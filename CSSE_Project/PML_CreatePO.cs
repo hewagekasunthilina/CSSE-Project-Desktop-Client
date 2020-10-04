@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace CSSE_Project
 {
-    public partial class Form1 : Form
+    public partial class PML_CreatePO : Form
     {
-        public Form1()
+        public PML_CreatePO()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
