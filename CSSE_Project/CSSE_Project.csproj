@@ -99,11 +99,41 @@
     <Compile Include="PML_CreatePO.Designer.cs">
       <DependentUpon>PML_CreatePO.cs</DependentUpon>
     </Compile>
-    <Compile Include="PML_StateMan_Home.cs">
+    <Compile Include="PML_SideNav_Account.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PML_StateMan_Home.Designer.cs">
-      <DependentUpon>PML_StateMan_Home.cs</DependentUpon>
+    <Compile Include="PML_SideNav_Account.Designer.cs">
+      <DependentUpon>PML_SideNav_Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PML_SideNav_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PML_SideNav_Admin.Designer.cs">
+      <DependentUpon>PML_SideNav_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PML_SideNav_LineMan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PML_SideNav_LineMan.Designer.cs">
+      <DependentUpon>PML_SideNav_LineMan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PML_SideNav_Other.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PML_SideNav_Other.Designer.cs">
+      <DependentUpon>PML_SideNav_Other.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PML_SideNav_Supervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PML_SideNav_Supervisor.Designer.cs">
+      <DependentUpon>PML_SideNav_Supervisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PML_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PML_Home.Designer.cs">
+      <DependentUpon>PML_Home.cs</DependentUpon>
     </Compile>
     <Compile Include="PML_Login.cs">
       <SubType>Form</SubType>
@@ -113,11 +143,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PML_SideNav_SiteMan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PML_SideNav_SiteMan.Designer.cs">
+      <DependentUpon>PML_SideNav_SiteMan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="PML_CreatePO.resx">
       <DependentUpon>PML_CreatePO.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PML_StateMan_Home.resx">
-      <DependentUpon>PML_StateMan_Home.cs</DependentUpon>
+    <EmbeddedResource Include="PML_SideNav_Account.resx">
+      <DependentUpon>PML_SideNav_Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PML_SideNav_Admin.resx">
+      <DependentUpon>PML_SideNav_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PML_SideNav_LineMan.resx">
+      <DependentUpon>PML_SideNav_LineMan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PML_SideNav_Other.resx">
+      <DependentUpon>PML_SideNav_Other.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PML_SideNav_Supervisor.resx">
+      <DependentUpon>PML_SideNav_Supervisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PML_Home.resx">
+      <DependentUpon>PML_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PML_Login.resx">
       <DependentUpon>PML_Login.cs</DependentUpon>
@@ -126,6 +177,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PML_SideNav_SiteMan.resx">
+      <DependentUpon>PML_SideNav_SiteMan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -224,6 +278,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login_usr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usr1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usr11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usr2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\authorize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_supplier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order_history1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usr3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goBack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

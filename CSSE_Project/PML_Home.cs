@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CSSE_Project
 {
-    public partial class PML_CreatePO : Form
+    public partial class PML_Home : Form
     {
-        public PML_CreatePO()
+        public PML_Home()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace CSSE_Project
             Application.Exit();
         }
 
-        private void PML_CreatePO_Load(object sender, EventArgs e)
+        private void PML_StateMan_Home_Load(object sender, EventArgs e)
         {
             lbl_name.Text = PML_Login.chkName;
 
@@ -35,7 +35,7 @@ namespace CSSE_Project
                     TopMost = true
                 };
 
-                this.pnl_CreatePO_SideNav.Controls.Add(sitMan);
+                this.pnl_HomeSideNav.Controls.Add(sitMan);
                 sitMan.Show();
             }
 
@@ -48,7 +48,7 @@ namespace CSSE_Project
                     TopMost = true
                 };
 
-                this.pnl_CreatePO_SideNav.Controls.Add(super);
+                this.pnl_HomeSideNav.Controls.Add(super);
                 super.Show();
             }
 
@@ -61,7 +61,7 @@ namespace CSSE_Project
                     TopMost = true
                 };
 
-                this.pnl_CreatePO_SideNav.Controls.Add(admin);
+                this.pnl_HomeSideNav.Controls.Add(admin);
                 admin.Show();
             }
 
@@ -74,7 +74,7 @@ namespace CSSE_Project
                     TopMost = true
                 };
 
-                this.pnl_CreatePO_SideNav.Controls.Add(acnt);
+                this.pnl_HomeSideNav.Controls.Add(acnt);
                 acnt.Show();
             }
 
@@ -87,7 +87,7 @@ namespace CSSE_Project
                     TopMost = true
                 };
 
-                this.pnl_CreatePO_SideNav.Controls.Add(lineMan);
+                this.pnl_HomeSideNav.Controls.Add(lineMan);
                 lineMan.Show();
             }
 
@@ -100,15 +100,20 @@ namespace CSSE_Project
                     TopMost = true
                 };
 
-                this.pnl_CreatePO_SideNav.Controls.Add(other);
+                this.pnl_HomeSideNav.Controls.Add(other);
                 other.Show();
             }
         }
 
+        private void pnl_sideNav_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            PML_Home home = new PML_Home();
-            home.Show();
+            PML_Login login = new PML_Login();
+            login.Show();
             this.Hide();
         }
     }
