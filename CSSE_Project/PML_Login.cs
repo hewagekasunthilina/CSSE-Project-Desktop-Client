@@ -14,7 +14,7 @@ namespace CSSE_Project
     public partial class PML_Login : Form
     {
         string connectionString = @"Server=projects.dimodigital.lk; Database=PML; Uid=ttm;Pwd=ttm;";
-        String chk;
+        String chkType, chkName;
         string userType;
 
         public PML_Login()
@@ -24,7 +24,8 @@ namespace CSSE_Project
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            chk = null;
+            chkType = null;
+            chkName = null;
 
             if (rb_siteMan.Checked == false & rb_supervisor.Checked == false & rb_acnt.Checked == false & rb_other.Checked == false)
             {
@@ -63,19 +64,18 @@ namespace CSSE_Project
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
                 mysqlCon.Open();
-                String sql = "SELECT UserName FROM pml_user WHERE UserType='" + userType + "' AND UserName='" + txt_userName.Text + "' AND Password='" + txt_password.Text + "'";
+                String sql = "SELECT UserType, UserName FROM pml_user WHERE UserType='" + userType + "' AND UserName='" + txt_userName.Text + "' AND Password='" + txt_password.Text + "'";
                 MySqlCommand mySc = new MySqlCommand(sql, mysqlCon);
                 MySqlDataReader myDr = mySc.ExecuteReader();
 
                 while (myDr.Read())
                 {
-                    chk = myDr.GetValue(0).ToString();
+                    chkName = myDr.GetValue(0).ToString();
+                    chkName = myDr.GetValue(1).ToString();
                 }
             }
 
-            MessageBox.Show(userType + chk+ txt_userName.Text+ txt_password.Text);
-
-            if (chk == null)
+            if (chkName == null)
             {
                 MessageBox.Show("Login Failed. Please check the User Type and Credentials Again !!", "ERROR");           
             }
