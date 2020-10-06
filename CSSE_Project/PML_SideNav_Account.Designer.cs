@@ -97,6 +97,7 @@
             this.btn_Supervisor_POHistory.TabIndex = 1;
             this.btn_Supervisor_POHistory.Text = "PO History";
             this.btn_Supervisor_POHistory.UseVisualStyleBackColor = false;
+            this.btn_Supervisor_POHistory.Click += new System.EventHandler(this.btn_Supervisor_POHistory_Click);
             // 
             // PML_SideNav_Account
             // 

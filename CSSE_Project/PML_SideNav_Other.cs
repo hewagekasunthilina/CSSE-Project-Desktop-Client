@@ -23,5 +23,12 @@ namespace CSSE_Project
             login.Show();
             this.Hide();
         }
+
+        private void btn_Supervisor_authorizePO_Click(object sender, EventArgs e)
+        {
+            PML_POhistory history = new PML_POhistory();
+            history.Show();
+            this.Hide();
+        }
     }
 }

@@ -93,11 +93,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PML_AuthorizePO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PML_AuthorizePO.Designer.cs">
+      <DependentUpon>PML_AuthorizePO.cs</DependentUpon>
+    </Compile>
     <Compile Include="PML_CreatePO.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PML_CreatePO.Designer.cs">
       <DependentUpon>PML_CreatePO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PML_PlaceOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PML_PlaceOrder.Designer.cs">
+      <DependentUpon>PML_PlaceOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PML_POhistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PML_POhistory.Designer.cs">
+      <DependentUpon>PML_POhistory.cs</DependentUpon>
     </Compile>
     <Compile Include="PML_SideNav_Account.cs">
       <SubType>Form</SubType>
@@ -149,8 +167,17 @@
     <Compile Include="PML_SideNav_SiteMan.Designer.cs">
       <DependentUpon>PML_SideNav_SiteMan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PML_AuthorizePO.resx">
+      <DependentUpon>PML_AuthorizePO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PML_CreatePO.resx">
       <DependentUpon>PML_CreatePO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PML_PlaceOrder.resx">
+      <DependentUpon>PML_PlaceOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PML_POhistory.resx">
+      <DependentUpon>PML_POhistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PML_SideNav_Account.resx">
       <DependentUpon>PML_SideNav_Account.cs</DependentUpon>
@@ -308,6 +335,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\goBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\place_order.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

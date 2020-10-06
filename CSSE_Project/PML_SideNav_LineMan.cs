@@ -23,5 +23,33 @@ namespace CSSE_Project
             login.Show();
             this.Hide();
         }
+
+        private void btn_Supervisor_authorizePO_Click(object sender, EventArgs e)
+        {
+            PML_AuthorizePO authorize = new PML_AuthorizePO();
+            authorize.Show();
+            this.Hide();
+        }
+
+        private void btn_Supervisor_POHistory_Click(object sender, EventArgs e)
+        {
+            PML_POhistory history = new PML_POhistory();
+            history.Show();
+            this.Hide();
+        }
+
+        private void btn_placeOrder_Click(object sender, EventArgs e)
+        {
+            PML_PlaceOrder placeOrder = new PML_PlaceOrder();
+            placeOrder.Show();
+            this.Hide();
+        }
+
+        private void btn_draft_Click(object sender, EventArgs e)
+        {
+            PML_DraftPO draftPO = new PML_DraftPO();
+            draftPO.Show();
+            this.Hide();
+        }
     }
 }

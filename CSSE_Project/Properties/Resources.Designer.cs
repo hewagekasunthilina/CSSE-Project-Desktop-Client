@@ -173,6 +173,16 @@ namespace CSSE_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap draft {
+            get {
+                object obj = ResourceManager.GetObject("draft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);
@@ -376,6 +386,16 @@ namespace CSSE_Project.Properties {
         internal static System.Drawing.Bitmap order_history1 {
             get {
                 object obj = ResourceManager.GetObject("order_history1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap place_order {
+            get {
+                object obj = ResourceManager.GetObject("place_order", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

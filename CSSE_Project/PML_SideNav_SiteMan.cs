@@ -30,5 +30,19 @@ namespace CSSE_Project
             logout.Show();
             this.Hide();
         }
+
+        private void btn_placeOrder_Click(object sender, EventArgs e)
+        {
+            PML_PlaceOrder placeOrder = new PML_PlaceOrder();
+            placeOrder.Show();
+            this.Hide();
+        }
+
+        private void btn_draft_Click(object sender, EventArgs e)
+        {
+            PML_DraftPO draftPO = new PML_DraftPO();
+            draftPO.Show();
+            this.Hide();
+        }
     }
 }
