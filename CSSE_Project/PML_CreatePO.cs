@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+
+
 namespace CSSE_Project
 {
     public partial class PML_CreatePO : Form
@@ -129,6 +135,62 @@ namespace CSSE_Project
         {
             OrderClear();
 
+        }
+
+        private void buttonMail_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Mail mail = new Mail();
+            mail.Show();
+        }
+
+        private void createDocument()
+        {
+            Document document = new Document(PageSize.A2);
+
+            PdfWriter.GetInstance(document, new FileStream("D:/PO_Report.pdf", FileMode.Create));
+            document.Open();
+
+            System.Drawing.Image PImage = System.Drawing.Image.FromFile("D:\\i1.png");
+            iTextSharp.text.Image ItextImage = iTextSharp.text.Image.GetInstance(PImage, System.Drawing.Imaging.ImageFormat.Png);
+            ItextImage.Alignment = Element.ALIGN_CENTER;
+            document.Add(ItextImage);
+
+
+            PdfPTable table = new PdfPTable(dg_po.Columns.Count);
+
+            for(int j = 0; j < dg_po.Columns.Count; j++)
+            {
+                table.AddCell(new Phrase(dg_po.Columns[j].HeaderText));
+            }
+
+            table.HeaderRows = 1;
+            
+
+            for(int i =0; i< dg_po.Rows.Count; i++)
+            {
+                for(int k=0; k < dg_po.Columns.Count; k++)
+                {
+                    if (dg_po[k,i].Value != null)
+                    {
+                        table.AddCell(new Phrase(dg_po[k, i].Value.ToString()));
+                    }
+                }
+            }
+
+            document.Add(table);
+
+            table.HorizontalAlignment = Element.ALIGN_CENTER;
+
+            document.Close();
+
+            MessageBox.Show("Document Created.");
+
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            createDocument();
         }
     }
 }

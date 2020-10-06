@@ -40,6 +40,10 @@
             this.btn_StateMan_POHistory = new System.Windows.Forms.Button();
             this.btn_StateMan_createPO = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_Description = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_refNo = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_POAdd = new System.Windows.Forms.Button();
@@ -60,10 +64,7 @@
             this.btn_print = new System.Windows.Forms.Button();
             this.txt_OrderSearch = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txt_refNo = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txt_Description = new System.Windows.Forms.TextBox();
+            this.buttonMail = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -254,6 +255,40 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(927, 196);
             this.panel2.TabIndex = 4;
+            // 
+            // txt_Description
+            // 
+            this.txt_Description.Location = new System.Drawing.Point(721, 21);
+            this.txt_Description.Name = "txt_Description";
+            this.txt_Description.Size = new System.Drawing.Size(167, 20);
+            this.txt_Description.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(620, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 16);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Description";
+            // 
+            // txt_refNo
+            // 
+            this.txt_refNo.Location = new System.Drawing.Point(158, 19);
+            this.txt_refNo.Name = "txt_refNo";
+            this.txt_refNo.Size = new System.Drawing.Size(133, 20);
+            this.txt_refNo.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(30, 21);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(122, 16);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Reference Number";
             // 
             // btn_delete
             // 
@@ -446,6 +481,7 @@
             // 
             this.dg_po.AllowUserToAddRows = false;
             this.dg_po.AllowUserToDeleteRows = false;
+            this.dg_po.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dg_po.BackgroundColor = System.Drawing.Color.White;
             this.dg_po.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dg_po.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
@@ -473,6 +509,7 @@
             this.btn_print.TabIndex = 16;
             this.btn_print.Text = "PRINT";
             this.btn_print.UseVisualStyleBackColor = false;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // txt_OrderSearch
             // 
@@ -498,39 +535,15 @@
             this.btn_search.UseVisualStyleBackColor = false;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // label8
+            // buttonMail
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(30, 21);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 16);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Reference Number";
-            // 
-            // txt_refNo
-            // 
-            this.txt_refNo.Location = new System.Drawing.Point(158, 19);
-            this.txt_refNo.Name = "txt_refNo";
-            this.txt_refNo.Size = new System.Drawing.Size(133, 20);
-            this.txt_refNo.TabIndex = 17;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(620, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 16);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Description";
-            // 
-            // txt_Description
-            // 
-            this.txt_Description.Location = new System.Drawing.Point(721, 21);
-            this.txt_Description.Name = "txt_Description";
-            this.txt_Description.Size = new System.Drawing.Size(167, 20);
-            this.txt_Description.TabIndex = 19;
+            this.buttonMail.Location = new System.Drawing.Point(1014, 517);
+            this.buttonMail.Name = "buttonMail";
+            this.buttonMail.Size = new System.Drawing.Size(131, 35);
+            this.buttonMail.TabIndex = 18;
+            this.buttonMail.Text = "Mail";
+            this.buttonMail.UseVisualStyleBackColor = true;
+            this.buttonMail.Click += new System.EventHandler(this.buttonMail_Click);
             // 
             // PML_CreatePO
             // 
@@ -538,6 +551,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.buttonMail);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txt_OrderSearch);
             this.Controls.Add(this.btn_print);
@@ -603,5 +617,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_refNo;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonMail;
     }
 }
