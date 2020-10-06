@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -45,6 +45,7 @@
             this.txt_orderRef = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_email = new System.Windows.Forms.Button();
             this.btn_statusUpdate = new System.Windows.Forms.Button();
             this.txt_comment = new System.Windows.Forms.TextBox();
             this.txt_updatedBy = new System.Windows.Forms.TextBox();
@@ -57,7 +58,8 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lbl = new System.Windows.Forms.Label();
             this.cb_statusFilter = new System.Windows.Forms.ComboBox();
-            this.btn_email = new System.Windows.Forms.Button();
+            this.txt_price = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -171,14 +173,14 @@
             this.dgv_authorizeView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_authorizeView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgv_authorizeView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Tan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_authorizeView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Tan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_authorizeView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_authorizeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_authorizeView.Location = new System.Drawing.Point(296, 150);
             this.dgv_authorizeView.Name = "dgv_authorizeView";
@@ -207,18 +209,20 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.txt_price);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txt_orderRef);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(550, 405);
+            this.panel2.Location = new System.Drawing.Point(344, 405);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(334, 55);
+            this.panel2.Size = new System.Drawing.Size(739, 55);
             this.panel2.TabIndex = 21;
             // 
             // txt_orderRef
             // 
             this.txt_orderRef.BackColor = System.Drawing.Color.White;
             this.txt_orderRef.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_orderRef.Location = new System.Drawing.Point(158, 15);
+            this.txt_orderRef.Location = new System.Drawing.Point(185, 15);
             this.txt_orderRef.Name = "txt_orderRef";
             this.txt_orderRef.ReadOnly = true;
             this.txt_orderRef.Size = new System.Drawing.Size(130, 22);
@@ -229,7 +233,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 15);
+            this.label2.Location = new System.Drawing.Point(63, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 15);
             this.label2.TabIndex = 0;
@@ -252,6 +256,21 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(739, 197);
             this.panel3.TabIndex = 22;
+            // 
+            // btn_email
+            // 
+            this.btn_email.BackColor = System.Drawing.Color.Peru;
+            this.btn_email.FlatAppearance.BorderSize = 0;
+            this.btn_email.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btn_email.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_email.ForeColor = System.Drawing.Color.White;
+            this.btn_email.Location = new System.Drawing.Point(432, 136);
+            this.btn_email.Name = "btn_email";
+            this.btn_email.Size = new System.Drawing.Size(151, 38);
+            this.btn_email.TabIndex = 11;
+            this.btn_email.Text = "SEND  EMAIL";
+            this.btn_email.UseVisualStyleBackColor = false;
             // 
             // btn_statusUpdate
             // 
@@ -301,7 +320,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(34, 63);
+            this.label5.Location = new System.Drawing.Point(32, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 15);
             this.label5.TabIndex = 6;
@@ -343,7 +362,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 18);
+            this.label3.Location = new System.Drawing.Point(32, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 15);
             this.label3.TabIndex = 2;
@@ -383,20 +402,26 @@
             this.cb_statusFilter.Size = new System.Drawing.Size(132, 23);
             this.cb_statusFilter.TabIndex = 11;
             // 
-            // btn_email
+            // txt_price
             // 
-            this.btn_email.BackColor = System.Drawing.Color.Peru;
-            this.btn_email.FlatAppearance.BorderSize = 0;
-            this.btn_email.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btn_email.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_email.ForeColor = System.Drawing.Color.White;
-            this.btn_email.Location = new System.Drawing.Point(432, 136);
-            this.btn_email.Name = "btn_email";
-            this.btn_email.Size = new System.Drawing.Size(151, 38);
-            this.btn_email.TabIndex = 11;
-            this.btn_email.Text = "SEND  EMAIL";
-            this.btn_email.UseVisualStyleBackColor = false;
+            this.txt_price.BackColor = System.Drawing.Color.White;
+            this.txt_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_price.Location = new System.Drawing.Point(535, 15);
+            this.txt_price.Name = "txt_price";
+            this.txt_price.ReadOnly = true;
+            this.txt_price.Size = new System.Drawing.Size(130, 22);
+            this.txt_price.TabIndex = 3;
+            this.txt_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(409, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 15);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Order Agreed Price";
             // 
             // PML_AuthorizePO
             // 
@@ -469,5 +494,7 @@
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.ComboBox cb_statusFilter;
         private System.Windows.Forms.Button btn_email;
+        private System.Windows.Forms.TextBox txt_price;
+        private System.Windows.Forms.Label label7;
     }
 }
