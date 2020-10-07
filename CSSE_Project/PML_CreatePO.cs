@@ -246,19 +246,19 @@ namespace CSSE_Project
 
             PdfPTable table = new PdfPTable(dg_po.Columns.Count);
 
-            for(int j = 0; j < dg_po.Columns.Count; j++)
+            for (int j = 0; j < dg_po.Columns.Count; j++)
             {
                 table.AddCell(new Phrase(dg_po.Columns[j].HeaderText));
             }
 
             table.HeaderRows = 1;
-            
 
-            for(int i =0; i< dg_po.Rows.Count; i++)
+
+            for (int i = 0; i < dg_po.Rows.Count; i++)
             {
-                for(int k=0; k < dg_po.Columns.Count; k++)
+                for (int k = 0; k < dg_po.Columns.Count; k++)
                 {
-                    if (dg_po[k,i].Value != null)
+                    if (dg_po[k, i].Value != null)
                     {
                         table.AddCell(new Phrase(dg_po[k, i].Value.ToString()));
                     }
@@ -286,5 +286,33 @@ namespace CSSE_Project
             login.Show();
             this.Hide();
         }
+
+        private void txt_refNo_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("select ifnull(max(cast(OrderID as int)),0)+1 from purchase_order", mysqlCon);
+                DataTable dtblOrder = new DataTable();
+                sqlDa.Fill(dtblOrder);
+                txt_refNo.Text = dtblOrder.Rows[0][0].ToString();
+                this.ActiveControl = txt_refNo;
+
+                txt_refNo.Text = "KHS2000" + txt_refNo.Text;
+            }
+        }
+
+        public void txt_price_Click(object sender, EventArgs e)
+        {
+            SupplierData sdata = new SupplierData();
+            sdata.Show();
+
+            
+          txt_price.Text = sdata.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+
+        }
+
+        
     }
 }
+    
+
