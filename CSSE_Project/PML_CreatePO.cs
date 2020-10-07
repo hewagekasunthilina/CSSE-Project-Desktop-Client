@@ -28,7 +28,99 @@ namespace CSSE_Project
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void PML_CreatePO_Load(object sender, EventArgs e)
+        {
+            OrderGridFill();
+            OrderClear();
+            lbl_name.Text = PML_Login.chkName;
+
+            if (PML_Login.chkType == "Site Manager")
+            {
+                PML_SideNav_SiteMan sitMan = new PML_SideNav_SiteMan()
+                {
+                    Dock = DockStyle.Fill,
+                    TopLevel = false,
+                    TopMost = true
+                };
+
+                this.pnl_CreatePO_SideNav.Controls.Add(sitMan);
+                sitMan.Show();
+            }
+
+            else if (PML_Login.chkType == "Supervisor")
+            {
+                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor()
+                {
+                    Dock = DockStyle.Fill,
+                    TopLevel = false,
+                    TopMost = true
+                };
+
+                this.pnl_CreatePO_SideNav.Controls.Add(super);
+                super.Show();
+            }
+
+            else if (PML_Login.chkType == "Admin")
+            {
+                PML_SideNav_Admin admin = new PML_SideNav_Admin()
+                {
+                    Dock = DockStyle.Fill,
+                    TopLevel = false,
+                    TopMost = true
+                };
+
+                this.pnl_CreatePO_SideNav.Controls.Add(admin);
+                admin.Show();
+            }
+
+            else if (PML_Login.chkType == "Accounting Staff")
+            {
+                PML_SideNav_Account acnt = new PML_SideNav_Account()
+                {
+                    Dock = DockStyle.Fill,
+                    TopLevel = false,
+                    TopMost = true
+                };
+
+                this.pnl_CreatePO_SideNav.Controls.Add(acnt);
+                acnt.Show();
+            }
+
+            else if (PML_Login.chkType == "Line Manager")
+            {
+                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan()
+                {
+                    Dock = DockStyle.Fill,
+                    TopLevel = false,
+                    TopMost = true
+                };
+
+                this.pnl_CreatePO_SideNav.Controls.Add(lineMan);
+                lineMan.Show();
+            }
+
+            else
+            {
+                PML_SideNav_Other other = new PML_SideNav_Other()
+                {
+                    Dock = DockStyle.Fill,
+                    TopLevel = false,
+                    TopMost = true
+                };
+
+                this.pnl_CreatePO_SideNav.Controls.Add(other);
+                other.Show();
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            PML_Home home = new PML_Home();
+            home.Show();
+            this.Hide();
         }
 
         private void btn_POAdd_Click(object sender, EventArgs e)
@@ -69,11 +161,6 @@ namespace CSSE_Project
             }
         }
 
-        private void PML_CreatePO_Load(object sender, EventArgs e)
-        {
-            OrderGridFill();
-            OrderClear();
-        }
 
         void OrderClear()
         {
@@ -191,6 +278,13 @@ namespace CSSE_Project
         private void btn_print_Click(object sender, EventArgs e)
         {
             createDocument();
+        }
+
+        private void pictureBox6_Click_1(object sender, EventArgs e)
+        {
+            PML_Login login = new PML_Login();
+            login.Show();
+            this.Hide();
         }
     }
 }
