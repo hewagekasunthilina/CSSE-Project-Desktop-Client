@@ -25,12 +25,14 @@ namespace CSSE_Project
         private void btn_SendMail_Click(object sender, EventArgs e)
         {
             login = new NetworkCredential(txt_UserName.Text, txt_pwd.Text);
-            client = new SmtpClient(txt_Smtp.Text);
-            client.Port = Convert.ToInt32(txt_port.Text);
-           // client.UseDefaultCredentials = false;
-            client.EnableSsl = chk_SSL.Checked;
+            client = new SmtpClient("smtp.gmail.com");
+            client.Port = Convert.ToInt32("587");
+            client.UseDefaultCredentials = false;
+            client.EnableSsl = true;
             client.Credentials = login;
-            msg = new MailMessage{From = new MailAddress(txt_UserName.Text + txt_Smtp.Text.Replace("smtp.", "@"), "sashinka kumarage", Encoding.UTF8) };
+            msg = new MailMessage { From = new MailAddress("sashinkakumarage@gmail.com" , "smtp.gmail.com") };
+            if (!string.IsNullOrEmpty(txt_attachment.Text.ToString()))
+                msg.Attachments.Add(new Attachment(txt_attachment.Text.ToString()));
             msg.To.Add(new MailAddress(txt_to.Text));
             if (!string.IsNullOrEmpty(txt_cc.Text))
                 msg.To.Add(new MailAddress(txt_cc.Text));
@@ -43,7 +45,7 @@ namespace CSSE_Project
             client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
             string userstate = "Sending...";
             client.SendAsync(msg, userstate);
-
+           
 
         }
 
@@ -57,8 +59,15 @@ namespace CSSE_Project
                 MessageBox.Show("Your message has been successfully sent.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-       
-
+        private void btn_attachment_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dg = new OpenFileDialog();
+            if(dg.ShowDialog() == DialogResult.OK)
+            {
+                string path = dg.FileName.ToString();
+                txt_attachment.Text = path;
+            }
+        }
     }
 }
 
