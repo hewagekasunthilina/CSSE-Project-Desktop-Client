@@ -38,15 +38,12 @@
             this.txt_cc = new System.Windows.Forms.TextBox();
             this.btn_SendMail = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chk_SSL = new System.Windows.Forms.CheckBox();
-            this.txt_Smtp = new System.Windows.Forms.TextBox();
-            this.txt_port = new System.Windows.Forms.TextBox();
             this.txt_pwd = new System.Windows.Forms.TextBox();
             this.txt_UserName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txt_attachment = new System.Windows.Forms.TextBox();
+            this.btn_attachment = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,7 +114,7 @@
             // 
             // btn_SendMail
             // 
-            this.btn_SendMail.Location = new System.Drawing.Point(254, 252);
+            this.btn_SendMail.Location = new System.Drawing.Point(265, 36);
             this.btn_SendMail.Name = "btn_SendMail";
             this.btn_SendMail.Size = new System.Drawing.Size(75, 23);
             this.btn_SendMail.TabIndex = 8;
@@ -127,45 +124,15 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.chk_SSL);
-            this.panel1.Controls.Add(this.txt_Smtp);
-            this.panel1.Controls.Add(this.txt_port);
             this.panel1.Controls.Add(this.txt_pwd);
+            this.panel1.Controls.Add(this.btn_SendMail);
             this.panel1.Controls.Add(this.txt_UserName);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(71, 297);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(503, 141);
             this.panel1.TabIndex = 9;
-            // 
-            // chk_SSL
-            // 
-            this.chk_SSL.AutoSize = true;
-            this.chk_SSL.Location = new System.Drawing.Point(241, 57);
-            this.chk_SSL.Name = "chk_SSL";
-            this.chk_SSL.Size = new System.Drawing.Size(46, 17);
-            this.chk_SSL.TabIndex = 9;
-            this.chk_SSL.Text = "SSL";
-            this.chk_SSL.UseVisualStyleBackColor = true;
-            // 
-            // txt_Smtp
-            // 
-            this.txt_Smtp.Location = new System.Drawing.Point(296, 91);
-            this.txt_Smtp.Name = "txt_Smtp";
-            this.txt_Smtp.Size = new System.Drawing.Size(100, 20);
-            this.txt_Smtp.TabIndex = 7;
-            this.txt_Smtp.Text = "smtp.gmail.com";
-            // 
-            // txt_port
-            // 
-            this.txt_port.Location = new System.Drawing.Point(108, 91);
-            this.txt_port.Name = "txt_port";
-            this.txt_port.Size = new System.Drawing.Size(100, 20);
-            this.txt_port.TabIndex = 6;
-            this.txt_port.Text = "587";
             // 
             // txt_pwd
             // 
@@ -191,24 +158,6 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "Password";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(43, 91);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Port";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(238, 97);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "SMTP";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -218,13 +167,31 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "UserName";
             // 
+            // txt_attachment
+            // 
+            this.txt_attachment.Location = new System.Drawing.Point(155, 250);
+            this.txt_attachment.Name = "txt_attachment";
+            this.txt_attachment.Size = new System.Drawing.Size(362, 20);
+            this.txt_attachment.TabIndex = 10;
+            // 
+            // btn_attachment
+            // 
+            this.btn_attachment.Location = new System.Drawing.Point(71, 250);
+            this.btn_attachment.Name = "btn_attachment";
+            this.btn_attachment.Size = new System.Drawing.Size(75, 23);
+            this.btn_attachment.TabIndex = 11;
+            this.btn_attachment.Text = "Attachment";
+            this.btn_attachment.UseVisualStyleBackColor = true;
+            this.btn_attachment.Click += new System.EventHandler(this.btn_attachment_Click);
+            // 
             // Mail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_attachment);
+            this.Controls.Add(this.txt_attachment);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btn_SendMail);
             this.Controls.Add(this.txt_cc);
             this.Controls.Add(this.txt_subject);
             this.Controls.Add(this.txt_msg);
@@ -254,14 +221,11 @@
         private System.Windows.Forms.TextBox txt_cc;
         private System.Windows.Forms.Button btn_SendMail;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox chk_SSL;
-        private System.Windows.Forms.TextBox txt_Smtp;
-        private System.Windows.Forms.TextBox txt_port;
         private System.Windows.Forms.TextBox txt_pwd;
         private System.Windows.Forms.TextBox txt_UserName;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_attachment;
+        private System.Windows.Forms.Button btn_attachment;
     }
 }

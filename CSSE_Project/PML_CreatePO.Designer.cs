@@ -34,10 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_StateMan_signOut = new System.Windows.Forms.Button();
-            this.btn_StateMan_goBack = new System.Windows.Forms.Button();
-            this.btn_StateMan_POHistory = new System.Windows.Forms.Button();
-            this.btn_StateMan_createPO = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_Description = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -68,6 +64,10 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pnl_CreatePO_SideNav = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btn_StateMan_signOut = new System.Windows.Forms.Button();
+            this.btn_StateMan_goBack = new System.Windows.Forms.Button();
+            this.btn_StateMan_POHistory = new System.Windows.Forms.Button();
+            this.btn_StateMan_createPO = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -147,81 +147,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_StateMan_signOut
-            // 
-            this.btn_StateMan_signOut.BackColor = System.Drawing.Color.Transparent;
-            this.btn_StateMan_signOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_StateMan_signOut.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_StateMan_signOut.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btn_StateMan_signOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btn_StateMan_signOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_StateMan_signOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_StateMan_signOut.ForeColor = System.Drawing.Color.White;
-            this.btn_StateMan_signOut.Image = global::CSSE_Project.Properties.Resources.logout;
-            this.btn_StateMan_signOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_StateMan_signOut.Location = new System.Drawing.Point(-1, 88);
-            this.btn_StateMan_signOut.Name = "btn_StateMan_signOut";
-            this.btn_StateMan_signOut.Size = new System.Drawing.Size(202, 50);
-            this.btn_StateMan_signOut.TabIndex = 7;
-            this.btn_StateMan_signOut.Text = "Sign Out";
-            this.btn_StateMan_signOut.UseVisualStyleBackColor = false;
-            // 
-            // btn_StateMan_goBack
-            // 
-            this.btn_StateMan_goBack.BackColor = System.Drawing.Color.Transparent;
-            this.btn_StateMan_goBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_StateMan_goBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_StateMan_goBack.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btn_StateMan_goBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btn_StateMan_goBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_StateMan_goBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_StateMan_goBack.ForeColor = System.Drawing.Color.White;
-            this.btn_StateMan_goBack.Image = global::CSSE_Project.Properties.Resources.back;
-            this.btn_StateMan_goBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_StateMan_goBack.Location = new System.Drawing.Point(-1, 137);
-            this.btn_StateMan_goBack.Name = "btn_StateMan_goBack";
-            this.btn_StateMan_goBack.Size = new System.Drawing.Size(202, 50);
-            this.btn_StateMan_goBack.TabIndex = 6;
-            this.btn_StateMan_goBack.Text = "Go Back";
-            this.btn_StateMan_goBack.UseVisualStyleBackColor = false;
-            // 
-            // btn_StateMan_POHistory
-            // 
-            this.btn_StateMan_POHistory.BackColor = System.Drawing.Color.Transparent;
-            this.btn_StateMan_POHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_StateMan_POHistory.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_StateMan_POHistory.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btn_StateMan_POHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btn_StateMan_POHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_StateMan_POHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_StateMan_POHistory.ForeColor = System.Drawing.Color.White;
-            this.btn_StateMan_POHistory.Image = global::CSSE_Project.Properties.Resources.order_history;
-            this.btn_StateMan_POHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_StateMan_POHistory.Location = new System.Drawing.Point(-1, 235);
-            this.btn_StateMan_POHistory.Name = "btn_StateMan_POHistory";
-            this.btn_StateMan_POHistory.Size = new System.Drawing.Size(202, 50);
-            this.btn_StateMan_POHistory.TabIndex = 5;
-            this.btn_StateMan_POHistory.Text = "PO History";
-            this.btn_StateMan_POHistory.UseVisualStyleBackColor = false;
-            // 
-            // btn_StateMan_createPO
-            // 
-            this.btn_StateMan_createPO.BackColor = System.Drawing.Color.White;
-            this.btn_StateMan_createPO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_StateMan_createPO.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_StateMan_createPO.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.btn_StateMan_createPO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_StateMan_createPO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_StateMan_createPO.ForeColor = System.Drawing.Color.Peru;
-            this.btn_StateMan_createPO.Image = global::CSSE_Project.Properties.Resources.create_order_color;
-            this.btn_StateMan_createPO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_StateMan_createPO.Location = new System.Drawing.Point(-1, 186);
-            this.btn_StateMan_createPO.Name = "btn_StateMan_createPO";
-            this.btn_StateMan_createPO.Size = new System.Drawing.Size(202, 50);
-            this.btn_StateMan_createPO.TabIndex = 4;
-            this.btn_StateMan_createPO.Text = "Create PO";
-            this.btn_StateMan_createPO.UseVisualStyleBackColor = false;
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -289,6 +214,7 @@
             this.txt_refNo.Name = "txt_refNo";
             this.txt_refNo.Size = new System.Drawing.Size(130, 20);
             this.txt_refNo.TabIndex = 17;
+            this.txt_refNo.Click += new System.EventHandler(this.txt_refNo_Click);
             // 
             // label8
             // 
@@ -415,6 +341,7 @@
             this.txt_price.Name = "txt_price";
             this.txt_price.Size = new System.Drawing.Size(130, 20);
             this.txt_price.TabIndex = 5;
+            this.txt_price.Click += new System.EventHandler(this.txt_price_Click);
             // 
             // label4
             // 
@@ -583,6 +510,81 @@
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click_1);
             // 
+            // btn_StateMan_signOut
+            // 
+            this.btn_StateMan_signOut.BackColor = System.Drawing.Color.Transparent;
+            this.btn_StateMan_signOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_StateMan_signOut.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_StateMan_signOut.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
+            this.btn_StateMan_signOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btn_StateMan_signOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_StateMan_signOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_StateMan_signOut.ForeColor = System.Drawing.Color.White;
+            this.btn_StateMan_signOut.Image = global::CSSE_Project.Properties.Resources.logout;
+            this.btn_StateMan_signOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_StateMan_signOut.Location = new System.Drawing.Point(-1, 88);
+            this.btn_StateMan_signOut.Name = "btn_StateMan_signOut";
+            this.btn_StateMan_signOut.Size = new System.Drawing.Size(202, 50);
+            this.btn_StateMan_signOut.TabIndex = 7;
+            this.btn_StateMan_signOut.Text = "Sign Out";
+            this.btn_StateMan_signOut.UseVisualStyleBackColor = false;
+            // 
+            // btn_StateMan_goBack
+            // 
+            this.btn_StateMan_goBack.BackColor = System.Drawing.Color.Transparent;
+            this.btn_StateMan_goBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_StateMan_goBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_StateMan_goBack.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
+            this.btn_StateMan_goBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btn_StateMan_goBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_StateMan_goBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_StateMan_goBack.ForeColor = System.Drawing.Color.White;
+            this.btn_StateMan_goBack.Image = global::CSSE_Project.Properties.Resources.back;
+            this.btn_StateMan_goBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_StateMan_goBack.Location = new System.Drawing.Point(-1, 137);
+            this.btn_StateMan_goBack.Name = "btn_StateMan_goBack";
+            this.btn_StateMan_goBack.Size = new System.Drawing.Size(202, 50);
+            this.btn_StateMan_goBack.TabIndex = 6;
+            this.btn_StateMan_goBack.Text = "Go Back";
+            this.btn_StateMan_goBack.UseVisualStyleBackColor = false;
+            // 
+            // btn_StateMan_POHistory
+            // 
+            this.btn_StateMan_POHistory.BackColor = System.Drawing.Color.Transparent;
+            this.btn_StateMan_POHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_StateMan_POHistory.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_StateMan_POHistory.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
+            this.btn_StateMan_POHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btn_StateMan_POHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_StateMan_POHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_StateMan_POHistory.ForeColor = System.Drawing.Color.White;
+            this.btn_StateMan_POHistory.Image = global::CSSE_Project.Properties.Resources.order_history;
+            this.btn_StateMan_POHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_StateMan_POHistory.Location = new System.Drawing.Point(-1, 235);
+            this.btn_StateMan_POHistory.Name = "btn_StateMan_POHistory";
+            this.btn_StateMan_POHistory.Size = new System.Drawing.Size(202, 50);
+            this.btn_StateMan_POHistory.TabIndex = 5;
+            this.btn_StateMan_POHistory.Text = "PO History";
+            this.btn_StateMan_POHistory.UseVisualStyleBackColor = false;
+            // 
+            // btn_StateMan_createPO
+            // 
+            this.btn_StateMan_createPO.BackColor = System.Drawing.Color.White;
+            this.btn_StateMan_createPO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_StateMan_createPO.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_StateMan_createPO.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
+            this.btn_StateMan_createPO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_StateMan_createPO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_StateMan_createPO.ForeColor = System.Drawing.Color.Peru;
+            this.btn_StateMan_createPO.Image = global::CSSE_Project.Properties.Resources.create_order_color;
+            this.btn_StateMan_createPO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_StateMan_createPO.Location = new System.Drawing.Point(-1, 186);
+            this.btn_StateMan_createPO.Name = "btn_StateMan_createPO";
+            this.btn_StateMan_createPO.Size = new System.Drawing.Size(202, 50);
+            this.btn_StateMan_createPO.TabIndex = 4;
+            this.btn_StateMan_createPO.Text = "Create PO";
+            this.btn_StateMan_createPO.UseVisualStyleBackColor = false;
+            // 
             // PML_CreatePO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -629,7 +631,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_title;
-        private System.Windows.Forms.TextBox txt_price;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cb_supplier;
         private System.Windows.Forms.Label label3;
@@ -661,5 +662,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel pnl_CreatePO_SideNav;
         private System.Windows.Forms.PictureBox pictureBox6;
+        public System.Windows.Forms.TextBox txt_price;
     }
 }
