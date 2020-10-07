@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnl_sideNav = new System.Windows.Forms.Panel();
             this.btn_StateMan_signOut = new System.Windows.Forms.Button();
             this.btn_StateMan_goBack = new System.Windows.Forms.Button();
             this.btn_StateMan_POHistory = new System.Windows.Forms.Button();
@@ -42,6 +41,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_Description = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.buttonMail = new System.Windows.Forms.Button();
             this.txt_refNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -64,14 +64,19 @@
             this.btn_print = new System.Windows.Forms.Button();
             this.txt_OrderSearch = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
-            this.buttonMail = new System.Windows.Forms.Button();
+            this.pnl_sideNav = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pnl_CreatePO_SideNav = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnl_sideNav.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_po)).BeginInit();
+            this.pnl_sideNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -141,18 +146,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // pnl_sideNav
-            // 
-            this.pnl_sideNav.BackColor = System.Drawing.Color.Peru;
-            this.pnl_sideNav.Controls.Add(this.btn_StateMan_signOut);
-            this.pnl_sideNav.Controls.Add(this.btn_StateMan_goBack);
-            this.pnl_sideNav.Controls.Add(this.btn_StateMan_POHistory);
-            this.pnl_sideNav.Controls.Add(this.btn_StateMan_createPO);
-            this.pnl_sideNav.Location = new System.Drawing.Point(0, 90);
-            this.pnl_sideNav.Name = "pnl_sideNav";
-            this.pnl_sideNav.Size = new System.Drawing.Size(200, 610);
-            this.pnl_sideNav.TabIndex = 3;
             // 
             // btn_StateMan_signOut
             // 
@@ -234,6 +227,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.txt_Description);
             this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.buttonMail);
             this.panel2.Controls.Add(this.txt_refNo);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.btn_delete);
@@ -251,55 +245,71 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.cb_material);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(288, 148);
+            this.panel2.Location = new System.Drawing.Point(285, 145);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(927, 196);
+            this.panel2.Size = new System.Drawing.Size(878, 196);
             this.panel2.TabIndex = 4;
             // 
             // txt_Description
             // 
-            this.txt_Description.Location = new System.Drawing.Point(721, 21);
+            this.txt_Description.Location = new System.Drawing.Point(713, 60);
+            this.txt_Description.Multiline = true;
             this.txt_Description.Name = "txt_Description";
-            this.txt_Description.Size = new System.Drawing.Size(167, 20);
+            this.txt_Description.Size = new System.Drawing.Size(130, 50);
             this.txt_Description.TabIndex = 19;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(620, 21);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(620, 60);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 16);
+            this.label9.Size = new System.Drawing.Size(69, 15);
             this.label9.TabIndex = 18;
             this.label9.Text = "Description";
             // 
+            // buttonMail
+            // 
+            this.buttonMail.BackColor = System.Drawing.Color.Peru;
+            this.buttonMail.FlatAppearance.BorderSize = 0;
+            this.buttonMail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMail.ForeColor = System.Drawing.Color.White;
+            this.buttonMail.Location = new System.Drawing.Point(712, 146);
+            this.buttonMail.Name = "buttonMail";
+            this.buttonMail.Size = new System.Drawing.Size(131, 35);
+            this.buttonMail.TabIndex = 18;
+            this.buttonMail.Text = "EMAIL";
+            this.buttonMail.UseVisualStyleBackColor = false;
+            this.buttonMail.Click += new System.EventHandler(this.buttonMail_Click);
+            // 
             // txt_refNo
             // 
-            this.txt_refNo.Location = new System.Drawing.Point(158, 19);
+            this.txt_refNo.Location = new System.Drawing.Point(158, 17);
             this.txt_refNo.Name = "txt_refNo";
-            this.txt_refNo.Size = new System.Drawing.Size(133, 20);
+            this.txt_refNo.Size = new System.Drawing.Size(130, 20);
             this.txt_refNo.TabIndex = 17;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(30, 21);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(30, 19);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 16);
+            this.label8.Size = new System.Drawing.Size(112, 15);
             this.label8.TabIndex = 16;
             this.label8.Text = "Reference Number";
             // 
             // btn_delete
             // 
-            this.btn_delete.BackColor = System.Drawing.Color.DimGray;
+            this.btn_delete.BackColor = System.Drawing.Color.Peru;
             this.btn_delete.FlatAppearance.BorderSize = 0;
             this.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_delete.Location = new System.Drawing.Point(721, 146);
+            this.btn_delete.Location = new System.Drawing.Point(493, 146);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(130, 35);
             this.btn_delete.TabIndex = 15;
@@ -309,14 +319,14 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.BackColor = System.Drawing.Color.DimGray;
+            this.btn_cancel.BackColor = System.Drawing.Color.Peru;
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
             this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_cancel.Location = new System.Drawing.Point(392, 146);
+            this.btn_cancel.Location = new System.Drawing.Point(262, 146);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(130, 35);
             this.btn_cancel.TabIndex = 14;
@@ -326,14 +336,14 @@
             // 
             // btn_POAdd
             // 
-            this.btn_POAdd.BackColor = System.Drawing.Color.DimGray;
+            this.btn_POAdd.BackColor = System.Drawing.Color.Peru;
             this.btn_POAdd.FlatAppearance.BorderSize = 0;
             this.btn_POAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btn_POAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_POAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_POAdd.ForeColor = System.Drawing.Color.White;
             this.btn_POAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_POAdd.Location = new System.Drawing.Point(65, 146);
+            this.btn_POAdd.Location = new System.Drawing.Point(33, 146);
             this.btn_POAdd.Name = "btn_POAdd";
             this.btn_POAdd.Size = new System.Drawing.Size(130, 35);
             this.btn_POAdd.TabIndex = 13;
@@ -343,25 +353,25 @@
             // 
             // dateTimeReqDate
             // 
-            this.dateTimeReqDate.Location = new System.Drawing.Point(445, 102);
+            this.dateTimeReqDate.Location = new System.Drawing.Point(445, 100);
             this.dateTimeReqDate.Name = "dateTimeReqDate";
-            this.dateTimeReqDate.Size = new System.Drawing.Size(135, 20);
+            this.dateTimeReqDate.Size = new System.Drawing.Size(130, 20);
             this.dateTimeReqDate.TabIndex = 12;
             // 
             // txt_qty
             // 
-            this.txt_qty.Location = new System.Drawing.Point(721, 62);
+            this.txt_qty.Location = new System.Drawing.Point(713, 19);
             this.txt_qty.Name = "txt_qty";
-            this.txt_qty.Size = new System.Drawing.Size(167, 20);
+            this.txt_qty.Size = new System.Drawing.Size(130, 20);
             this.txt_qty.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(335, 102);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(335, 100);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 16);
+            this.label5.Size = new System.Drawing.Size(87, 15);
             this.label5.TabIndex = 10;
             this.label5.Text = "Required Date";
             // 
@@ -373,46 +383,46 @@
             "Demodara",
             "Kaluthara",
             "Malabe"});
-            this.cmb_site.Location = new System.Drawing.Point(158, 97);
+            this.cmb_site.Location = new System.Drawing.Point(158, 95);
             this.cmb_site.MaxDropDownItems = 30;
             this.cmb_site.Name = "cmb_site";
-            this.cmb_site.Size = new System.Drawing.Size(137, 21);
+            this.cmb_site.Size = new System.Drawing.Size(130, 21);
             this.cmb_site.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(30, 102);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(30, 100);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 16);
+            this.label6.Size = new System.Drawing.Size(28, 15);
             this.label6.TabIndex = 8;
             this.label6.Text = "Site";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(620, 62);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(620, 19);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 16);
+            this.label7.Size = new System.Drawing.Size(51, 15);
             this.label7.TabIndex = 6;
             this.label7.Text = "Quantity";
             // 
             // txt_price
             // 
-            this.txt_price.Location = new System.Drawing.Point(445, 62);
+            this.txt_price.Location = new System.Drawing.Point(445, 60);
             this.txt_price.Name = "txt_price";
-            this.txt_price.Size = new System.Drawing.Size(135, 20);
+            this.txt_price.Size = new System.Drawing.Size(130, 20);
             this.txt_price.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(335, 62);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(335, 60);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 16);
+            this.label4.Size = new System.Drawing.Size(77, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "Agreed Price";
             // 
@@ -424,19 +434,19 @@
             "R & P Enterprises",
             "Duleepa Hardware",
             "TSK Pvt Ltd"});
-            this.cb_supplier.Location = new System.Drawing.Point(158, 57);
+            this.cb_supplier.Location = new System.Drawing.Point(158, 55);
             this.cb_supplier.MaxDropDownItems = 30;
             this.cb_supplier.Name = "cb_supplier";
-            this.cb_supplier.Size = new System.Drawing.Size(135, 21);
+            this.cb_supplier.Size = new System.Drawing.Size(130, 21);
             this.cb_supplier.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 62);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 60);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 16);
+            this.label3.Size = new System.Drawing.Size(53, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Supplier";
             // 
@@ -450,19 +460,19 @@
             "Cube 5 x 5",
             "Soil Load",
             "Sand Load"});
-            this.cb_material.Location = new System.Drawing.Point(445, 19);
+            this.cb_material.Location = new System.Drawing.Point(445, 17);
             this.cb_material.MaxDropDownItems = 30;
             this.cb_material.Name = "cb_material";
-            this.cb_material.Size = new System.Drawing.Size(135, 21);
+            this.cb_material.Size = new System.Drawing.Size(130, 21);
             this.cb_material.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(334, 19);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(334, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Material";
             // 
@@ -470,7 +480,7 @@
             // 
             this.lbl_title.AutoSize = true;
             this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_title.Location = new System.Drawing.Point(564, 107);
+            this.lbl_title.Location = new System.Drawing.Point(593, 107);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(275, 24);
             this.lbl_title.TabIndex = 5;
@@ -487,10 +497,10 @@
             this.dg_po.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dg_po.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dg_po.GridColor = System.Drawing.Color.White;
-            this.dg_po.Location = new System.Drawing.Point(236, 400);
+            this.dg_po.Location = new System.Drawing.Point(285, 413);
             this.dg_po.Name = "dg_po";
             this.dg_po.ReadOnly = true;
-            this.dg_po.Size = new System.Drawing.Size(752, 288);
+            this.dg_po.Size = new System.Drawing.Size(878, 262);
             this.dg_po.TabIndex = 6;
             this.dg_po.DoubleClick += new System.EventHandler(this.dg_po_DoubleClick);
             // 
@@ -503,7 +513,7 @@
             this.btn_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_print.ForeColor = System.Drawing.Color.White;
             this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Location = new System.Drawing.Point(1029, 477);
+            this.btn_print.Location = new System.Drawing.Point(932, 360);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(130, 35);
             this.btn_print.TabIndex = 16;
@@ -513,9 +523,9 @@
             // 
             // txt_OrderSearch
             // 
-            this.txt_OrderSearch.Location = new System.Drawing.Point(421, 360);
+            this.txt_OrderSearch.Location = new System.Drawing.Point(549, 379);
             this.txt_OrderSearch.Name = "txt_OrderSearch";
-            this.txt_OrderSearch.Size = new System.Drawing.Size(258, 20);
+            this.txt_OrderSearch.Size = new System.Drawing.Size(244, 20);
             this.txt_OrderSearch.TabIndex = 17;
             // 
             // btn_search
@@ -527,7 +537,7 @@
             this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_search.ForeColor = System.Drawing.Color.Black;
             this.btn_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_search.Location = new System.Drawing.Point(703, 357);
+            this.btn_search.Location = new System.Drawing.Point(817, 376);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(91, 25);
             this.btn_search.TabIndex = 16;
@@ -535,15 +545,43 @@
             this.btn_search.UseVisualStyleBackColor = false;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // buttonMail
+            // pnl_sideNav
             // 
-            this.buttonMail.Location = new System.Drawing.Point(1014, 517);
-            this.buttonMail.Name = "buttonMail";
-            this.buttonMail.Size = new System.Drawing.Size(131, 35);
-            this.buttonMail.TabIndex = 18;
-            this.buttonMail.Text = "Mail";
-            this.buttonMail.UseVisualStyleBackColor = true;
-            this.buttonMail.Click += new System.EventHandler(this.buttonMail_Click);
+            this.pnl_sideNav.BackColor = System.Drawing.Color.Peru;
+            this.pnl_sideNav.Controls.Add(this.pictureBox5);
+            this.pnl_sideNav.Controls.Add(this.pnl_CreatePO_SideNav);
+            this.pnl_sideNav.Location = new System.Drawing.Point(0, 90);
+            this.pnl_sideNav.Name = "pnl_sideNav";
+            this.pnl_sideNav.Size = new System.Drawing.Size(250, 610);
+            this.pnl_sideNav.TabIndex = 19;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::CSSE_Project.Properties.Resources.usr3;
+            this.pictureBox5.Location = new System.Drawing.Point(69, 57);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(110, 110);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pnl_CreatePO_SideNav
+            // 
+            this.pnl_CreatePO_SideNav.Location = new System.Drawing.Point(0, 159);
+            this.pnl_CreatePO_SideNav.Name = "pnl_CreatePO_SideNav";
+            this.pnl_CreatePO_SideNav.Size = new System.Drawing.Size(250, 400);
+            this.pnl_CreatePO_SideNav.TabIndex = 0;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::CSSE_Project.Properties.Resources.goBack;
+            this.pictureBox6.Location = new System.Drawing.Point(256, 96);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 20;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click_1);
             // 
             // PML_CreatePO
             // 
@@ -551,7 +589,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 700);
-            this.Controls.Add(this.buttonMail);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pnl_sideNav);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txt_OrderSearch);
             this.Controls.Add(this.btn_print);
@@ -569,10 +608,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnl_sideNav.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_po)).EndInit();
+            this.pnl_sideNav.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,5 +657,9 @@
         private System.Windows.Forms.TextBox txt_refNo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonMail;
+        private System.Windows.Forms.Panel pnl_sideNav;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel pnl_CreatePO_SideNav;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

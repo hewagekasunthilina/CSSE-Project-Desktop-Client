@@ -33,6 +33,8 @@ namespace CSSE_Project
 
         private void PML_CreatePO_Load(object sender, EventArgs e)
         {
+            OrderGridFill();
+            OrderClear();
             lbl_name.Text = PML_Login.chkName;
 
             if (PML_Login.chkType == "Site Manager")
@@ -159,11 +161,6 @@ namespace CSSE_Project
             }
         }
 
-        private void PML_CreatePO_Load(object sender, EventArgs e)
-        {
-            OrderGridFill();
-            OrderClear();
-        }
 
         void OrderClear()
         {
@@ -281,6 +278,13 @@ namespace CSSE_Project
         private void btn_print_Click(object sender, EventArgs e)
         {
             createDocument();
+        }
+
+        private void pictureBox6_Click_1(object sender, EventArgs e)
+        {
+            PML_Login login = new PML_Login();
+            login.Show();
+            this.Hide();
         }
     }
 }

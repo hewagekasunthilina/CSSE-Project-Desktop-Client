@@ -42,6 +42,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_authorizeSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_price = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txt_orderRef = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -56,10 +58,7 @@
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.lbl = new System.Windows.Forms.Label();
-            this.cb_statusFilter = new System.Windows.Forms.ComboBox();
-            this.txt_price = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_title = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -182,16 +181,16 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_authorizeView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_authorizeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_authorizeView.Location = new System.Drawing.Point(296, 150);
+            this.dgv_authorizeView.Location = new System.Drawing.Point(296, 178);
             this.dgv_authorizeView.Name = "dgv_authorizeView";
             this.dgv_authorizeView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_authorizeView.Size = new System.Drawing.Size(852, 222);
+            this.dgv_authorizeView.Size = new System.Drawing.Size(852, 216);
             this.dgv_authorizeView.TabIndex = 18;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(747, 115);
+            this.textBox1.Location = new System.Drawing.Point(582, 150);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(213, 21);
             this.textBox1.TabIndex = 19;
@@ -199,7 +198,7 @@
             // btn_authorizeSearch
             // 
             this.btn_authorizeSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_authorizeSearch.Location = new System.Drawing.Point(967, 113);
+            this.btn_authorizeSearch.Location = new System.Drawing.Point(802, 148);
             this.btn_authorizeSearch.Name = "btn_authorizeSearch";
             this.btn_authorizeSearch.Size = new System.Drawing.Size(75, 24);
             this.btn_authorizeSearch.TabIndex = 20;
@@ -213,10 +212,31 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txt_orderRef);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(344, 405);
+            this.panel2.Location = new System.Drawing.Point(352, 427);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(739, 55);
             this.panel2.TabIndex = 21;
+            // 
+            // txt_price
+            // 
+            this.txt_price.BackColor = System.Drawing.Color.White;
+            this.txt_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_price.Location = new System.Drawing.Point(535, 15);
+            this.txt_price.Name = "txt_price";
+            this.txt_price.ReadOnly = true;
+            this.txt_price.Size = new System.Drawing.Size(130, 22);
+            this.txt_price.TabIndex = 3;
+            this.txt_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(409, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 15);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Order Agreed Price";
             // 
             // txt_orderRef
             // 
@@ -252,9 +272,9 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.cb_status);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(344, 473);
+            this.panel3.Location = new System.Drawing.Point(352, 490);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(739, 197);
+            this.panel3.Size = new System.Drawing.Size(739, 188);
             this.panel3.TabIndex = 22;
             // 
             // btn_email
@@ -265,9 +285,9 @@
             this.btn_email.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_email.ForeColor = System.Drawing.Color.White;
-            this.btn_email.Location = new System.Drawing.Point(432, 136);
+            this.btn_email.Location = new System.Drawing.Point(433, 135);
             this.btn_email.Name = "btn_email";
-            this.btn_email.Size = new System.Drawing.Size(151, 38);
+            this.btn_email.Size = new System.Drawing.Size(150, 35);
             this.btn_email.TabIndex = 11;
             this.btn_email.Text = "SEND  EMAIL";
             this.btn_email.UseVisualStyleBackColor = false;
@@ -280,9 +300,9 @@
             this.btn_statusUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_statusUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_statusUpdate.ForeColor = System.Drawing.Color.White;
-            this.btn_statusUpdate.Location = new System.Drawing.Point(147, 136);
+            this.btn_statusUpdate.Location = new System.Drawing.Point(148, 135);
             this.btn_statusUpdate.Name = "btn_statusUpdate";
-            this.btn_statusUpdate.Size = new System.Drawing.Size(151, 38);
+            this.btn_statusUpdate.Size = new System.Drawing.Size(150, 35);
             this.btn_statusUpdate.TabIndex = 10;
             this.btn_statusUpdate.Text = "UPDATE  STATUS";
             this.btn_statusUpdate.UseVisualStyleBackColor = false;
@@ -293,7 +313,7 @@
             this.txt_comment.Location = new System.Drawing.Point(459, 63);
             this.txt_comment.Multiline = true;
             this.txt_comment.Name = "txt_comment";
-            this.txt_comment.Size = new System.Drawing.Size(234, 56);
+            this.txt_comment.Size = new System.Drawing.Size(234, 49);
             this.txt_comment.TabIndex = 9;
             // 
             // txt_updatedBy
@@ -379,49 +399,16 @@
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
-            // lbl
+            // lbl_title
             // 
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(380, 115);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(103, 15);
-            this.lbl.TabIndex = 23;
-            this.lbl.Text = "Filter By Status";
-            // 
-            // cb_statusFilter
-            // 
-            this.cb_statusFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_statusFilter.FormattingEnabled = true;
-            this.cb_statusFilter.ItemHeight = 15;
-            this.cb_statusFilter.Items.AddRange(new object[] {
-            "Approved",
-            "Declined"});
-            this.cb_statusFilter.Location = new System.Drawing.Point(489, 113);
-            this.cb_statusFilter.Name = "cb_statusFilter";
-            this.cb_statusFilter.Size = new System.Drawing.Size(132, 23);
-            this.cb_statusFilter.TabIndex = 11;
-            // 
-            // txt_price
-            // 
-            this.txt_price.BackColor = System.Drawing.Color.White;
-            this.txt_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_price.Location = new System.Drawing.Point(535, 15);
-            this.txt_price.Name = "txt_price";
-            this.txt_price.ReadOnly = true;
-            this.txt_price.Size = new System.Drawing.Size(130, 22);
-            this.txt_price.TabIndex = 3;
-            this.txt_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(409, 15);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 15);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Order Agreed Price";
+            this.lbl_title.AutoSize = true;
+            this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_title.Location = new System.Drawing.Point(576, 107);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(303, 24);
+            this.lbl_title.TabIndex = 23;
+            this.lbl_title.Text = "Authorize Purchase Requisition";
+            this.lbl_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // PML_AuthorizePO
             // 
@@ -429,8 +416,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 700);
-            this.Controls.Add(this.cb_statusFilter);
-            this.Controls.Add(this.lbl);
+            this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_authorizeSearch);
@@ -491,10 +477,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cb_status;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl;
-        private System.Windows.Forms.ComboBox cb_statusFilter;
         private System.Windows.Forms.Button btn_email;
         private System.Windows.Forms.TextBox txt_price;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_title;
     }
 }

@@ -43,6 +43,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_date = new System.Windows.Forms.TextBox();
             this.btn_emaiPO = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_placeOrder = new System.Windows.Forms.Button();
@@ -53,9 +54,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_orderRef = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbl = new System.Windows.Forms.Label();
-            this.dtp_filterDate = new System.Windows.Forms.DateTimePicker();
-            this.txt_date = new System.Windows.Forms.TextBox();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.lbl_title = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_placeOrderView)).BeginInit();
             this.pnl_sideNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -70,7 +70,7 @@
             // btn_placeSearch
             // 
             this.btn_placeSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_placeSearch.Location = new System.Drawing.Point(946, 113);
+            this.btn_placeSearch.Location = new System.Drawing.Point(797, 157);
             this.btn_placeSearch.Name = "btn_placeSearch";
             this.btn_placeSearch.Size = new System.Drawing.Size(75, 24);
             this.btn_placeSearch.TabIndex = 28;
@@ -80,7 +80,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(743, 115);
+            this.textBox1.Location = new System.Drawing.Point(587, 159);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(196, 21);
             this.textBox1.TabIndex = 27;
@@ -101,7 +101,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_placeOrderView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_placeOrderView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_placeOrderView.Location = new System.Drawing.Point(296, 150);
+            this.dgv_placeOrderView.Location = new System.Drawing.Point(297, 193);
             this.dgv_placeOrderView.Name = "dgv_placeOrderView";
             this.dgv_placeOrderView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_placeOrderView.Size = new System.Drawing.Size(852, 247);
@@ -217,6 +217,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btn_cancel);
             this.panel2.Controls.Add(this.txt_date);
             this.panel2.Controls.Add(this.btn_emaiPO);
             this.panel2.Controls.Add(this.btn_print);
@@ -228,10 +229,21 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txt_orderRef);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(370, 443);
+            this.panel2.Location = new System.Drawing.Point(371, 478);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(700, 199);
+            this.panel2.Size = new System.Drawing.Size(700, 187);
             this.panel2.TabIndex = 29;
+            // 
+            // txt_date
+            // 
+            this.txt_date.BackColor = System.Drawing.Color.White;
+            this.txt_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_date.Location = new System.Drawing.Point(512, 66);
+            this.txt_date.Name = "txt_date";
+            this.txt_date.ReadOnly = true;
+            this.txt_date.Size = new System.Drawing.Size(130, 22);
+            this.txt_date.TabIndex = 14;
+            this.txt_date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_emaiPO
             // 
@@ -241,11 +253,11 @@
             this.btn_emaiPO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_emaiPO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_emaiPO.ForeColor = System.Drawing.Color.White;
-            this.btn_emaiPO.Location = new System.Drawing.Point(471, 129);
+            this.btn_emaiPO.Location = new System.Drawing.Point(369, 124);
             this.btn_emaiPO.Name = "btn_emaiPO";
-            this.btn_emaiPO.Size = new System.Drawing.Size(150, 38);
+            this.btn_emaiPO.Size = new System.Drawing.Size(130, 35);
             this.btn_emaiPO.TabIndex = 13;
-            this.btn_emaiPO.Text = "EMAIL  ORDER";
+            this.btn_emaiPO.Text = "EMAIL";
             this.btn_emaiPO.UseVisualStyleBackColor = false;
             // 
             // btn_print
@@ -256,11 +268,11 @@
             this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_print.ForeColor = System.Drawing.Color.White;
-            this.btn_print.Location = new System.Drawing.Point(273, 129);
+            this.btn_print.Location = new System.Drawing.Point(200, 124);
             this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(150, 38);
+            this.btn_print.Size = new System.Drawing.Size(130, 35);
             this.btn_print.TabIndex = 12;
-            this.btn_print.Text = "PRINT  ORDER";
+            this.btn_print.Text = "PRINT";
             this.btn_print.UseVisualStyleBackColor = false;
             // 
             // btn_placeOrder
@@ -271,11 +283,11 @@
             this.btn_placeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_placeOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_placeOrder.ForeColor = System.Drawing.Color.White;
-            this.btn_placeOrder.Location = new System.Drawing.Point(74, 129);
+            this.btn_placeOrder.Location = new System.Drawing.Point(29, 124);
             this.btn_placeOrder.Name = "btn_placeOrder";
-            this.btn_placeOrder.Size = new System.Drawing.Size(150, 38);
+            this.btn_placeOrder.Size = new System.Drawing.Size(130, 35);
             this.btn_placeOrder.TabIndex = 11;
-            this.btn_placeOrder.Text = "PLACE  ORDER";
+            this.btn_placeOrder.Text = "PLACE";
             this.btn_placeOrder.UseVisualStyleBackColor = false;
             this.btn_placeOrder.Click += new System.EventHandler(this.btn_placeOrder_Click);
             // 
@@ -283,7 +295,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(386, 71);
+            this.label5.Location = new System.Drawing.Point(386, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 15);
             this.label5.TabIndex = 6;
@@ -293,7 +305,7 @@
             // 
             this.txt_amount.BackColor = System.Drawing.Color.White;
             this.txt_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_amount.Location = new System.Drawing.Point(169, 71);
+            this.txt_amount.Location = new System.Drawing.Point(169, 66);
             this.txt_amount.Name = "txt_amount";
             this.txt_amount.ReadOnly = true;
             this.txt_amount.Size = new System.Drawing.Size(130, 22);
@@ -304,7 +316,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 71);
+            this.label4.Location = new System.Drawing.Point(43, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 15);
             this.label4.TabIndex = 4;
@@ -314,7 +326,7 @@
             // 
             this.txt_orderStatus.BackColor = System.Drawing.Color.White;
             this.txt_orderStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_orderStatus.Location = new System.Drawing.Point(512, 30);
+            this.txt_orderStatus.Location = new System.Drawing.Point(512, 25);
             this.txt_orderStatus.Name = "txt_orderStatus";
             this.txt_orderStatus.ReadOnly = true;
             this.txt_orderStatus.Size = new System.Drawing.Size(130, 22);
@@ -325,7 +337,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(386, 30);
+            this.label3.Location = new System.Drawing.Point(386, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 15);
             this.label3.TabIndex = 2;
@@ -335,7 +347,7 @@
             // 
             this.txt_orderRef.BackColor = System.Drawing.Color.White;
             this.txt_orderRef.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_orderRef.Location = new System.Drawing.Point(169, 30);
+            this.txt_orderRef.Location = new System.Drawing.Point(169, 25);
             this.txt_orderRef.Name = "txt_orderRef";
             this.txt_orderRef.ReadOnly = true;
             this.txt_orderRef.Size = new System.Drawing.Size(130, 22);
@@ -346,40 +358,37 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 30);
+            this.label2.Location = new System.Drawing.Point(43, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Order Reference";
             // 
-            // lbl
+            // btn_cancel
             // 
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(412, 115);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(93, 15);
-            this.lbl.TabIndex = 31;
-            this.lbl.Text = "Filter By Date";
+            this.btn_cancel.BackColor = System.Drawing.Color.Peru;
+            this.btn_cancel.FlatAppearance.BorderSize = 0;
+            this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.ForeColor = System.Drawing.Color.White;
+            this.btn_cancel.Location = new System.Drawing.Point(538, 124);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(130, 35);
+            this.btn_cancel.TabIndex = 15;
+            this.btn_cancel.Text = "CANCEL";
+            this.btn_cancel.UseVisualStyleBackColor = false;
             // 
-            // dtp_filterDate
+            // lbl_title
             // 
-            this.dtp_filterDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_filterDate.Location = new System.Drawing.Point(511, 115);
-            this.dtp_filterDate.Name = "dtp_filterDate";
-            this.dtp_filterDate.Size = new System.Drawing.Size(199, 20);
-            this.dtp_filterDate.TabIndex = 32;
-            // 
-            // txt_date
-            // 
-            this.txt_date.BackColor = System.Drawing.Color.White;
-            this.txt_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_date.Location = new System.Drawing.Point(512, 71);
-            this.txt_date.Name = "txt_date";
-            this.txt_date.ReadOnly = true;
-            this.txt_date.Size = new System.Drawing.Size(130, 22);
-            this.txt_date.TabIndex = 14;
-            this.txt_date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lbl_title.AutoSize = true;
+            this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_title.Location = new System.Drawing.Point(618, 110);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(216, 24);
+            this.lbl_title.TabIndex = 30;
+            this.lbl_title.Text = "Place Purchase Order";
+            this.lbl_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // PML_PlaceOrder
             // 
@@ -387,8 +396,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 700);
-            this.Controls.Add(this.dtp_filterDate);
-            this.Controls.Add(this.lbl);
+            this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.btn_placeSearch);
@@ -444,8 +452,8 @@
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Button btn_placeOrder;
         private System.Windows.Forms.Button btn_emaiPO;
-        private System.Windows.Forms.Label lbl;
-        private System.Windows.Forms.DateTimePicker dtp_filterDate;
         private System.Windows.Forms.TextBox txt_date;
+        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Label lbl_title;
     }
 }
