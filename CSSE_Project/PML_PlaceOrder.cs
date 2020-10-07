@@ -86,11 +86,11 @@ namespace CSSE_Project
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
                 mysqlCon.Open();
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("OrderViewByStatus", mysqlCon);
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("ViewApprovedOrders", mysqlCon);
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataTable dtbRTag = new DataTable();
-                sqlDa.Fill(dtbRTag);
-                dgv_placeOrderView.DataSource = dtbRTag;
+                DataTable dtbPlace = new DataTable();
+                sqlDa.Fill(dtbPlace);
+                dgv_placeOrderView.DataSource = dtbPlace;
             }
 
         }
