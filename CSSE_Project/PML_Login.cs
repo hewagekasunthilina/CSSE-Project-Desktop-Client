@@ -16,6 +16,7 @@ namespace CSSE_Project
         string connectionString = @"Server=projects.dimodigital.lk; Database=PML; Uid=ttm;Pwd=ttm;";
         public static string chkType = ""; 
         public static string chkName = "";
+        public static string chkID = "";
         string userType;
 
         public PML_Login()
@@ -73,14 +74,15 @@ namespace CSSE_Project
                 using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
                 {
                     mysqlCon.Open();
-                    String sql = "SELECT UserType, UserName FROM pml_user WHERE UserType='" + userType + "' AND UserName='" + txt_userName.Text + "' AND Password='" + txt_password.Text + "'";
+                    String sql = "SELECT UserID, UserType, UserName FROM pml_user WHERE UserType='" + userType + "' AND UserName='" + txt_userName.Text + "' AND Password='" + txt_password.Text + "'";
                     MySqlCommand mySc = new MySqlCommand(sql, mysqlCon);
                     MySqlDataReader myDr = mySc.ExecuteReader();
 
                     while (myDr.Read())
                     {
-                        chkType = myDr.GetValue(0).ToString();
-                        chkName = myDr.GetValue(1).ToString();
+                        chkID = myDr.GetValue(0).ToString();
+                        chkType = myDr.GetValue(1).ToString();
+                        chkName = myDr.GetValue(2).ToString();
                     }
                 }
 

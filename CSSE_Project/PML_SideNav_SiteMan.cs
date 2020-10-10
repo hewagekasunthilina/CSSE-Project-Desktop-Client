@@ -44,5 +44,12 @@ namespace CSSE_Project
             draftPO.Show();
             this.Hide();
         }
+
+        private void btn_StateMan_POHistory_Click(object sender, EventArgs e)
+        {
+            PML_POhistory pML_POhistory = new PML_POhistory();
+            pML_POhistory.Show();
+            this.Hide();
+        }
     }
 }

@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_placeSearch = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_search = new System.Windows.Forms.TextBox();
             this.dgv_placeOrderView = new System.Windows.Forms.DataGridView();
             this.pnl_placeOrderSideNav = new System.Windows.Forms.Panel();
             this.pnl_sideNav = new System.Windows.Forms.Panel();
@@ -43,7 +43,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txt_date = new System.Windows.Forms.TextBox();
+            this.txt_material = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_des = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_supplier = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_site = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtp_po = new System.Windows.Forms.DateTimePicker();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_emaiPO = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_placeOrder = new System.Windows.Forms.Button();
@@ -54,7 +63,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_orderRef = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_cancel = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_placeOrderView)).BeginInit();
             this.pnl_sideNav.SuspendLayout();
@@ -76,14 +84,15 @@
             this.btn_placeSearch.TabIndex = 28;
             this.btn_placeSearch.Text = "Search";
             this.btn_placeSearch.UseVisualStyleBackColor = true;
+            this.btn_placeSearch.Click += new System.EventHandler(this.btn_placeSearch_Click);
             // 
-            // textBox1
+            // txt_search
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(587, 159);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 21);
-            this.textBox1.TabIndex = 27;
+            this.txt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.Location = new System.Drawing.Point(587, 159);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(196, 21);
+            this.txt_search.TabIndex = 27;
             // 
             // dgv_placeOrderView
             // 
@@ -104,7 +113,7 @@
             this.dgv_placeOrderView.Location = new System.Drawing.Point(297, 193);
             this.dgv_placeOrderView.Name = "dgv_placeOrderView";
             this.dgv_placeOrderView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_placeOrderView.Size = new System.Drawing.Size(852, 247);
+            this.dgv_placeOrderView.Size = new System.Drawing.Size(852, 233);
             this.dgv_placeOrderView.TabIndex = 26;
             this.dgv_placeOrderView.DoubleClick += new System.EventHandler(this.dgv_placeOrderView_DoubleClick);
             // 
@@ -134,6 +143,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // label1
             // 
@@ -202,6 +212,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox6
             // 
@@ -217,8 +228,16 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.txt_material);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.txt_des);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.txt_supplier);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.txt_site);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.dtp_po);
             this.panel2.Controls.Add(this.btn_cancel);
-            this.panel2.Controls.Add(this.txt_date);
             this.panel2.Controls.Add(this.btn_emaiPO);
             this.panel2.Controls.Add(this.btn_print);
             this.panel2.Controls.Add(this.btn_placeOrder);
@@ -229,21 +248,118 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txt_orderRef);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(371, 478);
+            this.panel2.Location = new System.Drawing.Point(371, 441);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(700, 187);
+            this.panel2.Size = new System.Drawing.Size(700, 224);
             this.panel2.TabIndex = 29;
             // 
-            // txt_date
+            // txt_material
             // 
-            this.txt_date.BackColor = System.Drawing.Color.White;
-            this.txt_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_date.Location = new System.Drawing.Point(512, 66);
-            this.txt_date.Name = "txt_date";
-            this.txt_date.ReadOnly = true;
-            this.txt_date.Size = new System.Drawing.Size(130, 22);
-            this.txt_date.TabIndex = 14;
-            this.txt_date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_material.BackColor = System.Drawing.Color.White;
+            this.txt_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_material.Location = new System.Drawing.Point(169, 57);
+            this.txt_material.Name = "txt_material";
+            this.txt_material.ReadOnly = true;
+            this.txt_material.Size = new System.Drawing.Size(144, 22);
+            this.txt_material.TabIndex = 24;
+            this.txt_material.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(43, 57);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 15);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Material";
+            // 
+            // txt_des
+            // 
+            this.txt_des.BackColor = System.Drawing.Color.White;
+            this.txt_des.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_des.Location = new System.Drawing.Point(507, 57);
+            this.txt_des.Name = "txt_des";
+            this.txt_des.ReadOnly = true;
+            this.txt_des.Size = new System.Drawing.Size(144, 22);
+            this.txt_des.TabIndex = 22;
+            this.txt_des.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(381, 57);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 15);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Description";
+            // 
+            // txt_supplier
+            // 
+            this.txt_supplier.BackColor = System.Drawing.Color.White;
+            this.txt_supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_supplier.Location = new System.Drawing.Point(169, 89);
+            this.txt_supplier.Name = "txt_supplier";
+            this.txt_supplier.ReadOnly = true;
+            this.txt_supplier.Size = new System.Drawing.Size(144, 22);
+            this.txt_supplier.TabIndex = 20;
+            this.txt_supplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(43, 89);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 15);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Supplier Name";
+            // 
+            // txt_site
+            // 
+            this.txt_site.BackColor = System.Drawing.Color.White;
+            this.txt_site.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_site.Location = new System.Drawing.Point(507, 25);
+            this.txt_site.Name = "txt_site";
+            this.txt_site.ReadOnly = true;
+            this.txt_site.Size = new System.Drawing.Size(144, 22);
+            this.txt_site.TabIndex = 18;
+            this.txt_site.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(381, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 15);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Construction Site";
+            // 
+            // dtp_po
+            // 
+            this.dtp_po.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_po.Location = new System.Drawing.Point(169, 121);
+            this.dtp_po.Name = "dtp_po";
+            this.dtp_po.Size = new System.Drawing.Size(144, 21);
+            this.dtp_po.TabIndex = 16;
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.BackColor = System.Drawing.Color.Peru;
+            this.btn_cancel.FlatAppearance.BorderSize = 0;
+            this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.ForeColor = System.Drawing.Color.White;
+            this.btn_cancel.Location = new System.Drawing.Point(538, 175);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(130, 35);
+            this.btn_cancel.TabIndex = 15;
+            this.btn_cancel.Text = "CANCEL";
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_emaiPO
             // 
@@ -253,12 +369,13 @@
             this.btn_emaiPO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_emaiPO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_emaiPO.ForeColor = System.Drawing.Color.White;
-            this.btn_emaiPO.Location = new System.Drawing.Point(369, 124);
+            this.btn_emaiPO.Location = new System.Drawing.Point(369, 175);
             this.btn_emaiPO.Name = "btn_emaiPO";
             this.btn_emaiPO.Size = new System.Drawing.Size(130, 35);
             this.btn_emaiPO.TabIndex = 13;
             this.btn_emaiPO.Text = "EMAIL";
             this.btn_emaiPO.UseVisualStyleBackColor = false;
+            this.btn_emaiPO.Click += new System.EventHandler(this.btn_emaiPO_Click);
             // 
             // btn_print
             // 
@@ -268,12 +385,13 @@
             this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_print.ForeColor = System.Drawing.Color.White;
-            this.btn_print.Location = new System.Drawing.Point(200, 124);
+            this.btn_print.Location = new System.Drawing.Point(200, 175);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(130, 35);
             this.btn_print.TabIndex = 12;
-            this.btn_print.Text = "PRINT";
+            this.btn_print.Text = "REPORT";
             this.btn_print.UseVisualStyleBackColor = false;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_placeOrder
             // 
@@ -283,7 +401,7 @@
             this.btn_placeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_placeOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_placeOrder.ForeColor = System.Drawing.Color.White;
-            this.btn_placeOrder.Location = new System.Drawing.Point(29, 124);
+            this.btn_placeOrder.Location = new System.Drawing.Point(29, 175);
             this.btn_placeOrder.Name = "btn_placeOrder";
             this.btn_placeOrder.Size = new System.Drawing.Size(130, 35);
             this.btn_placeOrder.TabIndex = 11;
@@ -295,7 +413,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(386, 66);
+            this.label5.Location = new System.Drawing.Point(43, 121);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 15);
             this.label5.TabIndex = 6;
@@ -305,10 +423,10 @@
             // 
             this.txt_amount.BackColor = System.Drawing.Color.White;
             this.txt_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_amount.Location = new System.Drawing.Point(169, 66);
+            this.txt_amount.Location = new System.Drawing.Point(507, 89);
             this.txt_amount.Name = "txt_amount";
             this.txt_amount.ReadOnly = true;
-            this.txt_amount.Size = new System.Drawing.Size(130, 22);
+            this.txt_amount.Size = new System.Drawing.Size(144, 22);
             this.txt_amount.TabIndex = 5;
             this.txt_amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -316,7 +434,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 66);
+            this.label4.Location = new System.Drawing.Point(381, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 15);
             this.label4.TabIndex = 4;
@@ -326,10 +444,10 @@
             // 
             this.txt_orderStatus.BackColor = System.Drawing.Color.White;
             this.txt_orderStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_orderStatus.Location = new System.Drawing.Point(512, 25);
+            this.txt_orderStatus.Location = new System.Drawing.Point(507, 121);
             this.txt_orderStatus.Name = "txt_orderStatus";
             this.txt_orderStatus.ReadOnly = true;
-            this.txt_orderStatus.Size = new System.Drawing.Size(130, 22);
+            this.txt_orderStatus.Size = new System.Drawing.Size(144, 22);
             this.txt_orderStatus.TabIndex = 3;
             this.txt_orderStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -337,11 +455,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(386, 25);
+            this.label3.Location = new System.Drawing.Point(381, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 15);
+            this.label3.Size = new System.Drawing.Size(108, 15);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Order Status";
+            this.label3.Text = "Order Approved By";
             // 
             // txt_orderRef
             // 
@@ -350,7 +468,7 @@
             this.txt_orderRef.Location = new System.Drawing.Point(169, 25);
             this.txt_orderRef.Name = "txt_orderRef";
             this.txt_orderRef.ReadOnly = true;
-            this.txt_orderRef.Size = new System.Drawing.Size(130, 22);
+            this.txt_orderRef.Size = new System.Drawing.Size(144, 22);
             this.txt_orderRef.TabIndex = 1;
             this.txt_orderRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -363,21 +481,6 @@
             this.label2.Size = new System.Drawing.Size(98, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Order Reference";
-            // 
-            // btn_cancel
-            // 
-            this.btn_cancel.BackColor = System.Drawing.Color.Peru;
-            this.btn_cancel.FlatAppearance.BorderSize = 0;
-            this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_cancel.Location = new System.Drawing.Point(538, 124);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(130, 35);
-            this.btn_cancel.TabIndex = 15;
-            this.btn_cancel.Text = "CANCEL";
-            this.btn_cancel.UseVisualStyleBackColor = false;
             // 
             // lbl_title
             // 
@@ -400,7 +503,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.btn_placeSearch);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.dgv_placeOrderView);
             this.Controls.Add(this.pnl_sideNav);
             this.Controls.Add(this.panel1);
@@ -433,7 +536,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_placeSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.DataGridView dgv_placeOrderView;
         private System.Windows.Forms.Panel pnl_placeOrderSideNav;
         private System.Windows.Forms.Panel pnl_sideNav;
@@ -452,8 +555,16 @@
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Button btn_placeOrder;
         private System.Windows.Forms.Button btn_emaiPO;
-        private System.Windows.Forms.TextBox txt_date;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Label lbl_title;
+        private System.Windows.Forms.DateTimePicker dtp_po;
+        private System.Windows.Forms.TextBox txt_supplier;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_site;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_material;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt_des;
+        private System.Windows.Forms.Label label9;
     }
 }

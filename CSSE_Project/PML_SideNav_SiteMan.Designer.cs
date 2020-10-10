@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.pnl_sideNav = new System.Windows.Forms.Panel();
+            this.btn_draft = new System.Windows.Forms.Button();
             this.btn_placeOrder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_StateMan_signOut = new System.Windows.Forms.Button();
             this.btn_StateMan_POHistory = new System.Windows.Forms.Button();
             this.btn_StateMan_createPO = new System.Windows.Forms.Button();
-            this.btn_draft = new System.Windows.Forms.Button();
             this.pnl_sideNav.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,27 @@
             this.pnl_sideNav.Name = "pnl_sideNav";
             this.pnl_sideNav.Size = new System.Drawing.Size(250, 400);
             this.pnl_sideNav.TabIndex = 2;
+            // 
+            // btn_draft
+            // 
+            this.btn_draft.BackColor = System.Drawing.Color.Transparent;
+            this.btn_draft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_draft.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_draft.FlatAppearance.BorderSize = 0;
+            this.btn_draft.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.btn_draft.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.btn_draft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_draft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_draft.ForeColor = System.Drawing.Color.White;
+            this.btn_draft.Image = global::CSSE_Project.Properties.Resources.draft;
+            this.btn_draft.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_draft.Location = new System.Drawing.Point(0, 265);
+            this.btn_draft.Name = "btn_draft";
+            this.btn_draft.Size = new System.Drawing.Size(250, 50);
+            this.btn_draft.TabIndex = 7;
+            this.btn_draft.Text = "Draft PO";
+            this.btn_draft.UseVisualStyleBackColor = false;
+            this.btn_draft.Click += new System.EventHandler(this.btn_draft_Click);
             // 
             // btn_placeOrder
             // 
@@ -124,6 +145,7 @@
             this.btn_StateMan_POHistory.TabIndex = 1;
             this.btn_StateMan_POHistory.Text = "PO History";
             this.btn_StateMan_POHistory.UseVisualStyleBackColor = false;
+            this.btn_StateMan_POHistory.Click += new System.EventHandler(this.btn_StateMan_POHistory_Click);
             // 
             // btn_StateMan_createPO
             // 
@@ -145,27 +167,6 @@
             this.btn_StateMan_createPO.Text = "Create PO";
             this.btn_StateMan_createPO.UseVisualStyleBackColor = false;
             this.btn_StateMan_createPO.Click += new System.EventHandler(this.btn_StateMan_createPO_Click);
-            // 
-            // btn_draft
-            // 
-            this.btn_draft.BackColor = System.Drawing.Color.Transparent;
-            this.btn_draft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_draft.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_draft.FlatAppearance.BorderSize = 0;
-            this.btn_draft.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
-            this.btn_draft.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
-            this.btn_draft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_draft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_draft.ForeColor = System.Drawing.Color.White;
-            this.btn_draft.Image = global::CSSE_Project.Properties.Resources.draft;
-            this.btn_draft.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_draft.Location = new System.Drawing.Point(0, 265);
-            this.btn_draft.Name = "btn_draft";
-            this.btn_draft.Size = new System.Drawing.Size(250, 50);
-            this.btn_draft.TabIndex = 7;
-            this.btn_draft.Text = "Draft PO";
-            this.btn_draft.UseVisualStyleBackColor = false;
-            this.btn_draft.Click += new System.EventHandler(this.btn_draft_Click);
             // 
             // PML_SideNav_SiteMan
             // 

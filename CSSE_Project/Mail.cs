@@ -14,15 +14,23 @@ namespace CSSE_Project
 {
     public partial class Mail : Form
     {
+        public static string toName;
+        public static string ccName;
+        public static string subject;
+        public static string userEmail;
+        public static string attachment;
+        public static string message;
+
         NetworkCredential login;
         SmtpClient client;
         MailMessage msg;
+
         public Mail()
         {
             InitializeComponent();
         }
 
-        private void btn_SendMail_Click(object sender, EventArgs e)
+        internal void btn_SendMail_Click(object sender, EventArgs e)
         {
             login = new NetworkCredential(txt_UserName.Text, txt_pwd.Text);
             client = new SmtpClient("smtp.gmail.com");
@@ -45,7 +53,7 @@ namespace CSSE_Project
             client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
             string userstate = "Sending...";
             client.SendAsync(msg, userstate);
-           
+            this.Close();
 
         }
 
@@ -67,6 +75,16 @@ namespace CSSE_Project
                 string path = dg.FileName.ToString();
                 txt_attachment.Text = path;
             }
+        }
+
+        private void Mail_Load(object sender, EventArgs e)
+        {
+            txt_to.Text = toName;
+            txt_cc.Text = ccName;
+            txt_subject.Text = subject;
+            txt_UserName.Text = userEmail;
+            txt_attachment.Text = attachment;
+            txt_msg.Text = message;
         }
     }
 }

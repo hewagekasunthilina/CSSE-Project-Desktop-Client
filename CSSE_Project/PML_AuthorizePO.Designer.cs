@@ -39,7 +39,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pnl_AuthSideNav = new System.Windows.Forms.Panel();
             this.dgv_authorizeView = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_authorizeSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_price = new System.Windows.Forms.TextBox();
@@ -138,6 +138,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pnl_sideNav
             // 
@@ -158,6 +159,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pnl_AuthSideNav
             // 
@@ -186,15 +188,16 @@
             this.dgv_authorizeView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_authorizeView.Size = new System.Drawing.Size(852, 216);
             this.dgv_authorizeView.TabIndex = 18;
+            this.dgv_authorizeView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_authorizeView_CellContentClick);
             this.dgv_authorizeView.DoubleClick += new System.EventHandler(this.dgv_authorizeView_DoubleClick);
             // 
-            // textBox1
+            // txt_search
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(582, 150);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 21);
-            this.textBox1.TabIndex = 19;
+            this.txt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.Location = new System.Drawing.Point(582, 150);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(213, 21);
+            this.txt_search.TabIndex = 19;
             // 
             // btn_authorizeSearch
             // 
@@ -205,6 +208,7 @@
             this.btn_authorizeSearch.TabIndex = 20;
             this.btn_authorizeSearch.Text = "Search";
             this.btn_authorizeSearch.UseVisualStyleBackColor = true;
+            this.btn_authorizeSearch.Click += new System.EventHandler(this.btn_authorizeSearch_Click);
             // 
             // panel2
             // 
@@ -292,6 +296,7 @@
             this.btn_email.TabIndex = 11;
             this.btn_email.Text = "SEND  EMAIL";
             this.btn_email.UseVisualStyleBackColor = false;
+            this.btn_email.Click += new System.EventHandler(this.btn_email_Click);
             // 
             // btn_statusUpdate
             // 
@@ -307,6 +312,7 @@
             this.btn_statusUpdate.TabIndex = 10;
             this.btn_statusUpdate.Text = "UPDATE  STATUS";
             this.btn_statusUpdate.UseVisualStyleBackColor = false;
+            this.btn_statusUpdate.Click += new System.EventHandler(this.btn_statusUpdate_Click);
             // 
             // txt_comment
             // 
@@ -421,7 +427,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_authorizeSearch);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.dgv_authorizeView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_sideNav);
@@ -463,7 +469,7 @@
         private System.Windows.Forms.Panel pnl_AuthSideNav;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.DataGridView dgv_authorizeView;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Button btn_authorizeSearch;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txt_orderRef;

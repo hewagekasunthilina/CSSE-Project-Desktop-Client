@@ -72,5 +72,19 @@ namespace CSSE_Project
                 siteMan.Show();
             }
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            PML_UserProfile userProfile = new PML_UserProfile();
+            userProfile.Show();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            PML_Login login = new PML_Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

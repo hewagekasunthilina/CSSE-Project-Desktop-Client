@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.pnl_sideNav = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_Supervisor_signOut = new System.Windows.Forms.Button();
             this.btn_Supervisor_POHistory = new System.Windows.Forms.Button();
             this.btn_Supervisor_authorizePO = new System.Windows.Forms.Button();
@@ -49,6 +49,17 @@
             this.pnl_sideNav.Name = "pnl_sideNav";
             this.pnl_sideNav.Size = new System.Drawing.Size(250, 400);
             this.pnl_sideNav.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(89, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Admin";
             // 
             // button1
             // 
@@ -70,17 +81,6 @@
             this.button1.Text = "PO History";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(89, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Admin";
             // 
             // btn_Supervisor_signOut
             // 
@@ -114,14 +114,15 @@
             this.btn_Supervisor_POHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Supervisor_POHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Supervisor_POHistory.ForeColor = System.Drawing.Color.White;
-            this.btn_Supervisor_POHistory.Image = global::CSSE_Project.Properties.Resources.add_supplier;
+            this.btn_Supervisor_POHistory.Image = global::CSSE_Project.Properties.Resources.materials;
             this.btn_Supervisor_POHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Supervisor_POHistory.Location = new System.Drawing.Point(0, 167);
             this.btn_Supervisor_POHistory.Name = "btn_Supervisor_POHistory";
             this.btn_Supervisor_POHistory.Size = new System.Drawing.Size(250, 50);
             this.btn_Supervisor_POHistory.TabIndex = 1;
-            this.btn_Supervisor_POHistory.Text = "Add Supplier";
+            this.btn_Supervisor_POHistory.Text = "Add Materials";
             this.btn_Supervisor_POHistory.UseVisualStyleBackColor = false;
+            this.btn_Supervisor_POHistory.Click += new System.EventHandler(this.btn_Supervisor_POHistory_Click);
             // 
             // btn_Supervisor_authorizePO
             // 
@@ -142,6 +143,7 @@
             this.btn_Supervisor_authorizePO.TabIndex = 0;
             this.btn_Supervisor_authorizePO.Text = "Add User";
             this.btn_Supervisor_authorizePO.UseVisualStyleBackColor = false;
+            this.btn_Supervisor_authorizePO.Click += new System.EventHandler(this.btn_Supervisor_authorizePO_Click);
             // 
             // PML_SideNav_Admin
             // 

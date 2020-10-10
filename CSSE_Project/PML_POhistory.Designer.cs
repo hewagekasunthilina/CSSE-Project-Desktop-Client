@@ -38,9 +38,11 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgv_POHistory = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_POHistorySearch = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lbl_title = new System.Windows.Forms.Label();
+            this.btn_statusUpdate = new System.Windows.Forms.Button();
             this.pnl_sideNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel1.SuspendLayout();
@@ -77,6 +79,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // label1
             // 
@@ -145,6 +148,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // dgv_POHistory
             // 
@@ -154,29 +158,30 @@
             this.dgv_POHistory.ColumnHeadersHeight = 20;
             this.dgv_POHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_POHistory.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgv_POHistory.Location = new System.Drawing.Point(308, 168);
+            this.dgv_POHistory.Location = new System.Drawing.Point(284, 201);
             this.dgv_POHistory.Name = "dgv_POHistory";
             this.dgv_POHistory.ReadOnly = true;
-            this.dgv_POHistory.Size = new System.Drawing.Size(806, 433);
+            this.dgv_POHistory.Size = new System.Drawing.Size(882, 389);
             this.dgv_POHistory.TabIndex = 26;
             // 
-            // textBox1
+            // txt_search
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(498, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(314, 22);
-            this.textBox1.TabIndex = 27;
+            this.txt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.Location = new System.Drawing.Point(510, 165);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(314, 22);
+            this.txt_search.TabIndex = 27;
             // 
             // btn_POHistorySearch
             // 
             this.btn_POHistorySearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_POHistorySearch.Location = new System.Drawing.Point(825, 117);
+            this.btn_POHistorySearch.Location = new System.Drawing.Point(837, 164);
             this.btn_POHistorySearch.Name = "btn_POHistorySearch";
             this.btn_POHistorySearch.Size = new System.Drawing.Size(75, 25);
             this.btn_POHistorySearch.TabIndex = 28;
             this.btn_POHistorySearch.Text = "Search";
             this.btn_POHistorySearch.UseVisualStyleBackColor = true;
+            this.btn_POHistorySearch.Click += new System.EventHandler(this.btn_POHistorySearch_Click);
             // 
             // pictureBox6
             // 
@@ -189,14 +194,43 @@
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
+            // lbl_title
+            // 
+            this.lbl_title.AutoSize = true;
+            this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_title.Location = new System.Drawing.Point(560, 104);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(270, 24);
+            this.lbl_title.TabIndex = 29;
+            this.lbl_title.Text = "View Purchase Requisitions";
+            this.lbl_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btn_statusUpdate
+            // 
+            this.btn_statusUpdate.BackColor = System.Drawing.Color.Peru;
+            this.btn_statusUpdate.FlatAppearance.BorderSize = 0;
+            this.btn_statusUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btn_statusUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_statusUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_statusUpdate.ForeColor = System.Drawing.Color.White;
+            this.btn_statusUpdate.Location = new System.Drawing.Point(643, 612);
+            this.btn_statusUpdate.Name = "btn_statusUpdate";
+            this.btn_statusUpdate.Size = new System.Drawing.Size(150, 35);
+            this.btn_statusUpdate.TabIndex = 30;
+            this.btn_statusUpdate.Text = "GET REPORT";
+            this.btn_statusUpdate.UseVisualStyleBackColor = false;
+            this.btn_statusUpdate.Click += new System.EventHandler(this.btn_statusUpdate_Click);
+            // 
             // PML_POhistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.btn_statusUpdate);
+            this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.btn_POHistorySearch);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.dgv_POHistory);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pnl_sideNav);
@@ -234,7 +268,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgv_POHistory;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Button btn_POHistorySearch;
+        private System.Windows.Forms.Label lbl_title;
+        private System.Windows.Forms.Button btn_statusUpdate;
     }
 }

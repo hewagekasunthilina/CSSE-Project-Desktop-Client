@@ -57,7 +57,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
             this.dg_po = new System.Windows.Forms.DataGridView();
-            this.btn_print = new System.Windows.Forms.Button();
             this.txt_OrderSearch = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.pnl_sideNav = new System.Windows.Forms.Panel();
@@ -146,6 +145,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -431,23 +431,6 @@
             this.dg_po.TabIndex = 6;
             this.dg_po.DoubleClick += new System.EventHandler(this.dg_po_DoubleClick);
             // 
-            // btn_print
-            // 
-            this.btn_print.BackColor = System.Drawing.Color.DimGray;
-            this.btn_print.FlatAppearance.BorderSize = 0;
-            this.btn_print.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.ForeColor = System.Drawing.Color.White;
-            this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Location = new System.Drawing.Point(932, 360);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(130, 35);
-            this.btn_print.TabIndex = 16;
-            this.btn_print.Text = "PRINT";
-            this.btn_print.UseVisualStyleBackColor = false;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
-            // 
             // txt_OrderSearch
             // 
             this.txt_OrderSearch.Location = new System.Drawing.Point(549, 379);
@@ -491,6 +474,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pnl_CreatePO_SideNav
             // 
@@ -595,7 +579,6 @@
             this.Controls.Add(this.pnl_sideNav);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txt_OrderSearch);
-            this.Controls.Add(this.btn_print);
             this.Controls.Add(this.dg_po);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.panel2);
@@ -650,7 +633,6 @@
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.DataGridView dg_po;
-        private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.TextBox txt_OrderSearch;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.TextBox txt_Description;

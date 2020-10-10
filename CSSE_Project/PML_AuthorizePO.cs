@@ -40,6 +40,7 @@ namespace CSSE_Project
             lbl_name.Text = PML_Login.chkName;
             txt_updatedBy.Text = PML_Login.chkName;
             GridFill();
+            Clear();
 
             if (PML_Login.chkType == "Supervisor")
             {
@@ -79,8 +80,18 @@ namespace CSSE_Project
                 DataTable dtbAuth = new DataTable();
                 sqlDa.Fill(dtbAuth);
                 dgv_authorizeView.DataSource = dtbAuth;
+                dgv_authorizeView.Columns[0].Visible = false;
             }
 
+        }
+
+        void Clear()
+        {
+            cb_status.SelectedItem = null;
+            txt_orderRef.Text = "";
+            txt_price.Text = "";
+            txt_comment.Text = "";
+            order_id = 0;
         }
 
         private void dgv_authorizeView_DoubleClick(object sender, EventArgs e)
@@ -91,6 +102,89 @@ namespace CSSE_Project
                 txt_price.Text = dgv_authorizeView.CurrentRow.Cells[5].Value.ToString();
                 order_id = Convert.ToInt32(dgv_authorizeView.CurrentRow.Cells[0].Value.ToString());
             }
+        }
+
+        private void btn_statusUpdate_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                if (cb_status.SelectedIndex != -1)
+                {
+                    MySqlCommand cmd;
+                    cmd = new MySqlCommand("UPDATE purchase_order SET Status='" + cb_status.Text + "', CheckedBy='" + txt_updatedBy.Text + "', CheckedOn='" + dtp_updatedDate.Text.Trim() + "' WHERE OrderID=@OrderID", mysqlCon);
+                    mysqlCon.Open();
+                    cmd.Parameters.AddWithValue("@OrderID", order_id);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Order Status Updated Successfully");
+                    GridFill();
+                    Clear();
+                }
+            }
+        }
+
+        private void dgv_authorizeView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_authorizeSearch_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("SearchByPending", mysqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDa.SelectCommand.Parameters.AddWithValue("_OrderSearch", txt_search.Text);
+                DataTable dtblOrder = new DataTable();
+                sqlDa.Fill(dtblOrder);
+                dgv_authorizeView.DataSource = dtblOrder;
+                dgv_authorizeView.Columns[0].Visible = false;
+            }
+        }
+
+        private void btn_email_Click(object sender, EventArgs e)
+        {
+            if (cb_status.Text =="Hold" && txt_orderRef.Text != "")
+            {
+                string userMail = null;
+                using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+                {
+                    mysqlCon.Open();
+                    String sql = "SELECT Email FROM pml_user WHERE Username='" + lbl_name.Text + "'";
+                    MySqlCommand mySc = new MySqlCommand(sql, mysqlCon);
+                    MySqlDataReader myDr = mySc.ExecuteReader();
+
+                    while (myDr.Read())
+                    {
+                        userMail = myDr.GetValue(0).ToString();
+                    }
+                }
+
+                Mail.userEmail = userMail;
+                Mail.subject = "Hold Purchase Orders";
+                Mail.message = txt_orderRef + "order is marked as hold because the agreed price is not mentioned.";
+                Mail openMail = new Mail();
+                openMail.Show();
+            }
+
+            else
+            {
+                MessageBox.Show("Please select a hold order");
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            PML_UserProfile userProfile = new PML_UserProfile();
+            userProfile.Show();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            PML_Login login = new PML_Login();
+            login.Show();
+            this.Hide();
         }
     }
 }
