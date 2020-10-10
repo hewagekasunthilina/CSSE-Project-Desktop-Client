@@ -53,8 +53,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dtp_po = new System.Windows.Forms.DateTimePicker();
             this.btn_cancel = new System.Windows.Forms.Button();
-            this.btn_emaiPO = new System.Windows.Forms.Button();
-            this.btn_print = new System.Windows.Forms.Button();
             this.btn_placeOrder = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_amount = new System.Windows.Forms.TextBox();
@@ -238,8 +236,6 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.dtp_po);
             this.panel2.Controls.Add(this.btn_cancel);
-            this.panel2.Controls.Add(this.btn_emaiPO);
-            this.panel2.Controls.Add(this.btn_print);
             this.panel2.Controls.Add(this.btn_placeOrder);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txt_amount);
@@ -353,45 +349,13 @@
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_cancel.Location = new System.Drawing.Point(538, 175);
+            this.btn_cancel.Location = new System.Drawing.Point(446, 175);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(130, 35);
+            this.btn_cancel.Size = new System.Drawing.Size(150, 35);
             this.btn_cancel.TabIndex = 15;
             this.btn_cancel.Text = "CANCEL";
             this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
-            // 
-            // btn_emaiPO
-            // 
-            this.btn_emaiPO.BackColor = System.Drawing.Color.Peru;
-            this.btn_emaiPO.FlatAppearance.BorderSize = 0;
-            this.btn_emaiPO.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btn_emaiPO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_emaiPO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_emaiPO.ForeColor = System.Drawing.Color.White;
-            this.btn_emaiPO.Location = new System.Drawing.Point(369, 175);
-            this.btn_emaiPO.Name = "btn_emaiPO";
-            this.btn_emaiPO.Size = new System.Drawing.Size(130, 35);
-            this.btn_emaiPO.TabIndex = 13;
-            this.btn_emaiPO.Text = "EMAIL";
-            this.btn_emaiPO.UseVisualStyleBackColor = false;
-            this.btn_emaiPO.Click += new System.EventHandler(this.btn_emaiPO_Click);
-            // 
-            // btn_print
-            // 
-            this.btn_print.BackColor = System.Drawing.Color.Peru;
-            this.btn_print.FlatAppearance.BorderSize = 0;
-            this.btn_print.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.ForeColor = System.Drawing.Color.White;
-            this.btn_print.Location = new System.Drawing.Point(200, 175);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(130, 35);
-            this.btn_print.TabIndex = 12;
-            this.btn_print.Text = "REPORT";
-            this.btn_print.UseVisualStyleBackColor = false;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_placeOrder
             // 
@@ -401,9 +365,9 @@
             this.btn_placeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_placeOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_placeOrder.ForeColor = System.Drawing.Color.White;
-            this.btn_placeOrder.Location = new System.Drawing.Point(29, 175);
+            this.btn_placeOrder.Location = new System.Drawing.Point(100, 175);
             this.btn_placeOrder.Name = "btn_placeOrder";
-            this.btn_placeOrder.Size = new System.Drawing.Size(130, 35);
+            this.btn_placeOrder.Size = new System.Drawing.Size(150, 35);
             this.btn_placeOrder.TabIndex = 11;
             this.btn_placeOrder.Text = "PLACE";
             this.btn_placeOrder.UseVisualStyleBackColor = false;
@@ -552,9 +516,7 @@
         private System.Windows.Forms.TextBox txt_amount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Button btn_placeOrder;
-        private System.Windows.Forms.Button btn_emaiPO;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.DateTimePicker dtp_po;

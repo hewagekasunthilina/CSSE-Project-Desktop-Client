@@ -32,28 +32,47 @@ namespace CSSE_Project
 
         internal void btn_SendMail_Click(object sender, EventArgs e)
         {
-            login = new NetworkCredential(txt_UserName.Text, txt_pwd.Text);
-            client = new SmtpClient("smtp.gmail.com");
-            client.Port = Convert.ToInt32("587");
-            client.UseDefaultCredentials = false;
-            client.EnableSsl = true;
-            client.Credentials = login;
-            msg = new MailMessage { From = new MailAddress("sashinkakumarage@gmail.com" , "smtp.gmail.com") };
-            if (!string.IsNullOrEmpty(txt_attachment.Text.ToString()))
-                msg.Attachments.Add(new Attachment(txt_attachment.Text.ToString()));
-            msg.To.Add(new MailAddress(txt_to.Text));
-            if (!string.IsNullOrEmpty(txt_cc.Text))
-                msg.To.Add(new MailAddress(txt_cc.Text));
-            msg.Subject = txt_subject.Text;
-            msg.Body = txt_msg.Text;
-            msg.BodyEncoding = Encoding.UTF8;
-            msg.IsBodyHtml = true;
-            msg.Priority = MailPriority.Normal;
-            msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-            client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
-            string userstate = "Sending...";
-            client.SendAsync(msg, userstate);
-            this.Close();
+
+            if(txt_UserName.Text == "")
+            {
+                MessageBox.Show("Please Enter your Email");
+            }
+
+            else if(txt_pwd.Text == "")
+            {
+                MessageBox.Show("Please Enter your Password");
+            }
+
+            else if(txt_subject.Text == "")
+            {
+                MessageBox.Show("Please Enter a Subject");
+            }
+
+            else
+            {
+                login = new NetworkCredential(txt_UserName.Text, txt_pwd.Text);
+                client = new SmtpClient("smtp.gmail.com");
+                client.Port = Convert.ToInt32("587");
+                client.UseDefaultCredentials = false;
+                client.EnableSsl = true;
+                client.Credentials = login;
+                msg = new MailMessage { From = new MailAddress("sashinkakumarage@gmail.com", "smtp.gmail.com") };
+                if (!string.IsNullOrEmpty(txt_attachment.Text.ToString()))
+                    msg.Attachments.Add(new Attachment(txt_attachment.Text.ToString()));
+                msg.To.Add(new MailAddress(txt_to.Text));
+                if (!string.IsNullOrEmpty(txt_cc.Text))
+                    msg.To.Add(new MailAddress(txt_cc.Text));
+                msg.Subject = txt_subject.Text;
+                msg.Body = txt_msg.Text;
+                msg.BodyEncoding = Encoding.UTF8;
+                msg.IsBodyHtml = true;
+                msg.Priority = MailPriority.Normal;
+                msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+                client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
+                string userstate = "Sending...";
+                client.SendAsync(msg, userstate);
+                this.Close();
+            }
 
         }
 

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -174,21 +174,20 @@
             this.dgv_authorizeView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_authorizeView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgv_authorizeView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Tan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_authorizeView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Tan;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_authorizeView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_authorizeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_authorizeView.Location = new System.Drawing.Point(296, 178);
             this.dgv_authorizeView.Name = "dgv_authorizeView";
             this.dgv_authorizeView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_authorizeView.Size = new System.Drawing.Size(852, 216);
             this.dgv_authorizeView.TabIndex = 18;
-            this.dgv_authorizeView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_authorizeView_CellContentClick);
             this.dgv_authorizeView.DoubleClick += new System.EventHandler(this.dgv_authorizeView_DoubleClick);
             // 
             // txt_search
@@ -294,7 +293,7 @@
             this.btn_email.Name = "btn_email";
             this.btn_email.Size = new System.Drawing.Size(150, 35);
             this.btn_email.TabIndex = 11;
-            this.btn_email.Text = "SEND  EMAIL";
+            this.btn_email.Text = "CANCEL";
             this.btn_email.UseVisualStyleBackColor = false;
             this.btn_email.Click += new System.EventHandler(this.btn_email_Click);
             // 
@@ -306,7 +305,7 @@
             this.btn_statusUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_statusUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_statusUpdate.ForeColor = System.Drawing.Color.White;
-            this.btn_statusUpdate.Location = new System.Drawing.Point(148, 135);
+            this.btn_statusUpdate.Location = new System.Drawing.Point(151, 135);
             this.btn_statusUpdate.Name = "btn_statusUpdate";
             this.btn_statusUpdate.Size = new System.Drawing.Size(150, 35);
             this.btn_statusUpdate.TabIndex = 10;

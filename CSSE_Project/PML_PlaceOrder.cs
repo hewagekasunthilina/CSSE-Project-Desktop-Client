@@ -133,17 +133,51 @@ namespace CSSE_Project
                 cmd.Parameters.AddWithValue("@OrderID", order_id);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Order Status Updated Successfully");
+
+                if (txt_orderRef.Text != "")
+                {
+                    Document pdoc = new Document(PageSize.A4, 50f, 0f, 0f, 30f);
+
+                    PdfWriter pWriter = PdfWriter.GetInstance(pdoc, new FileStream("C:/" + txt_orderRef.Text + ".pdf", FileMode.Create));
+                    pdoc.Open();
+
+                    System.Drawing.Image PImage = System.Drawing.Image.FromFile("C:\\ReportHeader.png");
+                    iTextSharp.text.Image ItextImage = iTextSharp.text.Image.GetInstance(PImage, System.Drawing.Imaging.ImageFormat.Png);
+                    ItextImage.Alignment = Element.ALIGN_CENTER;
+                    pdoc.Add(ItextImage);
+
+                    Paragraph address = new Paragraph("KHS2 Cnstructions (Pvt) Ltd ," + "\n" + "No: 01 ," + "\n" + "Dane's Plains ," + "\n" + "Katukurunda ," + "\n" + "Kaluthara North." + "\n");
+                    address.Alignment = Element.ALIGN_LEFT;
+                    pdoc.Add(address);
+
+                    Paragraph heading = new Paragraph("\n" + "\n" + "Prchase Order Requisition" + "\n" + "\n");
+                    heading.Alignment = Element.ALIGN_CENTER;
+                    pdoc.Add(heading);
+
+                    Paragraph para = new Paragraph("\n" + "Purchase Order Details are as of below. Please be kind enough to let us know if there are any information that should be modified." + "\n" + "\n" + "\n");
+                    para.Alignment = Element.ALIGN_LEFT;
+                    pdoc.Add(para);
+
+                    Paragraph para1 = new Paragraph("Order Reference   :   " + txt_orderRef.Text + "\n" + "Construction Site   :   " + txt_site.Text + "\n" + "Order Material       :   " + txt_material.Text + "\n" + "Order Description  :   " + txt_des.Text + "\n" + "Supplier Name       :   " + txt_supplier.Text + "\n" + "Agreed Price          :   LKR. " + txt_amount.Text + "\n" + "Delivery Date        :  " + dtp_po.Value + "\n" + "\n");
+                    para1.Alignment = Element.ALIGN_BASELINE;
+                    pdoc.Add(para1);
+
+                    Paragraph para2 = new Paragraph("\n" + "Thanks & Regards!" + "\n");
+                    para2.Alignment = Element.ALIGN_LEFT;
+                    pdoc.Add(para2);
+
+                    System.Drawing.Image PImage1 = System.Drawing.Image.FromFile("C:\\stamp.png");
+                    iTextSharp.text.Image ItextImage1 = iTextSharp.text.Image.GetInstance(PImage1, System.Drawing.Imaging.ImageFormat.Png);
+                    ItextImage1.Alignment = Element.ALIGN_LEFT;
+                    pdoc.Add(ItextImage1);
+
+                    pdoc.Close();
+                    MessageBox.Show("Order Report Created Successfully.");
+                }
+
                 GridFill();
             }
-        }
 
-        private void btn_cancel_Click(object sender, EventArgs e)
-        {
-            Clear();
-        }
-
-        private void btn_emaiPO_Click(object sender, EventArgs e)
-        {
             if (txt_orderRef.Text != "")
             {
                 string userMail = null;
@@ -188,75 +222,28 @@ namespace CSSE_Project
                     }
                 }
 
-
                 Mail.userEmail = userMail;
                 Mail.toName = Tomail;
                 Mail.ccName = ccMail;
-                Mail.attachment = "E:\\"+txt_orderRef.Text + ".pdf";
-                MessageBox.Show(Mail.attachment);
-                Mail.subject = "Order Requisition for " + txt_material.Text +" Order No: " + txt_orderRef.Text;
+                Mail.attachment = "C:\\" + txt_orderRef.Text + ".pdf";
+                Mail.subject = "Purchase Order Requisition";
+                Mail.message = "Please find the attached pdf file of order details of " + txt_material.Text + " Order No: " + txt_orderRef.Text + "\n" + "\n" + "Thanks & Regards!";
                 Mail openMail = new Mail();
                 openMail.Show();
-
-                
             }
 
             else
             {
-                MessageBox.Show("Please select an order from the table");
+                MessageBox.Show("Please select an order to be placed");
             }
-            
+
         }
 
-        private void btn_print_Click(object sender, EventArgs e)
+        private void btn_cancel_Click(object sender, EventArgs e)
         {
-            if (txt_orderRef.Text != "")
-            {
-                Document pdoc = new Document(PageSize.A4, 50f, 0f, 0f, 30f);
-
-                PdfWriter pWriter = PdfWriter.GetInstance(pdoc, new FileStream("E:/" + txt_orderRef.Text + ".pdf", FileMode.Create));
-                pdoc.Open();
-
-                System.Drawing.Image PImage = System.Drawing.Image.FromFile("E:\\ReportHeader.png");
-                iTextSharp.text.Image ItextImage = iTextSharp.text.Image.GetInstance(PImage, System.Drawing.Imaging.ImageFormat.Png);
-                ItextImage.Alignment = Element.ALIGN_CENTER;
-                pdoc.Add(ItextImage);
-
-                Paragraph address = new Paragraph("KHS2 Cnstructions (Pvt) Ltd ," + "\n" + "No: 01 ," + "\n" + "Dane's Plains ," + "\n" + "Katukurunda ," + "\n" + "Kaluthara North." + "\n");
-                address.Alignment = Element.ALIGN_LEFT;
-                pdoc.Add(address);
-
-                Paragraph heading = new Paragraph("\n" + "\n" + "Prchase Order Requisition" + "\n" + "\n");
-                heading.Alignment = Element.ALIGN_CENTER;
-                pdoc.Add(heading);
-
-                Paragraph para = new Paragraph("\n" + "Purchase Order Details are as of below. Please be kind enough to let us know if there are any information that should be modified." + "\n" + "\n" + "\n");
-                para.Alignment = Element.ALIGN_LEFT;
-                pdoc.Add(para);
-
-                Paragraph para1 = new Paragraph("Order Reference   :   " + txt_orderRef.Text + "\n" + "Construction Site   :   " + txt_site.Text + "\n" + "Order Material       :   " + txt_material.Text + "\n" + "Order Description  :   " + txt_des.Text + "\n" + "Supplier Name       :   " + txt_supplier.Text + "\n" + "Agreed Price          :   LKR. " + txt_amount.Text + "\n" + "Delivery Date        :  " + dtp_po.Value + "\n" + "\n");
-                para1.Alignment = Element.ALIGN_BASELINE;
-                pdoc.Add(para1);
-
-                Paragraph para2 = new Paragraph("\n" + "Thanks & Regards!" + "\n");
-                para2.Alignment = Element.ALIGN_LEFT;
-                pdoc.Add(para2);
-
-                System.Drawing.Image PImage1 = System.Drawing.Image.FromFile("E:\\stamp.png");
-                iTextSharp.text.Image ItextImage1= iTextSharp.text.Image.GetInstance(PImage1,System.Drawing.Imaging.ImageFormat.Png);
-                ItextImage1.Alignment = Element.ALIGN_LEFT;
-                pdoc.Add(ItextImage1);
-
-                pdoc.Close();
-                MessageBox.Show("Report Created");
-            }
-
-            else
-            {
-                MessageBox.Show("Please select an order from the table");
-            }
+            Clear();
         }
-
+        
         private void btn_placeSearch_Click(object sender, EventArgs e)
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))

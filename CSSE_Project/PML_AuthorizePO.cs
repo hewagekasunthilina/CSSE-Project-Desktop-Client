@@ -116,15 +116,35 @@ namespace CSSE_Project
                     cmd.Parameters.AddWithValue("@OrderID", order_id);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Order Status Updated Successfully");
-                    GridFill();
-                    Clear();
                 }
             }
-        }
 
-        private void dgv_authorizeView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            if (cb_status.Text == "Hold" && txt_orderRef.Text != "")
+            {
+                MessageBox.Show("Order Holded");
+                string userMail = null;
+                using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+                {
+                    mysqlCon.Open();
+                    String sql = "SELECT Email FROM pml_user WHERE Username='" + lbl_name.Text + "'";
+                    MySqlCommand mySc = new MySqlCommand(sql, mysqlCon);
+                    MySqlDataReader myDr = mySc.ExecuteReader();
 
+                    while (myDr.Read())
+                    {
+                        userMail = myDr.GetValue(0).ToString();
+                    }
+                }
+
+                Mail.userEmail = userMail;
+                Mail.subject = "Hold Purchase Orders";
+                Mail.message = txt_orderRef.Text + "order is marked as hold order because the agreed price is not mentioned.";
+                Mail openMail = new Mail();
+                openMail.Show();
+            }
+
+            GridFill();
+            Clear();
         }
 
         private void btn_authorizeSearch_Click(object sender, EventArgs e)
@@ -144,33 +164,7 @@ namespace CSSE_Project
 
         private void btn_email_Click(object sender, EventArgs e)
         {
-            if (cb_status.Text =="Hold" && txt_orderRef.Text != "")
-            {
-                string userMail = null;
-                using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
-                {
-                    mysqlCon.Open();
-                    String sql = "SELECT Email FROM pml_user WHERE Username='" + lbl_name.Text + "'";
-                    MySqlCommand mySc = new MySqlCommand(sql, mysqlCon);
-                    MySqlDataReader myDr = mySc.ExecuteReader();
-
-                    while (myDr.Read())
-                    {
-                        userMail = myDr.GetValue(0).ToString();
-                    }
-                }
-
-                Mail.userEmail = userMail;
-                Mail.subject = "Hold Purchase Orders";
-                Mail.message = txt_orderRef + "order is marked as hold because the agreed price is not mentioned.";
-                Mail openMail = new Mail();
-                openMail.Show();
-            }
-
-            else
-            {
-                MessageBox.Show("Please select a hold order");
-            }
+            Clear();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
