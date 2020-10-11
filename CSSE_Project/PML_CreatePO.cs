@@ -43,80 +43,38 @@ namespace CSSE_Project
 
             if (PML_Login.chkType == "Site Manager")
             {
-                PML_SideNav_SiteMan sitMan = new PML_SideNav_SiteMan()
-                /*{
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                }*/;
-
+                PML_SideNav_SiteMan sitMan = new PML_SideNav_SiteMan();
                 this.pnl_CreatePO_SideNav.Controls.Add(sitMan.pnl_sideNav);
-                //sitMan.Show();
             }
 
             else if (PML_Login.chkType == "Supervisor")
             {
-                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_CreatePO_SideNav.Controls.Add(super);
-                super.Show();
+                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor();
+                this.pnl_CreatePO_SideNav.Controls.Add(super.pnl_sideNav);
             }
 
             else if (PML_Login.chkType == "Admin")
             {
-                PML_SideNav_Admin admin = new PML_SideNav_Admin()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_CreatePO_SideNav.Controls.Add(admin);
-                admin.Show();
+                PML_SideNav_Admin admin = new PML_SideNav_Admin();
+                this.pnl_CreatePO_SideNav.Controls.Add(admin.pnl_sideNav);
             }
 
             else if (PML_Login.chkType == "Accounting Staff")
             {
-                PML_SideNav_Account acnt = new PML_SideNav_Account()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_CreatePO_SideNav.Controls.Add(acnt);
-                acnt.Show();
+                PML_SideNav_Account acnt = new PML_SideNav_Account();
+                this.pnl_CreatePO_SideNav.Controls.Add(acnt.pnl_sideNav);
             }
 
             else if (PML_Login.chkType == "Line Manager")
             {
-                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_CreatePO_SideNav.Controls.Add(lineMan);
-                lineMan.Show();
+                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan();
+                this.pnl_CreatePO_SideNav.Controls.Add(lineMan.pnl_sideNav);
             }
 
             else
             {
-                PML_SideNav_Other other = new PML_SideNav_Other()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_CreatePO_SideNav.Controls.Add(other);
-                other.Show();
+                PML_SideNav_Other other = new PML_SideNav_Other();
+                this.pnl_CreatePO_SideNav.Controls.Add(other.pnl_sideNav);
             }
         }
 

@@ -46,41 +46,20 @@ namespace CSSE_Project
 
             if (PML_Login.chkType == "Supervisor")
             {
-                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_placeOrderSideNav.Controls.Add(super);
-                super.Show();
+                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor();
+                this.pnl_placeOrderSideNav.Controls.Add(super.pnl_sideNav);
             }
 
             else if (PML_Login.chkType == "Line Manager")
             {
-                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_placeOrderSideNav.Controls.Add(lineMan);
-                lineMan.Show();
+                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan();
+                this.pnl_placeOrderSideNav.Controls.Add(lineMan.pnl_sideNav);
             }
 
             else if (PML_Login.chkType == "Site Manager")
             {
-                PML_SideNav_SiteMan siteMan = new PML_SideNav_SiteMan()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_placeOrderSideNav.Controls.Add(siteMan);
-                siteMan.Show();
+                PML_SideNav_SiteMan siteMan = new PML_SideNav_SiteMan();
+                this.pnl_placeOrderSideNav.Controls.Add(siteMan.pnl_sideNav);
             }
 
         }

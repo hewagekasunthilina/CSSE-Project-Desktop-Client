@@ -132,7 +132,6 @@
             this.pnl_sideNav.Name = "pnl_sideNav";
             this.pnl_sideNav.Size = new System.Drawing.Size(250, 610);
             this.pnl_sideNav.TabIndex = 1;
-            this.pnl_sideNav.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_sideNav_Paint);
             // 
             // pictureBox5
             // 

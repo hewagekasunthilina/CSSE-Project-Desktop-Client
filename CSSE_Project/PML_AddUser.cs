@@ -41,15 +41,8 @@ namespace CSSE_Project
 
             if (PML_Login.chkType == "Admin")
             {
-                PML_SideNav_Admin admin = new PML_SideNav_Admin()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_AddUserSideNav.Controls.Add(admin);
-                admin.Show();
+                PML_SideNav_Admin admin = new PML_SideNav_Admin();
+                this.pnl_AddUserSideNav.Controls.Add(admin.pnl_sideNav);
             }
         }
 
