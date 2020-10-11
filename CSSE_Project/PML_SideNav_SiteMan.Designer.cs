@@ -186,12 +186,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnl_sideNav;
-        private System.Windows.Forms.Button btn_StateMan_signOut;
-        private System.Windows.Forms.Button btn_StateMan_POHistory;
-        private System.Windows.Forms.Button btn_StateMan_createPO;
+        internal System.Windows.Forms.Panel pnl_sideNav;
+        internal System.Windows.Forms.Button btn_StateMan_signOut;
+        internal System.Windows.Forms.Button btn_StateMan_POHistory;
+        internal System.Windows.Forms.Button btn_StateMan_createPO;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_placeOrder;
-        private System.Windows.Forms.Button btn_draft;
+        internal System.Windows.Forms.Button btn_placeOrder;
+        internal System.Windows.Forms.Button btn_draft;
     }
 }

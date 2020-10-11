@@ -44,14 +44,14 @@ namespace CSSE_Project
             if (PML_Login.chkType == "Site Manager")
             {
                 PML_SideNav_SiteMan sitMan = new PML_SideNav_SiteMan()
-                {
+                /*{
                     Dock = DockStyle.Fill,
                     TopLevel = false,
                     TopMost = true
-                };
+                }*/;
 
-                this.pnl_CreatePO_SideNav.Controls.Add(sitMan);
-                sitMan.Show();
+                this.pnl_CreatePO_SideNav.Controls.Add(sitMan.pnl_sideNav);
+                //sitMan.Show();
             }
 
             else if (PML_Login.chkType == "Supervisor")
