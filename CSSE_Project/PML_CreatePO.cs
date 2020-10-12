@@ -21,6 +21,9 @@ namespace CSSE_Project
     {
         string connectionString = @"Server=projects.dimodigital.lk; Database=PML; Uid=ttm;Pwd=ttm;";
         int orderId = 0;
+
+        public static string priceAmount;
+
         public PML_CreatePO()
         {
             InitializeComponent();
@@ -36,91 +39,43 @@ namespace CSSE_Project
             OrderGridFill();
             OrderClear();
             lbl_name.Text = PML_Login.chkName;
+            priceAmount = txt_price.Text;
 
             if (PML_Login.chkType == "Site Manager")
             {
-                PML_SideNav_SiteMan sitMan = new PML_SideNav_SiteMan()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_CreatePO_SideNav.Controls.Add(sitMan);
-                sitMan.Show();
+                PML_SideNav_SiteMan sitMan = new PML_SideNav_SiteMan();
+                this.pnl_CreatePO_SideNav.Controls.Add(sitMan.pnl_sideNav);
             }
 
             else if (PML_Login.chkType == "Supervisor")
             {
-                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_CreatePO_SideNav.Controls.Add(super);
-                super.Show();
+                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor();
+                this.pnl_CreatePO_SideNav.Controls.Add(super.pnl_sideNav);
             }
 
             else if (PML_Login.chkType == "Admin")
             {
-                PML_SideNav_Admin admin = new PML_SideNav_Admin()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_CreatePO_SideNav.Controls.Add(admin);
-                admin.Show();
+                PML_SideNav_Admin admin = new PML_SideNav_Admin();
+                this.pnl_CreatePO_SideNav.Controls.Add(admin.pnl_sideNav);
             }
 
             else if (PML_Login.chkType == "Accounting Staff")
             {
-                PML_SideNav_Account acnt = new PML_SideNav_Account()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_CreatePO_SideNav.Controls.Add(acnt);
-                acnt.Show();
+                PML_SideNav_Account acnt = new PML_SideNav_Account();
+                this.pnl_CreatePO_SideNav.Controls.Add(acnt.pnl_sideNav);
             }
 
             else if (PML_Login.chkType == "Line Manager")
             {
-                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_CreatePO_SideNav.Controls.Add(lineMan);
-                lineMan.Show();
+                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan();
+                this.pnl_CreatePO_SideNav.Controls.Add(lineMan.pnl_sideNav);
             }
 
             else
             {
-                PML_SideNav_Other other = new PML_SideNav_Other()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_CreatePO_SideNav.Controls.Add(other);
-                other.Show();
+                PML_SideNav_Other other = new PML_SideNav_Other();
+                this.pnl_CreatePO_SideNav.Controls.Add(other.pnl_sideNav);
             }
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            PML_Home home = new PML_Home();
-            home.Show();
-            this.Hide();
         }
 
         private void btn_POAdd_Click(object sender, EventArgs e)
@@ -231,59 +186,10 @@ namespace CSSE_Project
             mail.Show();
         }
 
-        private void createDocument()
-        {
-            Document document = new Document(PageSize.A2);
-
-            PdfWriter.GetInstance(document, new FileStream("D:/PO_Report.pdf", FileMode.Create));
-            document.Open();
-
-            System.Drawing.Image PImage = System.Drawing.Image.FromFile("D:\\i1.png");
-            iTextSharp.text.Image ItextImage = iTextSharp.text.Image.GetInstance(PImage, System.Drawing.Imaging.ImageFormat.Png);
-            ItextImage.Alignment = Element.ALIGN_CENTER;
-            document.Add(ItextImage);
-
-
-            PdfPTable table = new PdfPTable(dg_po.Columns.Count);
-
-            for (int j = 0; j < dg_po.Columns.Count; j++)
-            {
-                table.AddCell(new Phrase(dg_po.Columns[j].HeaderText));
-            }
-
-            table.HeaderRows = 1;
-
-
-            for (int i = 0; i < dg_po.Rows.Count; i++)
-            {
-                for (int k = 0; k < dg_po.Columns.Count; k++)
-                {
-                    if (dg_po[k, i].Value != null)
-                    {
-                        table.AddCell(new Phrase(dg_po[k, i].Value.ToString()));
-                    }
-                }
-            }
-
-            document.Add(table);
-
-            table.HorizontalAlignment = Element.ALIGN_CENTER;
-
-            document.Close();
-
-            MessageBox.Show("Document Created.");
-
-        }
-
-        private void btn_print_Click(object sender, EventArgs e)
-        {
-            createDocument();
-        }
-
         private void pictureBox6_Click_1(object sender, EventArgs e)
         {
-            PML_Login login = new PML_Login();
-            login.Show();
+            PML_Home home = new PML_Home();
+            home.Show();
             this.Hide();
         }
 
@@ -304,14 +210,25 @@ namespace CSSE_Project
         public void txt_price_Click(object sender, EventArgs e)
         {
             SupplierData sdata = new SupplierData();
-            sdata.Show();
+            sdata.ShowDialog();
 
+            this.Text = sdata.PiceValue;
             
-          txt_price.Text = sdata.dataGridView1.CurrentRow.Cells[5].Value.ToString();
-
         }
 
-        
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            PML_UserProfile userProfile = new PML_UserProfile();
+            userProfile.Show();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            PML_Login login = new PML_Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }
     

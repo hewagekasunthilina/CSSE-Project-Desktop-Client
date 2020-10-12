@@ -15,6 +15,8 @@ namespace CSSE_Project
     {
         
         string connectionString = @"Server=projects.dimodigital.lk; Database=PML; Uid=ttm;Pwd=ttm;";
+        public static string a;
+
         public SupplierData()
         {
             InitializeComponent();
@@ -39,24 +41,22 @@ namespace CSSE_Project
             SupplieridFill();
         }
 
-        private void dataGridView1_Click(object sender, EventArgs e)
+        public string PiceValue
         {
-            PML_CreatePO po = new PML_CreatePO();
-
-            string a;
-            a = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            MessageBox.Show(a);
-
-            a = po.txt_price.Text;
-            MessageBox.Show(po.txt_price.Text);
-
-
-            po.ShowDialog();
-           
-
-
+            get { return dataGridView1.CurrentRow.Cells[5].Value.ToString(); }
         }
 
-        
+        public void dataGridView1_Click(object sender, EventArgs e)
+        {
+            a = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+
+            PML_CreatePO createPO = new PML_CreatePO();
+            createPO.Show();
+
+            PML_CreatePO.priceAmount = a;
+            MessageBox.Show(PML_CreatePO.priceAmount);
+        }
+
+
     }
 }
