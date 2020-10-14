@@ -15,6 +15,8 @@ namespace CSSE_Project
     {
         
         string connectionString = @"Server=projects.dimodigital.lk; Database=PML; Uid=ttm;Pwd=ttm;";
+        public static string a;
+
         public SupplierData()
         {
             InitializeComponent();
@@ -65,5 +67,10 @@ namespace CSSE_Project
                 dataGridView1.Columns[0].Visible = false;
             }
         }
+        
+
+       
+
+
     }
 }
