@@ -36,6 +36,10 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.6.7\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="GemBox.Email, Version=15.0.0.1029, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\GemBox Software\GemBox.Email 1.5\Bin\net35\GemBox.Email.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -56,6 +60,9 @@
     </Reference>
     <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="S22.Imap">
+      <HintPath>C:\Users\User\Downloads\S22.Imap\S22.Imap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -102,6 +109,13 @@
     <Compile Include="Mail.Designer.cs">
       <DependentUpon>Mail.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="MaterialData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialData.Designer.cs">
+      <DependentUpon>MaterialData.cs</DependentUpon>
+    </Compile>
     <Compile Include="PML_AddMaterials.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +127,7 @@
     </Compile>
     <Compile Include="PML_AddUser.Designer.cs">
       <DependentUpon>PML_AddUser.cs</DependentUpon>
+
     </Compile>
     <Compile Include="PML_AuthorizePO.cs">
       <SubType>Form</SubType>
@@ -209,6 +224,10 @@
     <EmbeddedResource Include="Mail.resx">
       <DependentUpon>Mail.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="MaterialData.resx">
+      <DependentUpon>MaterialData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PML_AddMaterials.resx">
       <DependentUpon>PML_AddMaterials.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +299,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\gif" />
   </ItemGroup>
   <ItemGroup>

@@ -27,12 +27,16 @@ namespace CSSE_Project
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
                 mysqlCon.Open();
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("OrderViewAll", mysqlCon);
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("SupplierViewAll", mysqlCon);
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataTable dtblOrder = new DataTable();
                 sqlDa.Fill(dtblOrder);
                 dataGridView1.DataSource = dtblOrder;
-               // dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[2].Visible = false;
+                dataGridView1.Columns[3].Visible = false;
+                dataGridView1.Columns[4].Visible = false;
+                dataGridView1.Columns[5].Visible = false;
             }
         }
 
@@ -41,21 +45,31 @@ namespace CSSE_Project
             SupplieridFill();
         }
 
-        public string PiceValue
+        
+
+        public void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            get { return dataGridView1.CurrentRow.Cells[5].Value.ToString(); }
+            Close();
+          
         }
 
-        public void dataGridView1_Click(object sender, EventArgs e)
+        private void BtnSearch_Click(object sender, EventArgs e)
         {
-            a = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-
-            PML_CreatePO createPO = new PML_CreatePO();
-            createPO.Show();
-
-            PML_CreatePO.priceAmount = a;
-            MessageBox.Show(PML_CreatePO.priceAmount);
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("SupplierSearchByValue", mysqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDa.SelectCommand.Parameters.AddWithValue("_SupSearch", txtSearch.Text);
+                DataTable dtbord = new DataTable();
+                sqlDa.Fill(dtbord);
+                dataGridView1.DataSource = dtbord;
+                dataGridView1.Columns[0].Visible = false;
+            }
         }
+        
+
+       
 
 
     }

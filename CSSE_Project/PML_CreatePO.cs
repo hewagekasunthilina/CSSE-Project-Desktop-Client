@@ -82,22 +82,29 @@ namespace CSSE_Project
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
-                mysqlCon.Open();
-                MySqlCommand mySqlCmd = new MySqlCommand("OrderAddOrEdit", mysqlCon);
-                mySqlCmd.CommandType = CommandType.StoredProcedure;
-                mySqlCmd.Parameters.AddWithValue("_OrderID", orderId);
-                mySqlCmd.Parameters.AddWithValue("_RefNo", txt_refNo.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_Material", cb_material.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_Description", txt_Description.Text);
-                mySqlCmd.Parameters.AddWithValue("_Supplier", cb_supplier.Text);
-                mySqlCmd.Parameters.AddWithValue("_Price", txt_price.Text);
-                mySqlCmd.Parameters.AddWithValue("_Quantity", txt_qty.Text);
-                mySqlCmd.Parameters.AddWithValue("_Site", cmb_site.Text);
-                mySqlCmd.Parameters.AddWithValue("_DelDate", dateTimeReqDate.Text.Trim());
-                mySqlCmd.ExecuteNonQuery();
-                MessageBox.Show("Submitted Successfully");
-                OrderGridFill();
-                OrderClear();
+
+                {
+                    
+                        mysqlCon.Open();
+                        MySqlCommand mySqlCmd = new MySqlCommand("OrderAddOrEdit", mysqlCon);
+                        mySqlCmd.CommandType = CommandType.StoredProcedure;
+                        mySqlCmd.Parameters.AddWithValue("_OrderID", orderId);
+                        mySqlCmd.Parameters.AddWithValue("_RefNo", txt_refNo.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_Material", cb_material.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_Description", txt_Description.Text);
+                        mySqlCmd.Parameters.AddWithValue("_Supplier", cb_supplier.Text);
+                        mySqlCmd.Parameters.AddWithValue("_Price", txt_price.Text);
+                        mySqlCmd.Parameters.AddWithValue("_Quantity", txt_qty.Text);
+                        mySqlCmd.Parameters.AddWithValue("_Site", cmb_site.Text);
+                        mySqlCmd.Parameters.AddWithValue("_DelDate", dateTimeReqDate.Text.Trim());
+                        mySqlCmd.ExecuteNonQuery();
+                        MessageBox.Show("Submitted Successfully");
+                        OrderGridFill();
+                        OrderClear();
+                        //this.Hide();
+                       
+                }
+                
 
             }
         }
@@ -113,6 +120,14 @@ namespace CSSE_Project
                 sqlDa.Fill(dtblOrder);
                 dg_po.DataSource = dtblOrder;
                 dg_po.Columns[0].Visible = false;
+                dg_po.Columns[10].Visible = false;
+                dg_po.Columns[11].Visible = false;
+                dg_po.Columns[12].Visible = false;
+                dg_po.Columns[13].Visible = false;
+                dg_po.Columns[14].Visible = false;
+                dg_po.Columns[15].Visible = false;
+                dg_po.Columns[16].Visible = false;
+                dg_po.Columns[17].Visible = false;
             }
         }
 
@@ -179,12 +194,7 @@ namespace CSSE_Project
 
         }
 
-        private void buttonMail_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Mail mail = new Mail();
-            mail.Show();
-        }
+       
 
         private void pictureBox6_Click_1(object sender, EventArgs e)
         {
@@ -207,20 +217,49 @@ namespace CSSE_Project
             }
         }
 
+        
+
+
         public void txt_price_Click(object sender, EventArgs e)
         {
             SupplierData sdata = new SupplierData();
             sdata.ShowDialog();
+            txt_price.Text = sdata.dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            cb_supplier.Text = sdata.dataGridView1.CurrentRow.Cells[1].Value.ToString();
 
-            this.Text = sdata.PiceValue;
-            
         }
+
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             PML_UserProfile userProfile = new PML_UserProfile();
             userProfile.Show();
             this.Hide();
+        }
+
+        private void cb_material_DoubleClick(object sender, EventArgs e)
+        {
+            MaterialData mdata = new MaterialData();
+            mdata.ShowDialog();
+            cb_material.Text = mdata.MatDGView.CurrentRow.Cells[1].Value.ToString();
+            txt_Description.Text = mdata.MatDGView.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void cb_supplier_DoubleClick(object sender, EventArgs e)
+        {
+            SupplierData sdata = new SupplierData();
+            sdata.ShowDialog();
+            txt_price.Text = sdata.dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            cb_supplier.Text = sdata.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void btnSiteAdd_Click(object sender, EventArgs e)
+        {
+            cmb_site.Text = "";
+            foreach (object sites in listBoxSite.SelectedItems)
+            {
+                cmb_site.Text += (cmb_site.Text == "" ? "" : ",") + sites.ToString();
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

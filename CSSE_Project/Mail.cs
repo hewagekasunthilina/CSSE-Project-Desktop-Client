@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 
+
+
+
 namespace CSSE_Project
 {
     public partial class Mail : Form
@@ -28,10 +31,13 @@ namespace CSSE_Project
         public Mail()
         {
             InitializeComponent();
+            
         }
 
         internal void btn_SendMail_Click(object sender, EventArgs e)
         {
+            
+
 
             if(txt_UserName.Text == "")
             {
@@ -89,7 +95,7 @@ namespace CSSE_Project
         private void btn_attachment_Click(object sender, EventArgs e)
         {
             OpenFileDialog dg = new OpenFileDialog();
-            if(dg.ShowDialog() == DialogResult.OK)
+            if (dg.ShowDialog() == DialogResult.OK)
             {
                 string path = dg.FileName.ToString();
                 txt_attachment.Text = path;
@@ -106,5 +112,6 @@ namespace CSSE_Project
             txt_msg.Text = message;
         }
     }
+
 }
 
