@@ -117,7 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="txt_msg.Text" xml:space="preserve">
-    <value>Dear Sir,                                                                                                          A new purchase order under reference number has been submitted for your approval.Please refer to the order details and let me know about your final decision.                                                                                                    Thank You</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="edit_pw.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAHxJREFUSEvt
+        kUEKgDAMBPsz/YUXnyLo0d/qXUF3pYFSUsQ23jIwlFwmLQ1OZII7HJ7JmAVe0ROO0JR0AT2gyUu6eJJ8
+        yQabkCBPIV3CP6kmv22+JJ0/k8fFFTZTios9rOYtPsNqPK7i8SJaVGyOEy1MTeLk1zj5Ne4ohHADeTh2
+        dLU3VbgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="edit_email.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAHxJREFUSEvt
+        kUEKgDAMBPsz/YUXnyLo0d/qXUF3pYFSUsQ23jIwlFwmLQ1OZII7HJ7JmAVe0ROO0JR0AT2gyUu6eJJ8
+        yQabkCBPIV3CP6kmv22+JJ0/k8fFFTZTios9rOYtPsNqPK7i8SJaVGyOEy1MTeLk1zj5Ne4ohHADeTh2
+        dLU3VbgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="edit_name.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAHxJREFUSEvt
+        kUEKgDAMBPsz/YUXnyLo0d/qXUF3pYFSUsQ23jIwlFwmLQ1OZII7HJ7JmAVe0ROO0JR0AT2gyUu6eJJ8
+        yQabkCBPIV3CP6kmv22+JJ0/k8fFFTZTios9rOYtPsNqPK7i8SJaVGyOEy1MTeLk1zj5Ne4ohHADeTh2
+        dLU3VbgAAAAASUVORK5CYII=
+</value>
   </data>
 </root>
