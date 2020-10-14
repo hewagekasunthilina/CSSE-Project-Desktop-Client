@@ -186,7 +186,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnl_sideNav;
+        internal System.Windows.Forms.Panel pnl_sideNav;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Supervisor_signOut;
         private System.Windows.Forms.Button btn_Supervisor_POHistory;

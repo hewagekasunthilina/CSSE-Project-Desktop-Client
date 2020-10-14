@@ -30,5 +30,19 @@ namespace CSSE_Project
             history.Show();
             this.Hide();
         }
+
+        private void btn_Supervisor_authorizePO_Click(object sender, EventArgs e)
+        {
+            PML_AddUser addUser = new PML_AddUser();
+            addUser.Show();
+            this.Hide();
+        }
+
+        private void btn_Supervisor_POHistory_Click(object sender, EventArgs e)
+        {
+            PML_AddMaterials addMaterials = new PML_AddMaterials();
+            addMaterials.Show();
+            this.Hide();
+        }
     }
 }

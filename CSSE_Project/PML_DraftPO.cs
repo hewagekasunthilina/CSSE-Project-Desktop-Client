@@ -48,41 +48,20 @@ namespace CSSE_Project
 
             if (PML_Login.chkType == "Supervisor")
             {
-                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_DraftSideNav.Controls.Add(super);
-                super.Show();
+                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor();
+                this.pnl_DraftSideNav.Controls.Add(super.pnl_sideNav);
             }
 
             else if (PML_Login.chkType == "Line Manager")
             {
-                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_DraftSideNav.Controls.Add(lineMan);
-                lineMan.Show();
+                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan();
+                this.pnl_DraftSideNav.Controls.Add(lineMan.pnl_sideNav);
             }
 
             else if (PML_Login.chkType == "Site Manager")
             {
-                PML_SideNav_SiteMan siteMan = new PML_SideNav_SiteMan()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_DraftSideNav.Controls.Add(siteMan);
-                siteMan.Show();
+                PML_SideNav_SiteMan siteMan = new PML_SideNav_SiteMan();
+                this.pnl_DraftSideNav.Controls.Add(siteMan.pnl_sideNav);
             }
         }
         public void Draft_gridFill()
@@ -153,8 +132,21 @@ namespace CSSE_Project
         }
 
         private void Dgv_draft_tbl_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        { }
 
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            PML_UserProfile userProfile = new PML_UserProfile();
+            userProfile.Show();
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            PML_Login login = new PML_Login();
+            login.Show();
+            this.Hide();
         }
     }
 }

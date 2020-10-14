@@ -165,10 +165,12 @@ namespace CSSE_Project
 
         private void Btn_Ddel_status_complaint_Click(object sender, EventArgs e)
         {
-            //this.Hide();
+            this.Hide();
             ComplainEmail complainEmail = new ComplainEmail();
-            complainEmail.txt_email_del_status_Message.Text = EmailMsg;
             complainEmail.ShowDialog();
+            
+            complainEmail.txt_email_del_status_Message.Text = EmailMsg;
+            
         }
 
         private void Btn_refresh_Click(object sender, EventArgs e)
