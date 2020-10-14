@@ -30,6 +30,7 @@
         {
             this.pnl_sideNav = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Supervisor_DeliveryStatusHandle = new System.Windows.Forms.Button();
             this.btn_Supervisor_signOut = new System.Windows.Forms.Button();
             this.btn_Supervisor_POHistory = new System.Windows.Forms.Button();
             this.pnl_sideNav.SuspendLayout();
@@ -38,12 +39,14 @@
             // pnl_sideNav
             // 
             this.pnl_sideNav.BackColor = System.Drawing.Color.Peru;
+            this.pnl_sideNav.Controls.Add(this.btn_Supervisor_DeliveryStatusHandle);
             this.pnl_sideNav.Controls.Add(this.label1);
             this.pnl_sideNav.Controls.Add(this.btn_Supervisor_signOut);
             this.pnl_sideNav.Controls.Add(this.btn_Supervisor_POHistory);
             this.pnl_sideNav.Location = new System.Drawing.Point(0, 0);
+            this.pnl_sideNav.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_sideNav.Name = "pnl_sideNav";
-            this.pnl_sideNav.Size = new System.Drawing.Size(250, 400);
+            this.pnl_sideNav.Size = new System.Drawing.Size(333, 492);
             this.pnl_sideNav.TabIndex = 5;
             // 
             // label1
@@ -51,11 +54,34 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(41, 4);
+            this.label1.Location = new System.Drawing.Point(55, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 25);
+            this.label1.Size = new System.Drawing.Size(213, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "Accounting Staff";
+            // 
+            // btn_Supervisor_DeliveryStatusHandle
+            // 
+            this.btn_Supervisor_DeliveryStatusHandle.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Supervisor_DeliveryStatusHandle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Supervisor_DeliveryStatusHandle.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Supervisor_DeliveryStatusHandle.FlatAppearance.BorderSize = 0;
+            this.btn_Supervisor_DeliveryStatusHandle.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.btn_Supervisor_DeliveryStatusHandle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.btn_Supervisor_DeliveryStatusHandle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Supervisor_DeliveryStatusHandle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Supervisor_DeliveryStatusHandle.ForeColor = System.Drawing.Color.White;
+            this.btn_Supervisor_DeliveryStatusHandle.Image = global::CSSE_Project.Properties.Resources.order_history;
+            this.btn_Supervisor_DeliveryStatusHandle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Supervisor_DeliveryStatusHandle.Location = new System.Drawing.Point(0, 215);
+            this.btn_Supervisor_DeliveryStatusHandle.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Supervisor_DeliveryStatusHandle.Name = "btn_Supervisor_DeliveryStatusHandle";
+            this.btn_Supervisor_DeliveryStatusHandle.Size = new System.Drawing.Size(333, 62);
+            this.btn_Supervisor_DeliveryStatusHandle.TabIndex = 5;
+            this.btn_Supervisor_DeliveryStatusHandle.Text = "PO Delivery Status";
+            this.btn_Supervisor_DeliveryStatusHandle.UseVisualStyleBackColor = false;
+            this.btn_Supervisor_DeliveryStatusHandle.Click += new System.EventHandler(this.Btn_Supervisor_DeliveryStatusHandle_Click);
             // 
             // btn_Supervisor_signOut
             // 
@@ -70,9 +96,10 @@
             this.btn_Supervisor_signOut.ForeColor = System.Drawing.Color.White;
             this.btn_Supervisor_signOut.Image = global::CSSE_Project.Properties.Resources.logout;
             this.btn_Supervisor_signOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Supervisor_signOut.Location = new System.Drawing.Point(0, 69);
+            this.btn_Supervisor_signOut.Location = new System.Drawing.Point(0, 85);
+            this.btn_Supervisor_signOut.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Supervisor_signOut.Name = "btn_Supervisor_signOut";
-            this.btn_Supervisor_signOut.Size = new System.Drawing.Size(250, 50);
+            this.btn_Supervisor_signOut.Size = new System.Drawing.Size(333, 62);
             this.btn_Supervisor_signOut.TabIndex = 3;
             this.btn_Supervisor_signOut.Text = "Sign Out";
             this.btn_Supervisor_signOut.UseVisualStyleBackColor = false;
@@ -91,9 +118,10 @@
             this.btn_Supervisor_POHistory.ForeColor = System.Drawing.Color.White;
             this.btn_Supervisor_POHistory.Image = global::CSSE_Project.Properties.Resources.order_history;
             this.btn_Supervisor_POHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Supervisor_POHistory.Location = new System.Drawing.Point(0, 119);
+            this.btn_Supervisor_POHistory.Location = new System.Drawing.Point(0, 146);
+            this.btn_Supervisor_POHistory.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Supervisor_POHistory.Name = "btn_Supervisor_POHistory";
-            this.btn_Supervisor_POHistory.Size = new System.Drawing.Size(250, 50);
+            this.btn_Supervisor_POHistory.Size = new System.Drawing.Size(333, 62);
             this.btn_Supervisor_POHistory.TabIndex = 1;
             this.btn_Supervisor_POHistory.Text = "PO History";
             this.btn_Supervisor_POHistory.UseVisualStyleBackColor = false;
@@ -101,11 +129,12 @@
             // 
             // PML_SideNav_Account
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 400);
+            this.ClientSize = new System.Drawing.Size(333, 492);
             this.Controls.Add(this.pnl_sideNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PML_SideNav_Account";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PML_SideNav_Account";
@@ -121,5 +150,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Supervisor_signOut;
         private System.Windows.Forms.Button btn_Supervisor_POHistory;
+        private System.Windows.Forms.Button btn_Supervisor_DeliveryStatusHandle;
     }
 }

@@ -20,7 +20,8 @@ namespace CSSE_Project
     public partial class PML_CreatePO : Form
     {
         string connectionString = @"Server=projects.dimodigital.lk; Database=PML; Uid=ttm;Pwd=ttm;";
-        int orderId = 0;
+        public int orderId = 0;
+        PML_DraftPO pml_draft_po = new PML_DraftPO();
         public PML_CreatePO()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace CSSE_Project
         private void PML_CreatePO_Load(object sender, EventArgs e)
         {
             OrderGridFill();
-            OrderClear();
+            //OrderClear();
             lbl_name.Text = PML_Login.chkName;
 
             if (PML_Login.chkType == "Site Manager")
@@ -142,6 +143,7 @@ namespace CSSE_Project
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Submitted Successfully");
                 OrderGridFill();
+                pml_draft_po.Draft_gridFill();
                 OrderClear();
 
             }
@@ -215,6 +217,7 @@ namespace CSSE_Project
                 MessageBox.Show("Deleted Successfully");
                 OrderGridFill();
                 OrderClear();
+                pml_draft_po.Draft_gridFill();
             }
         }
 
@@ -285,6 +288,11 @@ namespace CSSE_Project
             PML_Login login = new PML_Login();
             login.Show();
             this.Hide();
+        }
+
+        private void Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
