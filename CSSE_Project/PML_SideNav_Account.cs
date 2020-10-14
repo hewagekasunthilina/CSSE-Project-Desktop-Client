@@ -30,5 +30,12 @@ namespace CSSE_Project
             history.Show();
             this.Hide();
         }
+
+        private void Btn_Supervisor_DeliveryStatusHandle_Click(object sender, EventArgs e)
+        {
+            PML_PODeliveryStatus deliverystatusprocurement = new PML_PODeliveryStatus();
+            deliverystatusprocurement.Show();
+            this.Hide();
+        }
     }
 }
