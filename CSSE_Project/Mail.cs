@@ -10,16 +10,22 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 
+
+
+
 namespace CSSE_Project
 {
     public partial class Mail : Form
     {
+        
         NetworkCredential login;
         SmtpClient client;
         MailMessage msg;
+
         public Mail()
         {
             InitializeComponent();
+            
         }
 
         private void btn_SendMail_Click(object sender, EventArgs e)
@@ -30,7 +36,7 @@ namespace CSSE_Project
             client.UseDefaultCredentials = false;
             client.EnableSsl = true;
             client.Credentials = login;
-            msg = new MailMessage { From = new MailAddress("sashinkakumarage@gmail.com" , "smtp.gmail.com") };
+            msg = new MailMessage { From = new MailAddress("sashinkakumarage@gmail.com", "smtp.gmail.com") };
             if (!string.IsNullOrEmpty(txt_attachment.Text.ToString()))
                 msg.Attachments.Add(new Attachment(txt_attachment.Text.ToString()));
             msg.To.Add(new MailAddress(txt_to.Text));
@@ -45,7 +51,7 @@ namespace CSSE_Project
             client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
             string userstate = "Sending...";
             client.SendAsync(msg, userstate);
-           
+
 
         }
 
@@ -62,12 +68,14 @@ namespace CSSE_Project
         private void btn_attachment_Click(object sender, EventArgs e)
         {
             OpenFileDialog dg = new OpenFileDialog();
-            if(dg.ShowDialog() == DialogResult.OK)
+            if (dg.ShowDialog() == DialogResult.OK)
             {
                 string path = dg.FileName.ToString();
                 txt_attachment.Text = path;
             }
         }
+
     }
+
 }
 

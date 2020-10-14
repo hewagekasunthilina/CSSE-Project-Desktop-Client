@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mail));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -97,6 +98,7 @@
             this.txt_msg.Name = "txt_msg";
             this.txt_msg.Size = new System.Drawing.Size(364, 96);
             this.txt_msg.TabIndex = 5;
+            this.txt_msg.Text = resources.GetString("txt_msg.Text");
             // 
             // txt_subject
             // 
@@ -114,7 +116,7 @@
             // 
             // btn_SendMail
             // 
-            this.btn_SendMail.Location = new System.Drawing.Point(265, 36);
+            this.btn_SendMail.Location = new System.Drawing.Point(158, 100);
             this.btn_SendMail.Name = "btn_SendMail";
             this.btn_SendMail.Size = new System.Drawing.Size(75, 23);
             this.btn_SendMail.TabIndex = 8;
@@ -124,6 +126,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txt_pwd);
             this.panel1.Controls.Add(this.btn_SendMail);
             this.panel1.Controls.Add(this.txt_UserName);
@@ -131,7 +134,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(71, 297);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(503, 141);
+            this.panel1.Size = new System.Drawing.Size(645, 141);
             this.panel1.TabIndex = 9;
             // 
             // txt_pwd
@@ -139,14 +142,14 @@
             this.txt_pwd.Location = new System.Drawing.Point(108, 57);
             this.txt_pwd.Name = "txt_pwd";
             this.txt_pwd.PasswordChar = '*';
-            this.txt_pwd.Size = new System.Drawing.Size(100, 20);
+            this.txt_pwd.Size = new System.Drawing.Size(244, 20);
             this.txt_pwd.TabIndex = 5;
             // 
             // txt_UserName
             // 
             this.txt_UserName.Location = new System.Drawing.Point(108, 22);
             this.txt_UserName.Name = "txt_UserName";
-            this.txt_UserName.Size = new System.Drawing.Size(100, 20);
+            this.txt_UserName.Size = new System.Drawing.Size(244, 20);
             this.txt_UserName.TabIndex = 4;
             // 
             // label8

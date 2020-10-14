@@ -35,9 +35,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSiteAdd = new System.Windows.Forms.Button();
+            this.listBoxSite = new System.Windows.Forms.ListBox();
+            this.cmb_site = new System.Windows.Forms.TextBox();
+            this.cb_supplier = new System.Windows.Forms.TextBox();
+            this.cb_material = new System.Windows.Forms.TextBox();
             this.txt_Description = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.buttonMail = new System.Windows.Forms.Button();
             this.txt_refNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -46,14 +50,11 @@
             this.dateTimeReqDate = new System.Windows.Forms.DateTimePicker();
             this.txt_qty = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmb_site = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_price = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cb_supplier = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cb_material = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
             this.dg_po = new System.Windows.Forms.DataGridView();
@@ -150,9 +151,13 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnSiteAdd);
+            this.panel2.Controls.Add(this.listBoxSite);
+            this.panel2.Controls.Add(this.cmb_site);
+            this.panel2.Controls.Add(this.cb_supplier);
+            this.panel2.Controls.Add(this.cb_material);
             this.panel2.Controls.Add(this.txt_Description);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.buttonMail);
             this.panel2.Controls.Add(this.txt_refNo);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.btn_delete);
@@ -161,26 +166,77 @@
             this.panel2.Controls.Add(this.dateTimeReqDate);
             this.panel2.Controls.Add(this.txt_qty);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.cmb_site);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txt_price);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.cb_supplier);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.cb_material);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(285, 145);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(878, 196);
+            this.panel2.Size = new System.Drawing.Size(878, 225);
             this.panel2.TabIndex = 4;
+            // 
+            // btnSiteAdd
+            // 
+            this.btnSiteAdd.BackColor = System.Drawing.Color.Peru;
+            this.btnSiteAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiteAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSiteAdd.Location = new System.Drawing.Point(623, 97);
+            this.btnSiteAdd.Name = "btnSiteAdd";
+            this.btnSiteAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnSiteAdd.TabIndex = 24;
+            this.btnSiteAdd.Text = "Add Site";
+            this.btnSiteAdd.UseVisualStyleBackColor = false;
+            this.btnSiteAdd.Click += new System.EventHandler(this.btnSiteAdd_Click);
+            // 
+            // listBoxSite
+            // 
+            this.listBoxSite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxSite.FormattingEnabled = true;
+            this.listBoxSite.ItemHeight = 15;
+            this.listBoxSite.Items.AddRange(new object[] {
+            "Malabe",
+            "Panadura",
+            "Horana",
+            "Padukka",
+            "Galle",
+            "Kandy"});
+            this.listBoxSite.Location = new System.Drawing.Point(158, 103);
+            this.listBoxSite.Name = "listBoxSite";
+            this.listBoxSite.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBoxSite.Size = new System.Drawing.Size(141, 19);
+            this.listBoxSite.TabIndex = 23;
+            // 
+            // cmb_site
+            // 
+            this.cmb_site.Location = new System.Drawing.Point(338, 100);
+            this.cmb_site.Name = "cmb_site";
+            this.cmb_site.Size = new System.Drawing.Size(237, 20);
+            this.cmb_site.TabIndex = 22;
+            // 
+            // cb_supplier
+            // 
+            this.cb_supplier.Location = new System.Drawing.Point(158, 59);
+            this.cb_supplier.Name = "cb_supplier";
+            this.cb_supplier.Size = new System.Drawing.Size(130, 20);
+            this.cb_supplier.TabIndex = 21;
+            this.cb_supplier.DoubleClick += new System.EventHandler(this.cb_supplier_DoubleClick);
+            // 
+            // cb_material
+            // 
+            this.cb_material.Location = new System.Drawing.Point(445, 19);
+            this.cb_material.Name = "cb_material";
+            this.cb_material.Size = new System.Drawing.Size(130, 20);
+            this.cb_material.TabIndex = 20;
+            this.cb_material.DoubleClick += new System.EventHandler(this.cb_material_DoubleClick);
             // 
             // txt_Description
             // 
             this.txt_Description.Location = new System.Drawing.Point(713, 60);
             this.txt_Description.Multiline = true;
             this.txt_Description.Name = "txt_Description";
-            this.txt_Description.Size = new System.Drawing.Size(130, 50);
+            this.txt_Description.Size = new System.Drawing.Size(130, 33);
             this.txt_Description.TabIndex = 19;
             // 
             // label9
@@ -192,21 +248,6 @@
             this.label9.Size = new System.Drawing.Size(69, 15);
             this.label9.TabIndex = 18;
             this.label9.Text = "Description";
-            // 
-            // buttonMail
-            // 
-            this.buttonMail.BackColor = System.Drawing.Color.Peru;
-            this.buttonMail.FlatAppearance.BorderSize = 0;
-            this.buttonMail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMail.ForeColor = System.Drawing.Color.White;
-            this.buttonMail.Location = new System.Drawing.Point(712, 146);
-            this.buttonMail.Name = "buttonMail";
-            this.buttonMail.Size = new System.Drawing.Size(131, 35);
-            this.buttonMail.TabIndex = 18;
-            this.buttonMail.Text = "EMAIL";
-            this.buttonMail.UseVisualStyleBackColor = false;
-            this.buttonMail.Click += new System.EventHandler(this.buttonMail_Click);
             // 
             // txt_refNo
             // 
@@ -235,7 +276,7 @@
             this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_delete.Location = new System.Drawing.Point(493, 146);
+            this.btn_delete.Location = new System.Drawing.Point(671, 174);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(130, 35);
             this.btn_delete.TabIndex = 15;
@@ -252,7 +293,7 @@
             this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
             this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_cancel.Location = new System.Drawing.Point(262, 146);
+            this.btn_cancel.Location = new System.Drawing.Point(445, 174);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(130, 35);
             this.btn_cancel.TabIndex = 14;
@@ -269,7 +310,7 @@
             this.btn_POAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_POAdd.ForeColor = System.Drawing.Color.White;
             this.btn_POAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_POAdd.Location = new System.Drawing.Point(33, 146);
+            this.btn_POAdd.Location = new System.Drawing.Point(225, 174);
             this.btn_POAdd.Name = "btn_POAdd";
             this.btn_POAdd.Size = new System.Drawing.Size(130, 35);
             this.btn_POAdd.TabIndex = 13;
@@ -279,7 +320,7 @@
             // 
             // dateTimeReqDate
             // 
-            this.dateTimeReqDate.Location = new System.Drawing.Point(445, 100);
+            this.dateTimeReqDate.Location = new System.Drawing.Point(158, 136);
             this.dateTimeReqDate.Name = "dateTimeReqDate";
             this.dateTimeReqDate.Size = new System.Drawing.Size(130, 20);
             this.dateTimeReqDate.TabIndex = 12;
@@ -295,25 +336,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(335, 100);
+            this.label5.Location = new System.Drawing.Point(30, 141);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 15);
             this.label5.TabIndex = 10;
             this.label5.Text = "Required Date";
-            // 
-            // cmb_site
-            // 
-            this.cmb_site.FormattingEnabled = true;
-            this.cmb_site.Items.AddRange(new object[] {
-            "Pagoda",
-            "Demodara",
-            "Kaluthara",
-            "Malabe"});
-            this.cmb_site.Location = new System.Drawing.Point(158, 95);
-            this.cmb_site.MaxDropDownItems = 30;
-            this.cmb_site.Name = "cmb_site";
-            this.cmb_site.Size = new System.Drawing.Size(130, 21);
-            this.cmb_site.TabIndex = 9;
             // 
             // label6
             // 
@@ -341,7 +368,6 @@
             this.txt_price.Name = "txt_price";
             this.txt_price.Size = new System.Drawing.Size(130, 20);
             this.txt_price.TabIndex = 5;
-            this.txt_price.Click += new System.EventHandler(this.txt_price_Click);
             // 
             // label4
             // 
@@ -353,20 +379,6 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Agreed Price";
             // 
-            // cb_supplier
-            // 
-            this.cb_supplier.FormattingEnabled = true;
-            this.cb_supplier.Items.AddRange(new object[] {
-            "MDK Stores",
-            "R & P Enterprises",
-            "Duleepa Hardware",
-            "TSK Pvt Ltd"});
-            this.cb_supplier.Location = new System.Drawing.Point(158, 55);
-            this.cb_supplier.MaxDropDownItems = 30;
-            this.cb_supplier.Name = "cb_supplier";
-            this.cb_supplier.Size = new System.Drawing.Size(130, 21);
-            this.cb_supplier.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -376,22 +388,6 @@
             this.label3.Size = new System.Drawing.Size(53, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Supplier";
-            // 
-            // cb_material
-            // 
-            this.cb_material.FormattingEnabled = true;
-            this.cb_material.Items.AddRange(new object[] {
-            "Cement",
-            "Chips",
-            "Cube 3 x 3",
-            "Cube 5 x 5",
-            "Soil Load",
-            "Sand Load"});
-            this.cb_material.Location = new System.Drawing.Point(445, 17);
-            this.cb_material.MaxDropDownItems = 30;
-            this.cb_material.Name = "cb_material";
-            this.cb_material.Size = new System.Drawing.Size(130, 21);
-            this.cb_material.TabIndex = 1;
             // 
             // label2
             // 
@@ -433,14 +429,14 @@
             // 
             // btn_print
             // 
-            this.btn_print.BackColor = System.Drawing.Color.DimGray;
+            this.btn_print.BackColor = System.Drawing.Color.Peru;
             this.btn_print.FlatAppearance.BorderSize = 0;
             this.btn_print.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_print.ForeColor = System.Drawing.Color.White;
             this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Location = new System.Drawing.Point(932, 360);
+            this.btn_print.Location = new System.Drawing.Point(923, 372);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(130, 35);
             this.btn_print.TabIndex = 16;
@@ -450,21 +446,21 @@
             // 
             // txt_OrderSearch
             // 
-            this.txt_OrderSearch.Location = new System.Drawing.Point(549, 379);
+            this.txt_OrderSearch.Location = new System.Drawing.Point(549, 387);
             this.txt_OrderSearch.Name = "txt_OrderSearch";
             this.txt_OrderSearch.Size = new System.Drawing.Size(244, 20);
             this.txt_OrderSearch.TabIndex = 17;
             // 
             // btn_search
             // 
-            this.btn_search.BackColor = System.Drawing.Color.LightGray;
+            this.btn_search.BackColor = System.Drawing.Color.Peru;
             this.btn_search.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_search.ForeColor = System.Drawing.Color.Black;
+            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.ForeColor = System.Drawing.Color.White;
             this.btn_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_search.Location = new System.Drawing.Point(817, 376);
+            this.btn_search.Location = new System.Drawing.Point(817, 382);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(91, 25);
             this.btn_search.TabIndex = 16;
@@ -632,13 +628,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cb_supplier;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cb_material;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_qty;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmb_site;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimeReqDate;
@@ -657,11 +650,15 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_refNo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button buttonMail;
         private System.Windows.Forms.Panel pnl_sideNav;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel pnl_CreatePO_SideNav;
         private System.Windows.Forms.PictureBox pictureBox6;
         public System.Windows.Forms.TextBox txt_price;
+        private System.Windows.Forms.TextBox cb_supplier;
+        private System.Windows.Forms.TextBox cb_material;
+        private System.Windows.Forms.Button btnSiteAdd;
+        private System.Windows.Forms.ListBox listBoxSite;
+        private System.Windows.Forms.TextBox cmb_site;
     }
 }

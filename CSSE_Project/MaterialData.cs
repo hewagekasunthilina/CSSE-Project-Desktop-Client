@@ -11,58 +11,50 @@ using System.Windows.Forms;
 
 namespace CSSE_Project
 {
-    public partial class SupplierData : Form
+    public partial class MaterialData : Form
     {
-        
         string connectionString = @"Server=projects.dimodigital.lk; Database=PML; Uid=ttm;Pwd=ttm;";
-        public SupplierData()
+        public MaterialData()
         {
             InitializeComponent();
         }
 
-        void SupplieridFill()
+        void MaterialGridFill()
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
                 mysqlCon.Open();
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("SupplierViewAll", mysqlCon);
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("MaterialViewAll", mysqlCon);
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataTable dtblOrder = new DataTable();
                 sqlDa.Fill(dtblOrder);
-                dataGridView1.DataSource = dtblOrder;
-                dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[2].Visible = false;
-                dataGridView1.Columns[3].Visible = false;
-                dataGridView1.Columns[4].Visible = false;
-                dataGridView1.Columns[5].Visible = false;
+                MatDGView.DataSource = dtblOrder;
+                MatDGView.Columns[0].Visible = false;
             }
         }
 
-        private void SupplierData_Load(object sender, EventArgs e)
-        {
-            SupplieridFill();
-        }
-
-        
-
-        public void dataGridView1_DoubleClick(object sender, EventArgs e)
+        private void MatDGView_DoubleClick(object sender, EventArgs e)
         {
             Close();
-          
         }
 
-        private void BtnSearch_Click(object sender, EventArgs e)
+        private void MaterialData_Load(object sender, EventArgs e)
+        {
+            MaterialGridFill();
+        }
+
+        private void MatSearch_Click(object sender, EventArgs e)
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
                 mysqlCon.Open();
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("SupplierSearchByValue", mysqlCon);
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("MatSearchByValue", mysqlCon);
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sqlDa.SelectCommand.Parameters.AddWithValue("_SupSearch", txtSearch.Text);
+                sqlDa.SelectCommand.Parameters.AddWithValue("_MatIDSearch", txtMatSearch.Text);
                 DataTable dtbord = new DataTable();
                 sqlDa.Fill(dtbord);
-                dataGridView1.DataSource = dtbord;
-                dataGridView1.Columns[0].Visible = false;
+                MatDGView.DataSource = dtbord;
+                MatDGView.Columns[0].Visible = false;
             }
         }
     }
