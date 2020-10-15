@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mail));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -98,7 +97,7 @@
             this.txt_msg.Name = "txt_msg";
             this.txt_msg.Size = new System.Drawing.Size(336, 96);
             this.txt_msg.TabIndex = 5;
-            this.txt_msg.Text = resources.GetString("txt_msg.Text");
+            this.txt_msg.Text = "                                 ";
             // 
             // txt_subject
             // 

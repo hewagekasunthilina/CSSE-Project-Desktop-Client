@@ -21,6 +21,10 @@ namespace CSSE_Project
     {
         string connectionString = @"Server=projects.dimodigital.lk; Database=PML; Uid=ttm;Pwd=ttm;";
         public int orderId = 0;
+        string userMail = null;
+        string RefNumber = null;
+
+
 
         public static string priceAmount;
 
@@ -82,30 +86,50 @@ namespace CSSE_Project
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
+                mysqlCon.Open();
+                String sql = "SELECT Email FROM pml_user WHERE Username='" + lbl_name.Text + "'";
+                MySqlCommand mySc = new MySqlCommand(sql, mysqlCon);
+                MySqlDataReader myDr = mySc.ExecuteReader();
+
+                while (myDr.Read())
+                {
+                    userMail = myDr.GetValue(0).ToString();
+
+                }
+            }
+
+            
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
 
                 {
-                    
-                        mysqlCon.Open();
-                        MySqlCommand mySqlCmd = new MySqlCommand("OrderAddOrEdit", mysqlCon);
-                        mySqlCmd.CommandType = CommandType.StoredProcedure;
-                        mySqlCmd.Parameters.AddWithValue("_OrderID", orderId);
-                        mySqlCmd.Parameters.AddWithValue("_RefNo", txt_refNo.Text.Trim());
-                        mySqlCmd.Parameters.AddWithValue("_Material", cb_material.Text.Trim());
-                        mySqlCmd.Parameters.AddWithValue("_Description", txt_Description.Text);
-                        mySqlCmd.Parameters.AddWithValue("_Supplier", cb_supplier.Text);
-                        mySqlCmd.Parameters.AddWithValue("_Price", txt_price.Text);
-                        mySqlCmd.Parameters.AddWithValue("_Quantity", txt_qty.Text);
-                        mySqlCmd.Parameters.AddWithValue("_Site", cmb_site.Text);
-                        mySqlCmd.Parameters.AddWithValue("_DelDate", dateTimeReqDate.Text.Trim());
-                        mySqlCmd.ExecuteNonQuery();
-                        MessageBox.Show("Submitted Successfully");
-                        OrderGridFill();
-                        OrderClear();
-                        //this.Hide();
-                       
-                }
-                
 
+                    mysqlCon.Open();
+                    MySqlCommand mySqlCmd = new MySqlCommand("OrderAddOrEdit", mysqlCon);
+                    mySqlCmd.CommandType = CommandType.StoredProcedure;
+                    mySqlCmd.Parameters.AddWithValue("_OrderID", orderId);
+                    mySqlCmd.Parameters.AddWithValue("_RefNo", txt_refNo.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_Material", cb_material.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_Description", txt_Description.Text);
+                    mySqlCmd.Parameters.AddWithValue("_Supplier", cb_supplier.Text);
+                    mySqlCmd.Parameters.AddWithValue("_Price", txt_price.Text);
+                    mySqlCmd.Parameters.AddWithValue("_Quantity", txt_qty.Text);
+                    mySqlCmd.Parameters.AddWithValue("_Site", cmb_site.Text);
+                    mySqlCmd.Parameters.AddWithValue("_DelDate", dateTimeReqDate.Text.Trim());
+                    mySqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Submitted Successfully");
+                    OrderGridFill();
+                    Mail mail = new Mail();
+                    Mail.toName = "sashinkakumarage@gmail.com";
+                    Mail.ccName = "hashithilanka@gmail.com";
+                    Mail.subject = "Request Approval for Purchase Order";
+                    Mail.message = "Dear Sir, I would like to kindly ask for your approval to the purchase order under the reference number " + txt_refNo.Text + ". I appreciate your prompt response for my request. Thank You";
+                    Mail.userEmail = userMail;
+                        mail.Show();
+                        this.Hide();
+                    OrderClear();
+
+                }
             }
         }
 
