@@ -39,11 +39,6 @@ namespace CSSE_Project
             lbl_name.Text = PML_Login.chkName;
             UserGridFill();
 
-            if (PML_Login.chkType == "Admin")
-            {
-                PML_SideNav_Admin admin = new PML_SideNav_Admin();
-                this.pnl_AddUserSideNav.Controls.Add(admin.pnl_sideNav);
-            }
         }
 
         void UserGridFill()
@@ -176,6 +171,174 @@ namespace CSSE_Project
         {
             PML_Login login = new PML_Login();
             login.Show();
+            this.Hide();
+        }
+
+        private void btn_StateMan_signOut_Click(object sender, EventArgs e)
+        {
+            PML_Login logout = new PML_Login();
+            logout.Show();
+            this.Hide();
+        }
+
+        private void btn_Supervisor_signOut_Click(object sender, EventArgs e)
+        {
+            PML_Login logout = new PML_Login();
+            logout.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PML_Login logout = new PML_Login();
+            logout.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            PML_Login logout = new PML_Login();
+            logout.Show();
+            this.Hide();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            PML_Login logout = new PML_Login();
+            logout.Show();
+            this.Hide();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            PML_Login logout = new PML_Login();
+            logout.Show();
+            this.Hide();
+        }
+
+        private void btn_StateMan_POHistory_Click(object sender, EventArgs e)
+        {
+            PML_POhistory pML_POhistory = new PML_POhistory();
+            pML_POhistory.Show();
+            this.Hide();
+        }
+
+        private void btn_Supervisor_POHistory_Click(object sender, EventArgs e)
+        {
+            PML_POhistory pML_POhistory = new PML_POhistory();
+            pML_POhistory.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PML_POhistory pML_POhistory = new PML_POhistory();
+            pML_POhistory.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            PML_POhistory pML_POhistory = new PML_POhistory();
+            pML_POhistory.Show();
+            this.Hide();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            PML_POhistory pML_POhistory = new PML_POhistory();
+            pML_POhistory.Show();
+            this.Hide();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            PML_POhistory pML_POhistory = new PML_POhistory();
+            pML_POhistory.Show();
+            this.Hide();
+        }
+
+        private void btn_StateMan_createPO_Click(object sender, EventArgs e)
+        {
+            PML_CreatePO openCreatePO = new PML_CreatePO();
+            openCreatePO.Show();
+            this.Hide();
+        }
+
+        private void btn_placeOrder_Click(object sender, EventArgs e)
+        {
+            PML_PlaceOrder placeOrder = new PML_PlaceOrder();
+            placeOrder.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PML_PlaceOrder placeOrder = new PML_PlaceOrder();
+            placeOrder.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PML_PlaceOrder placeOrder = new PML_PlaceOrder();
+            placeOrder.Show();
+            this.Hide();
+        }
+
+        private void btn_draft_Click(object sender, EventArgs e)
+        {
+            PML_DraftPO draftPO = new PML_DraftPO();
+            draftPO.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PML_DraftPO draftPO = new PML_DraftPO();
+            draftPO.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            PML_DraftPO draftPO = new PML_DraftPO();
+            draftPO.Show();
+            this.Hide();
+        }
+
+        private void btn_Supervisor_authorizePO_Click(object sender, EventArgs e)
+        {
+            PML_AuthorizePO authorize = new PML_AuthorizePO();
+            authorize.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            PML_AuthorizePO authorize = new PML_AuthorizePO();
+            authorize.Show();
+            this.Hide();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            PML_AddUser addUser = new PML_AddUser();
+            addUser.Show();
+            this.Hide();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            PML_AddMaterials addMaterials = new PML_AddMaterials();
+            addMaterials.Show();
+            this.Hide();
+        }
+
+        private void btn_Supervisor_DeliveryStatusHandle_Click(object sender, EventArgs e)
+        {
+            PML_PODeliveryStatus deliverystatusprocurement = new PML_PODeliveryStatus();
+            deliverystatusprocurement.Show();
             this.Hide();
         }
     }

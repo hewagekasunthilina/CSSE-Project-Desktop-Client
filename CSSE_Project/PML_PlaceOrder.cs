@@ -46,20 +46,12 @@ namespace CSSE_Project
 
             if (PML_Login.chkType == "Supervisor")
             {
-                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor();
-                this.pnl_placeOrderSideNav.Controls.Add(super.pnl_sideNav);
+                lblName.Text = "Supervisor";
             }
 
             else if (PML_Login.chkType == "Line Manager")
             {
-                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan();
-                this.pnl_placeOrderSideNav.Controls.Add(lineMan.pnl_sideNav);
-            }
-
-            else if (PML_Login.chkType == "Site Manager")
-            {
-                PML_SideNav_SiteMan siteMan = new PML_SideNav_SiteMan();
-                this.pnl_placeOrderSideNav.Controls.Add(siteMan.pnl_sideNav);
+                lblName.Text = "Line Manager";
             }
 
         }
@@ -251,5 +243,41 @@ namespace CSSE_Project
             login.Show();
             this.Hide();
         }
+
+        private void btn_Supervisor_signOut_Click(object sender, EventArgs e)
+        {
+            PML_Login logout = new PML_Login();
+            logout.Show();
+            this.Hide();
+        }
+
+        private void btn_Supervisor_POHistory_Click(object sender, EventArgs e)
+        {
+            PML_POhistory pML_POhistory = new PML_POhistory();
+            pML_POhistory.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PML_PlaceOrder placeOrder = new PML_PlaceOrder();
+            placeOrder.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PML_DraftPO draftPO = new PML_DraftPO();
+            draftPO.Show();
+            this.Hide();
+        }
+
+        private void btn_Supervisor_authorizePO_Click(object sender, EventArgs e)
+        {
+            PML_AuthorizePO authorize = new PML_AuthorizePO();
+            authorize.Show();
+            this.Hide();
+        }
+
     }
 }

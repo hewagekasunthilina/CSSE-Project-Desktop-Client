@@ -20,83 +20,6 @@ namespace CSSE_Project
         {
             lbl_name.Text = PML_Login.chkName;
 
-            if (PML_Login.chkType == "Site Manager")
-            {
-                PML_SideNav_SiteMan sitMan = new PML_SideNav_SiteMan()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_POHistorySideNav.Controls.Add(sitMan);
-                sitMan.Show();
-            }
-
-            else if (PML_Login.chkType == "Supervisor")
-            {
-                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_POHistorySideNav.Controls.Add(super);
-                super.Show();
-            }
-
-            else if (PML_Login.chkType == "Admin")
-            {
-                PML_SideNav_Admin admin = new PML_SideNav_Admin()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_POHistorySideNav.Controls.Add(admin);
-                admin.Show();
-            }
-
-            else if (PML_Login.chkType == "Accounting Staff")
-            {
-                PML_SideNav_Account acnt = new PML_SideNav_Account()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_POHistorySideNav.Controls.Add(acnt);
-                acnt.Show();
-            }
-
-            else if (PML_Login.chkType == "Line Manager")
-            {
-                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_POHistorySideNav.Controls.Add(lineMan);
-                lineMan.Show();
-            }
-
-            else
-            {
-                PML_SideNav_Other other = new PML_SideNav_Other()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-                };
-
-                this.pnl_POHistorySideNav.Controls.Add(other);
-                other.Show();
-            }
             dgv_Delivary_status.DataSource = procurement_delivery_status.FillGridByRef();
 
         }
@@ -243,6 +166,27 @@ namespace CSSE_Project
 
             MessageBox.Show("Document Created.");
 
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            PML_Login logout = new PML_Login();
+            logout.Show();
+            this.Hide();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            PML_POhistory pML_POhistory = new PML_POhistory();
+            pML_POhistory.Show();
+            this.Hide();
+        }
+
+        private void btn_Supervisor_DeliveryStatusHandle_Click(object sender, EventArgs e)
+        {
+            PML_PODeliveryStatus deliverystatusprocurement = new PML_PODeliveryStatus();
+            deliverystatusprocurement.Show();
+            this.Hide();
         }
     }
 }

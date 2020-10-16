@@ -36,7 +36,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_sideNav = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pnl_AddUserSideNav = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.txt_UserSearch = new System.Windows.Forms.TextBox();
@@ -54,6 +53,12 @@
             this.cb_type = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnl_admin = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -63,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).BeginInit();
             this.panel2.SuspendLayout();
+            this.pnl_admin.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -137,8 +143,8 @@
             // pnl_sideNav
             // 
             this.pnl_sideNav.BackColor = System.Drawing.Color.Peru;
+            this.pnl_sideNav.Controls.Add(this.pnl_admin);
             this.pnl_sideNav.Controls.Add(this.pictureBox5);
-            this.pnl_sideNav.Controls.Add(this.pnl_AddUserSideNav);
             this.pnl_sideNav.Location = new System.Drawing.Point(0, 90);
             this.pnl_sideNav.Name = "pnl_sideNav";
             this.pnl_sideNav.Size = new System.Drawing.Size(250, 610);
@@ -154,13 +160,6 @@
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pnl_AddUserSideNav
-            // 
-            this.pnl_AddUserSideNav.Location = new System.Drawing.Point(0, 159);
-            this.pnl_AddUserSideNav.Name = "pnl_AddUserSideNav";
-            this.pnl_AddUserSideNav.Size = new System.Drawing.Size(250, 400);
-            this.pnl_AddUserSideNav.TabIndex = 0;
             // 
             // pictureBox6
             // 
@@ -372,6 +371,114 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "User Name";
             // 
+            // pnl_admin
+            // 
+            this.pnl_admin.BackColor = System.Drawing.Color.Peru;
+            this.pnl_admin.Controls.Add(this.button10);
+            this.pnl_admin.Controls.Add(this.label11);
+            this.pnl_admin.Controls.Add(this.button11);
+            this.pnl_admin.Controls.Add(this.button12);
+            this.pnl_admin.Controls.Add(this.button13);
+            this.pnl_admin.Location = new System.Drawing.Point(1, 206);
+            this.pnl_admin.Name = "pnl_admin";
+            this.pnl_admin.Size = new System.Drawing.Size(250, 400);
+            this.pnl_admin.TabIndex = 42;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Image = global::CSSE_Project.Properties.Resources.order_history1;
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(0, 216);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(250, 50);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "PO History";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(89, 4);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 25);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Admin";
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.Transparent;
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Image = global::CSSE_Project.Properties.Resources.logout;
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.Location = new System.Drawing.Point(0, 69);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(250, 50);
+            this.button11.TabIndex = 3;
+            this.button11.Text = "Sign Out";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.Transparent;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Image = global::CSSE_Project.Properties.Resources.materials;
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.Location = new System.Drawing.Point(0, 167);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(250, 50);
+            this.button12.TabIndex = 1;
+            this.button12.Text = "Add Materials";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.Transparent;
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.Image = global::CSSE_Project.Properties.Resources.add_user;
+            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button13.Location = new System.Drawing.Point(0, 118);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(250, 50);
+            this.button13.TabIndex = 0;
+            this.button13.Text = "Add User";
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // PML_AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,6 +510,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnl_admin.ResumeLayout(false);
+            this.pnl_admin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,7 +527,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnl_sideNav;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel pnl_AddUserSideNav;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.TextBox txt_UserSearch;
@@ -436,5 +544,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txt_name;
+        internal System.Windows.Forms.Panel pnl_admin;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
     }
 }

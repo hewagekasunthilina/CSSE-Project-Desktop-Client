@@ -118,7 +118,6 @@
     <Compile Include="Mail.Designer.cs">
       <DependentUpon>Mail.cs</DependentUpon>
     </Compile>
-
     <Compile Include="MaterialData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,7 +135,6 @@
     </Compile>
     <Compile Include="PML_AddUser.Designer.cs">
       <DependentUpon>PML_AddUser.cs</DependentUpon>
-
     </Compile>
     <Compile Include="PML_AuthorizePO.cs">
       <SubType>Form</SubType>
@@ -174,36 +172,6 @@
     <Compile Include="PML_POhistory.Designer.cs">
       <DependentUpon>PML_POhistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="PML_SideNav_Account.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PML_SideNav_Account.Designer.cs">
-      <DependentUpon>PML_SideNav_Account.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PML_SideNav_Admin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PML_SideNav_Admin.Designer.cs">
-      <DependentUpon>PML_SideNav_Admin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PML_SideNav_LineMan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PML_SideNav_LineMan.Designer.cs">
-      <DependentUpon>PML_SideNav_LineMan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PML_SideNav_Other.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PML_SideNav_Other.Designer.cs">
-      <DependentUpon>PML_SideNav_Other.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PML_SideNav_Supervisor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PML_SideNav_Supervisor.Designer.cs">
-      <DependentUpon>PML_SideNav_Supervisor.cs</DependentUpon>
-    </Compile>
     <Compile Include="PML_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,12 +193,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PML_SideNav_SiteMan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PML_SideNav_SiteMan.Designer.cs">
-      <DependentUpon>PML_SideNav_SiteMan.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ComplainEmail.resx">
       <DependentUpon>ComplainEmail.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,7 +205,6 @@
     <EmbeddedResource Include="Mail.resx">
       <DependentUpon>Mail.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="MaterialData.resx">
       <DependentUpon>MaterialData.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,21 +232,6 @@
     <EmbeddedResource Include="PML_POhistory.resx">
       <DependentUpon>PML_POhistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PML_SideNav_Account.resx">
-      <DependentUpon>PML_SideNav_Account.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PML_SideNav_Admin.resx">
-      <DependentUpon>PML_SideNav_Admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PML_SideNav_LineMan.resx">
-      <DependentUpon>PML_SideNav_LineMan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PML_SideNav_Other.resx">
-      <DependentUpon>PML_SideNav_Other.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PML_SideNav_Supervisor.resx">
-      <DependentUpon>PML_SideNav_Supervisor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PML_Home.resx">
       <DependentUpon>PML_Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,9 +245,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PML_SideNav_SiteMan.resx">
-      <DependentUpon>PML_SideNav_SiteMan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupplierData.resx">
       <DependentUpon>SupplierData.cs</DependentUpon>

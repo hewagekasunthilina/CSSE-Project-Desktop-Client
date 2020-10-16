@@ -40,42 +40,6 @@ namespace CSSE_Project
             lbl_profName.Text = PML_Login.chkName;
             txt_name.Text = PML_Login.chkName;
 
-            if (PML_Login.chkType == "Site Manager")
-            {
-                PML_SideNav_SiteMan sitMan = new PML_SideNav_SiteMan();
-                this.pnl_ProfileSideNav.Controls.Add(sitMan.pnl_sideNav);
-            }
-
-            else if (PML_Login.chkType == "Supervisor")
-            {
-                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor();
-                this.pnl_ProfileSideNav.Controls.Add(super.pnl_sideNav);
-            }
-
-            else if (PML_Login.chkType == "Admin")
-            {
-                PML_SideNav_Admin admin = new PML_SideNav_Admin();
-                this.pnl_ProfileSideNav.Controls.Add(admin.pnl_sideNav);
-            }
-
-            else if (PML_Login.chkType == "Accounting Staff")
-            {
-                PML_SideNav_Account acnt = new PML_SideNav_Account();
-                this.pnl_ProfileSideNav.Controls.Add(acnt.pnl_sideNav);
-            }
-
-            else if (PML_Login.chkType == "Line Manager")
-            {
-                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan();
-                this.pnl_ProfileSideNav.Controls.Add(lineMan.pnl_sideNav);
-            }
-
-            else
-            {
-                PML_SideNav_Other other = new PML_SideNav_Other();
-                this.pnl_ProfileSideNav.Controls.Add(other.pnl_sideNav);
-            }
-
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
                 mysqlCon.Open();
@@ -185,5 +149,6 @@ namespace CSSE_Project
             login.Show();
             this.Hide();
         }
+
     }
 }

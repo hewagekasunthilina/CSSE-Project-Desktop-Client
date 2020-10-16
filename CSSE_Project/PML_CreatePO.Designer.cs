@@ -61,8 +61,14 @@
             this.txt_OrderSearch = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.pnl_sideNav = new System.Windows.Forms.Panel();
+            this.pnl_siteMan = new System.Windows.Forms.Panel();
+            this.btn_draft = new System.Windows.Forms.Button();
+            this.btn_placeOrder = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pnl_CreatePO_SideNav = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btn_StateMan_signOut = new System.Windows.Forms.Button();
             this.btn_StateMan_goBack = new System.Windows.Forms.Button();
@@ -75,6 +81,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_po)).BeginInit();
             this.pnl_sideNav.SuspendLayout();
+            this.pnl_siteMan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
@@ -179,10 +186,10 @@
             // 
             // btnSiteAdd
             // 
-            this.btnSiteAdd.BackColor = System.Drawing.Color.Peru;
+            this.btnSiteAdd.BackColor = System.Drawing.Color.LightGray;
             this.btnSiteAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiteAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSiteAdd.Location = new System.Drawing.Point(623, 97);
+            this.btnSiteAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSiteAdd.Location = new System.Drawing.Point(512, 95);
             this.btnSiteAdd.Name = "btnSiteAdd";
             this.btnSiteAdd.Size = new System.Drawing.Size(75, 23);
             this.btnSiteAdd.TabIndex = 24;
@@ -205,14 +212,14 @@
             this.listBoxSite.Location = new System.Drawing.Point(158, 97);
             this.listBoxSite.Name = "listBoxSite";
             this.listBoxSite.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBoxSite.Size = new System.Drawing.Size(141, 19);
+            this.listBoxSite.Size = new System.Drawing.Size(130, 19);
             this.listBoxSite.TabIndex = 23;
             // 
             // cmb_site
             // 
-            this.cmb_site.Location = new System.Drawing.Point(338, 100);
+            this.cmb_site.Location = new System.Drawing.Point(294, 97);
             this.cmb_site.Name = "cmb_site";
-            this.cmb_site.Size = new System.Drawing.Size(237, 20);
+            this.cmb_site.Size = new System.Drawing.Size(212, 20);
             this.cmb_site.TabIndex = 22;
             // 
             // cb_supplier
@@ -236,7 +243,7 @@
             this.txt_Description.Location = new System.Drawing.Point(713, 60);
             this.txt_Description.Multiline = true;
             this.txt_Description.Name = "txt_Description";
-            this.txt_Description.Size = new System.Drawing.Size(130, 33);
+            this.txt_Description.Size = new System.Drawing.Size(130, 55);
             this.txt_Description.TabIndex = 19;
             // 
             // label9
@@ -456,12 +463,142 @@
             // pnl_sideNav
             // 
             this.pnl_sideNav.BackColor = System.Drawing.Color.Peru;
+            this.pnl_sideNav.Controls.Add(this.pnl_siteMan);
             this.pnl_sideNav.Controls.Add(this.pictureBox5);
-            this.pnl_sideNav.Controls.Add(this.pnl_CreatePO_SideNav);
             this.pnl_sideNav.Location = new System.Drawing.Point(0, 90);
             this.pnl_sideNav.Name = "pnl_sideNav";
             this.pnl_sideNav.Size = new System.Drawing.Size(250, 610);
             this.pnl_sideNav.TabIndex = 19;
+            // 
+            // pnl_siteMan
+            // 
+            this.pnl_siteMan.BackColor = System.Drawing.Color.Peru;
+            this.pnl_siteMan.Controls.Add(this.btn_draft);
+            this.pnl_siteMan.Controls.Add(this.btn_placeOrder);
+            this.pnl_siteMan.Controls.Add(this.label10);
+            this.pnl_siteMan.Controls.Add(this.button1);
+            this.pnl_siteMan.Controls.Add(this.button2);
+            this.pnl_siteMan.Controls.Add(this.button3);
+            this.pnl_siteMan.Location = new System.Drawing.Point(0, 172);
+            this.pnl_siteMan.Name = "pnl_siteMan";
+            this.pnl_siteMan.Size = new System.Drawing.Size(250, 400);
+            this.pnl_siteMan.TabIndex = 45;
+            // 
+            // btn_draft
+            // 
+            this.btn_draft.BackColor = System.Drawing.Color.Transparent;
+            this.btn_draft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_draft.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_draft.FlatAppearance.BorderSize = 0;
+            this.btn_draft.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.btn_draft.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.btn_draft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_draft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_draft.ForeColor = System.Drawing.Color.White;
+            this.btn_draft.Image = global::CSSE_Project.Properties.Resources.draft;
+            this.btn_draft.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_draft.Location = new System.Drawing.Point(0, 265);
+            this.btn_draft.Name = "btn_draft";
+            this.btn_draft.Size = new System.Drawing.Size(250, 50);
+            this.btn_draft.TabIndex = 7;
+            this.btn_draft.Text = "Draft PO";
+            this.btn_draft.UseVisualStyleBackColor = false;
+            this.btn_draft.Click += new System.EventHandler(this.btn_draft_Click);
+            // 
+            // btn_placeOrder
+            // 
+            this.btn_placeOrder.BackColor = System.Drawing.Color.Transparent;
+            this.btn_placeOrder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_placeOrder.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_placeOrder.FlatAppearance.BorderSize = 0;
+            this.btn_placeOrder.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.btn_placeOrder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.btn_placeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_placeOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_placeOrder.ForeColor = System.Drawing.Color.White;
+            this.btn_placeOrder.Image = global::CSSE_Project.Properties.Resources.place_order;
+            this.btn_placeOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_placeOrder.Location = new System.Drawing.Point(0, 216);
+            this.btn_placeOrder.Name = "btn_placeOrder";
+            this.btn_placeOrder.Size = new System.Drawing.Size(250, 50);
+            this.btn_placeOrder.TabIndex = 6;
+            this.btn_placeOrder.Text = "Place Order";
+            this.btn_placeOrder.UseVisualStyleBackColor = false;
+            this.btn_placeOrder.Click += new System.EventHandler(this.btn_placeOrder_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(54, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(140, 25);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Site Manager";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::CSSE_Project.Properties.Resources.logout;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 69);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 50);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Sign Out";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::CSSE_Project.Properties.Resources.order_history;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 167);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(250, 50);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "PO History";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::CSSE_Project.Properties.Resources.create_order;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 118);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(250, 50);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Create PO";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // pictureBox5
             // 
@@ -473,13 +610,6 @@
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pnl_CreatePO_SideNav
-            // 
-            this.pnl_CreatePO_SideNav.Location = new System.Drawing.Point(0, 159);
-            this.pnl_CreatePO_SideNav.Name = "pnl_CreatePO_SideNav";
-            this.pnl_CreatePO_SideNav.Size = new System.Drawing.Size(250, 400);
-            this.pnl_CreatePO_SideNav.TabIndex = 0;
             // 
             // pictureBox6
             // 
@@ -595,6 +725,8 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_po)).EndInit();
             this.pnl_sideNav.ResumeLayout(false);
+            this.pnl_siteMan.ResumeLayout(false);
+            this.pnl_siteMan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
@@ -632,7 +764,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel pnl_sideNav;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel pnl_CreatePO_SideNav;
         private System.Windows.Forms.PictureBox pictureBox6;
         public System.Windows.Forms.TextBox txt_price;
         private System.Windows.Forms.Button btnSiteAdd;
@@ -644,5 +775,12 @@
         public System.Windows.Forms.TextBox cb_material;
         public System.Windows.Forms.ListBox listBoxSite;
         public System.Windows.Forms.TextBox cmb_site;
+        internal System.Windows.Forms.Panel pnl_siteMan;
+        internal System.Windows.Forms.Button btn_draft;
+        internal System.Windows.Forms.Button btn_placeOrder;
+        private System.Windows.Forms.Label label10;
+        internal System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.Button button2;
+        internal System.Windows.Forms.Button button3;
     }
 }

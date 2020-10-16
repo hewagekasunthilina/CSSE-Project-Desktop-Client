@@ -37,7 +37,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_sideNav = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pnl_ProfileSideNav = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lbl_title = new System.Windows.Forms.Label();
             this.lbl_profName = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnl_mainSide = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -142,7 +142,6 @@
             // 
             this.pnl_sideNav.BackColor = System.Drawing.Color.Peru;
             this.pnl_sideNav.Controls.Add(this.pictureBox5);
-            this.pnl_sideNav.Controls.Add(this.pnl_ProfileSideNav);
             this.pnl_sideNav.Location = new System.Drawing.Point(0, 90);
             this.pnl_sideNav.Name = "pnl_sideNav";
             this.pnl_sideNav.Size = new System.Drawing.Size(250, 610);
@@ -158,13 +157,6 @@
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pnl_ProfileSideNav
-            // 
-            this.pnl_ProfileSideNav.Location = new System.Drawing.Point(0, 159);
-            this.pnl_ProfileSideNav.Name = "pnl_ProfileSideNav";
-            this.pnl_ProfileSideNav.Size = new System.Drawing.Size(250, 400);
-            this.pnl_ProfileSideNav.TabIndex = 0;
             // 
             // pictureBox6
             // 
@@ -373,6 +365,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "User Name";
             // 
+            // pnl_mainSide
+            // 
+            this.pnl_mainSide.BackColor = System.Drawing.Color.Peru;
+            this.pnl_mainSide.Location = new System.Drawing.Point(0, 363);
+            this.pnl_mainSide.Name = "pnl_mainSide";
+            this.pnl_mainSide.Size = new System.Drawing.Size(250, 336);
+            this.pnl_mainSide.TabIndex = 46;
+            // 
             // PML_UserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,6 +381,7 @@
             this.BackgroundImage = global::CSSE_Project.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.pnl_mainSide);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbl_profName);
             this.Controls.Add(this.lbl_title);
@@ -421,7 +422,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnl_sideNav;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel pnl_ProfileSideNav;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Label lbl_profName;
@@ -440,5 +440,6 @@
         private System.Windows.Forms.PictureBox edit_name;
         private System.Windows.Forms.TextBox txt_ID;
         private System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.Panel pnl_mainSide;
     }
 }

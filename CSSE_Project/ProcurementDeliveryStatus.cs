@@ -228,16 +228,16 @@ namespace CSSE_Project
     {
         Document document = new Document(PageSize.A2);
 
-        PdfWriter.GetInstance(document, new FileStream("D:/DelivaryStatusComplain_Report.pdf", FileMode.Create));
+        PdfWriter.GetInstance(document, new FileStream("C:/DelivaryStatusComplain_Report.pdf", FileMode.Create));
         document.Open();
 
-        /*System.Drawing.Image PImage = System.Drawing.Image.FromFile("D:\\i1.png");
-        iTextSharp.text.Image ItextImage = iTextSharp.text.Image.GetInstance(PImage, System.Drawing.Imaging.ImageFormat.Png);
-        ItextImage.Alignment = Element.ALIGN_CENTER;
-        document.Add(ItextImage);*/
+            System.Drawing.Image PImage = System.Drawing.Image.FromFile("C:\\ReportHeader.png");
+            iTextSharp.text.Image ItextImage = iTextSharp.text.Image.GetInstance(PImage, System.Drawing.Imaging.ImageFormat.Png);
+            ItextImage.Alignment = Element.ALIGN_CENTER;
+            document.Add(ItextImage);
 
 
-        PdfPTable table = new PdfPTable(proc_testGrid.Columns.Count);
+            PdfPTable table = new PdfPTable(proc_testGrid.Columns.Count);
 
         for (int j = 0; j < proc_testGrid.Columns.Count; j++)
         {

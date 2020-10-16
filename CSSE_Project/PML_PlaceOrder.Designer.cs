@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_placeSearch = new System.Windows.Forms.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.dgv_placeOrderView = new System.Windows.Forms.DataGridView();
-            this.pnl_placeOrderSideNav = new System.Windows.Forms.Panel();
             this.pnl_sideNav = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,6 +61,13 @@
             this.txt_orderRef = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
+            this.pnl_sup = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lblName = new System.Windows.Forms.Label();
+            this.btn_Supervisor_signOut = new System.Windows.Forms.Button();
+            this.btn_Supervisor_POHistory = new System.Windows.Forms.Button();
+            this.btn_Supervisor_authorizePO = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_placeOrderView)).BeginInit();
             this.pnl_sideNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -71,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel2.SuspendLayout();
+            this.pnl_sup.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_placeSearch
@@ -99,14 +106,14 @@
             this.dgv_placeOrderView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_placeOrderView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgv_placeOrderView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Tan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_placeOrderView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Tan;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_placeOrderView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_placeOrderView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_placeOrderView.Location = new System.Drawing.Point(297, 193);
             this.dgv_placeOrderView.Name = "dgv_placeOrderView";
@@ -115,18 +122,11 @@
             this.dgv_placeOrderView.TabIndex = 26;
             this.dgv_placeOrderView.DoubleClick += new System.EventHandler(this.dgv_placeOrderView_DoubleClick);
             // 
-            // pnl_placeOrderSideNav
-            // 
-            this.pnl_placeOrderSideNav.Location = new System.Drawing.Point(0, 159);
-            this.pnl_placeOrderSideNav.Name = "pnl_placeOrderSideNav";
-            this.pnl_placeOrderSideNav.Size = new System.Drawing.Size(250, 400);
-            this.pnl_placeOrderSideNav.TabIndex = 0;
-            // 
             // pnl_sideNav
             // 
             this.pnl_sideNav.BackColor = System.Drawing.Color.Peru;
+            this.pnl_sideNav.Controls.Add(this.pnl_sup);
             this.pnl_sideNav.Controls.Add(this.pictureBox5);
-            this.pnl_sideNav.Controls.Add(this.pnl_placeOrderSideNav);
             this.pnl_sideNav.Location = new System.Drawing.Point(0, 90);
             this.pnl_sideNav.Name = "pnl_sideNav";
             this.pnl_sideNav.Size = new System.Drawing.Size(250, 610);
@@ -457,6 +457,136 @@
             this.lbl_title.Text = "Place Purchase Order";
             this.lbl_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pnl_sup
+            // 
+            this.pnl_sup.BackColor = System.Drawing.Color.Peru;
+            this.pnl_sup.Controls.Add(this.button2);
+            this.pnl_sup.Controls.Add(this.button3);
+            this.pnl_sup.Controls.Add(this.lblName);
+            this.pnl_sup.Controls.Add(this.btn_Supervisor_signOut);
+            this.pnl_sup.Controls.Add(this.btn_Supervisor_POHistory);
+            this.pnl_sup.Controls.Add(this.btn_Supervisor_authorizePO);
+            this.pnl_sup.Location = new System.Drawing.Point(-1, 170);
+            this.pnl_sup.Name = "pnl_sup";
+            this.pnl_sup.Size = new System.Drawing.Size(250, 400);
+            this.pnl_sup.TabIndex = 50;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::CSSE_Project.Properties.Resources.draft;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 265);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(250, 50);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Draft PO";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::CSSE_Project.Properties.Resources.place_order;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 216);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(250, 50);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Place Order";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.Black;
+            this.lblName.Location = new System.Drawing.Point(65, 4);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(115, 25);
+            this.lblName.TabIndex = 4;
+            this.lblName.Text = "Supervisor";
+            // 
+            // btn_Supervisor_signOut
+            // 
+            this.btn_Supervisor_signOut.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Supervisor_signOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Supervisor_signOut.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Supervisor_signOut.FlatAppearance.BorderSize = 0;
+            this.btn_Supervisor_signOut.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.btn_Supervisor_signOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.btn_Supervisor_signOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Supervisor_signOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Supervisor_signOut.ForeColor = System.Drawing.Color.White;
+            this.btn_Supervisor_signOut.Image = global::CSSE_Project.Properties.Resources.logout;
+            this.btn_Supervisor_signOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Supervisor_signOut.Location = new System.Drawing.Point(0, 69);
+            this.btn_Supervisor_signOut.Name = "btn_Supervisor_signOut";
+            this.btn_Supervisor_signOut.Size = new System.Drawing.Size(250, 50);
+            this.btn_Supervisor_signOut.TabIndex = 3;
+            this.btn_Supervisor_signOut.Text = "Sign Out";
+            this.btn_Supervisor_signOut.UseVisualStyleBackColor = false;
+            this.btn_Supervisor_signOut.Click += new System.EventHandler(this.btn_Supervisor_signOut_Click);
+            // 
+            // btn_Supervisor_POHistory
+            // 
+            this.btn_Supervisor_POHistory.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Supervisor_POHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Supervisor_POHistory.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Supervisor_POHistory.FlatAppearance.BorderSize = 0;
+            this.btn_Supervisor_POHistory.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.btn_Supervisor_POHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.btn_Supervisor_POHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Supervisor_POHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Supervisor_POHistory.ForeColor = System.Drawing.Color.White;
+            this.btn_Supervisor_POHistory.Image = global::CSSE_Project.Properties.Resources.order_history;
+            this.btn_Supervisor_POHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Supervisor_POHistory.Location = new System.Drawing.Point(0, 167);
+            this.btn_Supervisor_POHistory.Name = "btn_Supervisor_POHistory";
+            this.btn_Supervisor_POHistory.Size = new System.Drawing.Size(250, 50);
+            this.btn_Supervisor_POHistory.TabIndex = 1;
+            this.btn_Supervisor_POHistory.Text = "PO History";
+            this.btn_Supervisor_POHistory.UseVisualStyleBackColor = false;
+            this.btn_Supervisor_POHistory.Click += new System.EventHandler(this.btn_Supervisor_POHistory_Click);
+            // 
+            // btn_Supervisor_authorizePO
+            // 
+            this.btn_Supervisor_authorizePO.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Supervisor_authorizePO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Supervisor_authorizePO.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Supervisor_authorizePO.FlatAppearance.BorderSize = 0;
+            this.btn_Supervisor_authorizePO.FlatAppearance.CheckedBackColor = System.Drawing.Color.Tan;
+            this.btn_Supervisor_authorizePO.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Tan;
+            this.btn_Supervisor_authorizePO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Supervisor_authorizePO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Supervisor_authorizePO.ForeColor = System.Drawing.Color.White;
+            this.btn_Supervisor_authorizePO.Image = global::CSSE_Project.Properties.Resources.authorize;
+            this.btn_Supervisor_authorizePO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Supervisor_authorizePO.Location = new System.Drawing.Point(0, 118);
+            this.btn_Supervisor_authorizePO.Name = "btn_Supervisor_authorizePO";
+            this.btn_Supervisor_authorizePO.Size = new System.Drawing.Size(250, 50);
+            this.btn_Supervisor_authorizePO.TabIndex = 0;
+            this.btn_Supervisor_authorizePO.Text = "Authorize PO";
+            this.btn_Supervisor_authorizePO.UseVisualStyleBackColor = false;
+            this.btn_Supervisor_authorizePO.Click += new System.EventHandler(this.btn_Supervisor_authorizePO_Click);
+            // 
             // PML_PlaceOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,6 +618,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnl_sup.ResumeLayout(false);
+            this.pnl_sup.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,7 +634,6 @@
         private System.Windows.Forms.Button btn_placeSearch;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.DataGridView dgv_placeOrderView;
-        private System.Windows.Forms.Panel pnl_placeOrderSideNav;
         private System.Windows.Forms.Panel pnl_sideNav;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label1;
@@ -528,5 +659,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_des;
         private System.Windows.Forms.Label label9;
+        internal System.Windows.Forms.Panel pnl_sup;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btn_Supervisor_signOut;
+        private System.Windows.Forms.Button btn_Supervisor_POHistory;
+        private System.Windows.Forms.Button btn_Supervisor_authorizePO;
     }
 }

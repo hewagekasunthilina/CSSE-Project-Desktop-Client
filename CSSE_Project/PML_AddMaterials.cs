@@ -39,11 +39,6 @@ namespace CSSE_Project
             lbl_name.Text = PML_Login.chkName;
             MaterialGridFill();
 
-            if (PML_Login.chkType == "Admin")
-            {
-                PML_SideNav_Admin admin = new PML_SideNav_Admin();
-                this.pnl_AddMaterialSideNav.Controls.Add(admin.pnl_sideNav);
-            }
         }
 
         void MaterialGridFill()
@@ -142,5 +137,34 @@ namespace CSSE_Project
             login.Show();
             this.Hide();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            PML_Login logout = new PML_Login();
+            logout.Show();
+            this.Hide();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            PML_POhistory pML_POhistory = new PML_POhistory();
+            pML_POhistory.Show();
+            this.Hide();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            PML_AddUser addUser = new PML_AddUser();
+            addUser.Show();
+            this.Hide();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            PML_AddMaterials addMaterials = new PML_AddMaterials();
+            addMaterials.Show();
+            this.Hide();
+        }
+
     }
 }

@@ -45,41 +45,7 @@ namespace CSSE_Project
             lbl_name.Text = PML_Login.chkName;
             priceAmount = txt_price.Text;
 
-            if (PML_Login.chkType == "Site Manager")
-            {
-                PML_SideNav_SiteMan sitMan = new PML_SideNav_SiteMan();
-                this.pnl_CreatePO_SideNav.Controls.Add(sitMan.pnl_sideNav);
-            }
-
-            else if (PML_Login.chkType == "Supervisor")
-            {
-                PML_SideNav_Supervisor super = new PML_SideNav_Supervisor();
-                this.pnl_CreatePO_SideNav.Controls.Add(super.pnl_sideNav);
-            }
-
-            else if (PML_Login.chkType == "Admin")
-            {
-                PML_SideNav_Admin admin = new PML_SideNav_Admin();
-                this.pnl_CreatePO_SideNav.Controls.Add(admin.pnl_sideNav);
-            }
-
-            else if (PML_Login.chkType == "Accounting Staff")
-            {
-                PML_SideNav_Account acnt = new PML_SideNav_Account();
-                this.pnl_CreatePO_SideNav.Controls.Add(acnt.pnl_sideNav);
-            }
-
-            else if (PML_Login.chkType == "Line Manager")
-            {
-                PML_SideNav_LineMan lineMan = new PML_SideNav_LineMan();
-                this.pnl_CreatePO_SideNav.Controls.Add(lineMan.pnl_sideNav);
-            }
-
-            else
-            {
-                PML_SideNav_Other other = new PML_SideNav_Other();
-                this.pnl_CreatePO_SideNav.Controls.Add(other.pnl_sideNav);
-            }
+            
         }
 
         private void btn_POAdd_Click(object sender, EventArgs e)
@@ -239,20 +205,7 @@ namespace CSSE_Project
 
                 txt_refNo.Text = "KHS2000" + txt_refNo.Text;
             }
-        }
-
-        
-
-
-        public void txt_price_Click(object sender, EventArgs e)
-        {
-            SupplierData sdata = new SupplierData();
-            sdata.ShowDialog();
-            txt_price.Text = sdata.dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            cb_supplier.Text = sdata.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-
-        }
-
+        } 
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
@@ -292,6 +245,42 @@ namespace CSSE_Project
             login.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PML_Login logout = new PML_Login();
+            logout.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PML_CreatePO openCreatePO = new PML_CreatePO();
+            openCreatePO.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PML_POhistory pML_POhistory = new PML_POhistory();
+            pML_POhistory.Show();
+            this.Hide();
+        }
+
+        private void btn_placeOrder_Click(object sender, EventArgs e)
+        {
+            PML_PlaceOrder placeOrder = new PML_PlaceOrder();
+            placeOrder.Show();
+            this.Hide();
+        }
+
+        private void btn_draft_Click(object sender, EventArgs e)
+        {
+            PML_DraftPO draftPO = new PML_DraftPO();
+            draftPO.Show();
+            this.Hide();
+        }
+
     }
 }
     
